@@ -138,55 +138,69 @@ Leah is a wife, a proud mom of three boys, and a woman of faith based in Iowa.
 
 ## 10. Visual identity
 
-### Logo suite: "The Doorway"
-- **Wordmark:** *Leah* in italic, Roling in roman. The italic is the person; the roman is the authority.
-- **Monogram:** an italic *L* and roman *R* joined into a ligature, framed by an arch.
-  The arch is a **doorway**, from Leah's own line "One philosophy. Many doorways."
-  It is also a cathedral window (faith) and the shape of home (family).
-- **Keystone:** the small diamond at the top of the arch. The keystone is the stone that holds
-  the whole arch together. For Leah, that's her faith.
-- **Seal:** the monogram ringed by *LEAH ROLING • COACH • AUTHOR • SPEAKER*.
+**The feel:** lively, inviting, fun, minimal, modern. Lots of white space, big confident type,
+playful flat shapes (circles are suns, arches are doors), rounded corners and one bright pop of
+Sunshine in every layout.
+
+### Logo suite: "The Open Door"
+- **Wordmark:** **leah roling.** in lowercase Bricolage Grotesque Bold. Lowercase is approachable:
+  a friend, not a guru. The period is a small Sunshine **sun dot**, warmth at the end of every
+  truth she tells.
+- **Mark:** a Lilac doorway with a Sunshine sun rising inside it. The doorway comes from Leah's line
+  "One philosophy. Many doorways." The rising sun means every day is a new chance to become who
+  you were made to be. The arch also echoes a church window (faith) and a front door (home and family).
+- **Lockup:** mark + wordmark side by side. This is the default for headers, slides and signage.
+- **Seal:** the mark ringed by *LEAH ROLING • COACH • AUTHOR • SPEAKER*, for stickers, merch,
+  certificates and the back of business cards.
 - **Signature:** a handwritten *Leah*, used for sign-offs, book plates and personal notes.
 
-Clear space = the height of the keystone × 4 on every side. Minimum size: wordmark 120 px /
-1.25 in wide; monogram 28 px / 0.3 in tall.
+**Files (16 SVG + PNG):** wordmark (color, reverse, ink, white), stacked wordmark (color, reverse),
+mark (color, ink, mono, white), lockup (color, reverse), seal (color, reverse), signature (ink, white).
+
+**Clear space:** keep at least **2× the sun-dot diameter** empty on every side of the wordmark and
+lockup (for the mark alone, ¼ of its width). **Minimum size:** wordmark 100 px / 1 in wide;
+lockup 140 px / 1.4 in; mark 24 px / 0.25 in tall; seal 64 px / 0.75 in.
 
 ### Color
 
 | Name | Role | HEX | RGB | CMYK |
 |---|---|---|---|---|
-| **Garnet** | Signature / conviction | `#7E1F2C` | 126 31 44 | 0 75 65 51 |
-| **Ink** | Authority / text | `#1C1815` | 28 24 21 | 0 14 25 89 |
-| **Linen** | Grace / canvas | `#F6F0E7` | 246 240 231 | 0 2 6 4 |
-| **Brass** | Legacy / accent | `#B08D57` | 176 141 87 | 0 20 51 31 |
-| **Ember** | Becoming / spark | `#C8553D` | 200 85 61 | 0 58 70 22 |
-| Bone | Surface | `#EAE0D1` | 234 224 209 | 0 4 11 8 |
-| Blush | Warmth | `#EBD3CB` | 235 211 203 | 0 10 14 8 |
-| Stone | Muted text | `#675D54` | 103 93 84 | 0 10 18 60 |
+| **Sunshine** | Joy / the becoming (primary accent) | `#FFC933` | 255 201 51 | 0 21 80 0 |
+| **Lilac** | Grace / faith (secondary accent) | `#C8B6FF` | 200 182 255 | 22 29 0 0 |
+| **Ink** | Truth / text | `#17161B` | 23 22 27 | 15 19 0 89 |
+| **Paper** | Space / canvas | `#FFFDF8` | 255 253 248 | 0 1 3 0 |
+| Butter | Sunshine tint | `#FFF0BF` | 255 240 191 | 0 6 25 0 |
+| Lavender | Lilac tint | `#F0EBFF` | 240 235 255 | 6 8 0 0 |
+| Cloud | Neutral surface | `#F5F2EC` | 245 242 236 | 0 1 4 4 |
+| Stone | Muted text | `#646069` | 100 96 105 | 5 9 0 59 |
 
-Ratio: 60% Linen/Bone · 25% Ink · 10% Garnet · 5% Brass/Ember.
-Accessibility: Ink on Linen 15.6:1 · Garnet on Linen 8.8:1 · Stone on Linen 5.7:1 (all AA).
-Brass and Ember are for accents and large type only on light backgrounds.
+Ratio: ~70% Paper/Cloud · 15% Ink · 10% Sunshine · 5% Lilac.
+Accessibility: Ink on Paper 17.7:1 · Ink on Sunshine 11.7:1 · Ink on Lilac 9.9:1 ·
+Stone on Paper 6.0:1 (all AA). Sunshine and Lilac are **never text colors on light backgrounds**;
+use them as fills, highlights and shapes. Sunshine text is fine on Ink.
 
 ### Typography
-- **Fraunces** (display serif): headlines, pull quotes, the wordmark. Soft, warm, editorial.
-  Use the italic for the *one word that matters*.
-- **Instrument Sans** (sans): body copy, UI, labels. Small caps labels tracked +24%.
+- **Bricolage Grotesque** (display): headlines, big numbers, the wordmark. Bold (600–700),
+  tight tracking (about -4%), line-height ~0.95. Modern with a wink of personality.
+- **Instrument Sans** (text): body copy, UI, buttons, labels. Labels are uppercase, tracked +20%.
 - **Mrs Saint Delafield** (script): signature only. Never for sentences.
+- **Emphasis:** the one word that matters gets a **Sunshine highlighter swipe** behind it
+  (on dark backgrounds, the word itself turns Sunshine).
 
-Both Fraunces and Instrument Sans are free (Google Fonts / SIL Open Font License).
+All three are free (Google Fonts / SIL Open Font License).
 
 ### Photography
 - Real, warm, natural light. Leah laughing, mid-conversation, on stage, with people.
-- One black-and-white hero portrait for gravitas, then warm color everywhere else.
-- Wardrobe that carries the palette: black, cream, and her signature reds.
+- One black-and-white hero portrait for contrast, then bright, warm color everywhere else.
+- Bright, clean backgrounds and lots of light. Wardrobe that plays with the palette: black, white, soft yellows and lilacs.
 - Avoid: stock-photo handshakes, staged "thinking" poses, heavy filters.
 
 ### Graphic motifs
-- Arch-cropped portraits (the doorway)
-- Hairline rules and small-caps labels, like an editorial magazine
-- One italic word per headline in Garnet
-- The keystone diamond as a bullet or section marker
+- Arch-cropped portraits on a Lilac door shape (the doorway)
+- Sunshine circles (the sun) placed off-edge or overlapping a photo
+- The highlighter swipe on one word per headline
+- Rounded cards (16–24 px corners) and pill buttons
+- A small Sunshine dot before every label instead of bullets or rules
 
 ---
 

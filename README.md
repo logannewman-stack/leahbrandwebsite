@@ -13,7 +13,7 @@ a 31-page brand book, social templates and a fast personal website.
 | `assets/` | Site CSS, JS, self-hosted fonts, optimized photos, icons |
 | `brand/Leah-Roling-Brand-Book.pdf` | **The brand book.** Print it or send it as-is |
 | `brand/BRAND-STRATEGY.md` | Positioning, voice, bios, palette and type in plain text |
-| `brand/logos/` | 18 logo files as outlined SVG, plus 2400px transparent PNGs in `png/` |
+| `brand/logos/` | 16 logo files as outlined SVG, plus 2400px transparent PNGs in `png/` |
 | `brand/social/` | Instagram post/story, book launch, podcast and LinkedIn templates |
 | `brand/email-signature.html` | Paste-ready email signature |
 | `brand/source/` | Source files and scripts that regenerate everything above |
@@ -75,7 +75,7 @@ Add `--pages` to the last command to also write page previews to `brand/source/p
 
 ## Credits
 
-- Typefaces: [Fraunces](https://fonts.google.com/specimen/Fraunces),
+- Typefaces: [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque),
   [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) and
   [Mrs Saint Delafield](https://fonts.google.com/specimen/Mrs+Saint+Delafield), all under the SIL Open Font License.
 - Photography and the *SHIFT* / *Return on Life* covers come from Leah's existing websites.

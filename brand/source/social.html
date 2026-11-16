@@ -9,166 +9,160 @@
   Edit the text here, re-run the script, and new PNGs are produced.
 -->
 <style>
-@font-face{font-family:"Fraunces";src:url(../../assets/fonts/fraunces-roman.woff2) format("woff2");font-weight:100 900;font-style:normal}
-@font-face{font-family:"Fraunces";src:url(../../assets/fonts/fraunces-italic.woff2) format("woff2");font-weight:100 900;font-style:italic}
+@font-face{font-family:"Bricolage";src:url(../../assets/fonts/bricolage-grotesque.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%}
 @font-face{font-family:"Instrument Sans";src:url(../../assets/fonts/instrument-sans-roman.woff2) format("woff2");font-weight:400 700;font-stretch:75% 100%;font-style:normal}
 @font-face{font-family:"Signature";src:url(script-mrs-saint-delafield.woff2) format("woff2")}
-:root{--garnet:#7E1F2C;--ink:#1C1815;--linen:#F6F0E7;--brass:#B08D57;--ember:#C8553D;--bone:#EAE0D1;--blush:#EBD3CB;--stone:#675D54}
+:root{--ink:#17161B;--paper:#FFFDF8;--sun:#FFC933;--butter:#FFF0BF;--lilac:#C8B6FF;--lav:#F0EBFF;--cloud:#F5F2EC;--stone:#646069}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#999;padding:40px;display:flex;flex-direction:column;gap:40px;align-items:flex-start;font-family:"Instrument Sans",sans-serif;-webkit-font-smoothing:antialiased}
+body{background:#999;padding:40px;display:flex;flex-direction:column;gap:40px;align-items:flex-start;font-family:"Instrument Sans",sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink)}
 .t{position:relative;overflow:hidden;flex:none}
-.serif{font-family:"Fraunces",serif;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 0;font-weight:340;letter-spacing:-.02em}
-.serif em{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;color:var(--garnet)}
-.label{font-weight:600;text-transform:uppercase;letter-spacing:.3em}
-.ks{display:inline-block;width:14px;height:21px;background:currentColor;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);flex:none}
+.d{font-family:"Bricolage",sans-serif;font-weight:700;letter-spacing:-.045em;line-height:.95;font-variation-settings:"opsz" 96}
+.hl{background:linear-gradient(transparent 58%,var(--sun) 58%,var(--sun) 92%,transparent 92%);padding:0 .06em;margin:0 -.03em}
+.hl-paper{background:linear-gradient(transparent 58%,var(--paper) 58%,var(--paper) 92%,transparent 92%);padding:0 .06em;margin:0 -.03em}
+.hl-lilac{background:linear-gradient(transparent 58%,var(--lilac) 58%,var(--lilac) 92%,transparent 92%);padding:0 .06em;margin:0 -.03em}
+.label{font-weight:600;text-transform:uppercase;letter-spacing:.2em;display:inline-flex;align-items:center;gap:.7em}
+.label::before{content:"";width:.7em;height:.7em;border-radius:50%;background:var(--sun);flex:none}
+.label.ink-dot::before{background:var(--ink)}
 .arch{border-radius:9999px 9999px 0 0;overflow:hidden}
 .arch img{width:100%;height:100%;object-fit:cover;display:block}
+.sun{position:absolute;border-radius:50%;background:var(--sun)}
+.pill{display:inline-flex;align-items:center;gap:.6em;border-radius:999px;font-weight:600}
 
 /* 1 — Quote card 1080x1350 */
-#ig-quote-1080x1350{width:1080px;height:1350px;background:var(--linen);color:var(--ink);padding:150px 120px 220px;display:flex;flex-direction:column;align-items:center}
-#ig-quote-1080x1350 .frame{position:absolute;left:52px;right:52px;top:52px;bottom:52px;border:1.5px solid rgba(126,31,44,.22);border-radius:9999px 9999px 0 0;pointer-events:none}
-#ig-quote-1080x1350 .top{display:flex;justify-content:center;margin-top:60px}
-#ig-quote-1080x1350 .top img{height:120px}
-#ig-quote-1080x1350 .q{font-size:88px;line-height:1.06;text-align:center;margin:auto 0;text-wrap:balance}
-#ig-quote-1080x1350 .q .open{display:block;font-size:150px;line-height:.6;color:var(--brass);font-style:italic;margin-bottom:22px}
-#ig-quote-1080x1350 .foot{position:absolute;left:120px;right:120px;bottom:110px;display:flex;align-items:center;justify-content:center;gap:22px;color:var(--stone);font-size:20px}
-#ig-quote-1080x1350 .foot .rule{height:1px;flex:1;background:rgba(28,24,21,.2)}
-#ig-quote-1080x1350 .foot .ks{color:var(--garnet)}
+#ig-quote-1080x1350{width:1080px;height:1350px;background:var(--paper);padding:110px 100px}
+#ig-quote-1080x1350 .sun{width:420px;height:420px;right:-120px;top:-120px}
+#ig-quote-1080x1350 .door{position:absolute;left:-60px;bottom:-40px;width:300px;height:420px;background:var(--lilac);border-radius:9999px 9999px 0 0}
+#ig-quote-1080x1350 .label{font-size:22px;position:relative}
+#ig-quote-1080x1350 .q{position:relative;font-size:96px;margin-top:300px}
+#ig-quote-1080x1350 .foot{position:absolute;right:100px;bottom:100px;display:flex;align-items:center;gap:22px}
+#ig-quote-1080x1350 .foot img{height:58px}
 
 /* 2 — Podcast episode 1080x1350 */
-#ig-podcast-1080x1350{width:1080px;height:1350px;background:var(--ink);color:var(--linen);padding:88px 96px}
-#ig-podcast-1080x1350 .head{display:flex;justify-content:space-between;align-items:center;font-size:20px;color:var(--brass)}
-#ig-podcast-1080x1350 .head .label{letter-spacing:.32em}
-#ig-podcast-1080x1350 .photo{position:absolute;right:96px;top:170px;width:470px;height:600px}
-#ig-podcast-1080x1350 .photo img{object-position:40% 50%}
-#ig-podcast-1080x1350 .ep{position:absolute;left:96px;top:190px;font-size:250px;line-height:.8;color:var(--linen)}
-#ig-podcast-1080x1350 .ep small{display:block;font-family:"Instrument Sans";font-size:22px;letter-spacing:.3em;font-weight:600;color:var(--brass);margin-bottom:40px;text-transform:uppercase}
-#ig-podcast-1080x1350 .title{position:absolute;left:96px;right:96px;top:820px;font-size:116px;line-height:.98}
-#ig-podcast-1080x1350 .title em{color:var(--blush)}
-#ig-podcast-1080x1350 .sub{position:absolute;left:96px;right:96px;bottom:88px;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(246,240,231,.22);padding-top:30px;font-size:22px;color:rgba(246,240,231,.78)}
-#ig-podcast-1080x1350 .sub b{font-family:"Fraunces";font-style:italic;font-weight:340;font-size:34px;color:var(--linen);letter-spacing:-.01em}
+#ig-podcast-1080x1350{width:1080px;height:1350px;background:var(--lilac);padding:96px 96px}
+#ig-podcast-1080x1350 .label{font-size:22px}
+#ig-podcast-1080x1350 .num{font-size:330px;letter-spacing:-.06em;line-height:.8;margin-top:70px}
+#ig-podcast-1080x1350 .photo{position:absolute;right:96px;top:250px;width:380px;height:520px;background:var(--paper)}
+#ig-podcast-1080x1350 .photo img{object-position:42% 50%}
+#ig-podcast-1080x1350 .sun{width:170px;height:170px;right:390px;top:610px}
+#ig-podcast-1080x1350 .title{position:absolute;left:96px;right:96px;top:860px;font-size:118px}
+#ig-podcast-1080x1350 .foot{position:absolute;left:96px;right:96px;bottom:96px;display:flex;justify-content:space-between;align-items:center;font-size:24px;font-weight:600}
+#ig-podcast-1080x1350 .foot .pill{background:var(--ink);color:var(--paper);padding:20px 32px;font-size:22px}
 
 /* 3 — Book launch 1080x1080 */
-#ig-book-1080x1080{width:1080px;height:1080px;background:var(--garnet);color:var(--linen)}
-#ig-book-1080x1080 .glow{position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 45%,rgba(246,240,231,.12),transparent 70%)}
-#ig-book-1080x1080 .copy{position:absolute;left:88px;top:110px;width:440px}
-#ig-book-1080x1080 .copy .label{font-size:19px;color:var(--blush)}
-#ig-book-1080x1080 .copy h2{font-size:92px;line-height:.98;margin-top:36px}
-#ig-book-1080x1080 .copy h2 em{color:var(--blush)}
-#ig-book-1080x1080 .copy p{font-size:25px;line-height:1.45;color:rgba(246,240,231,.85);margin-top:34px}
-#ig-book-1080x1080 .cta{position:absolute;left:88px;bottom:96px;display:flex;align-items:center;gap:18px;font-size:20px}
-#ig-book-1080x1080 .cta span.pill{border:1.5px solid var(--linen);border-radius:999px;padding:18px 30px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:17px}
-#ig-book-1080x1080 .book{position:absolute;right:104px;top:150px;width:420px;height:640px;transform:perspective(1800px) rotateY(-16deg) rotateX(2deg);transform-origin:left center;box-shadow:40px 50px 80px rgba(0,0,0,.45),6px 6px 0 rgba(0,0,0,.15)}
-.cover-replaceable{background:var(--ink);color:var(--linen);position:relative;overflow:hidden;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
-.cover-replaceable::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5%;background:linear-gradient(90deg,rgba(255,255,255,.12),rgba(255,255,255,0))}
-.cover-replaceable .k{margin-top:14%;color:var(--brass);width:.42em;height:.63em}
-.cover-replaceable .tt{font-family:"Fraunces";font-weight:420;font-variation-settings:"opsz" 144,"SOFT" 30;font-size:1.32em;letter-spacing:.06em;margin-top:7%;line-height:1;padding-left:.06em}
-.cover-replaceable .st{font-family:"Fraunces";font-style:italic;font-weight:320;font-size:.72em;margin-top:4%;color:var(--brass)}
-.cover-replaceable .chair{margin-top:12%;width:30%;aspect-ratio:200/262;border:2px solid rgba(246,240,231,.85);border-bottom:0;border-radius:9999px 9999px 0 0;position:relative}
-.cover-replaceable .chair::after{content:"";position:absolute;left:50%;top:-7%;width:9%;aspect-ratio:2/3;background:var(--ember);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:translateX(-50%)}
-.cover-replaceable .desc{font-family:"Instrument Sans";font-size:.42em;letter-spacing:.04em;line-height:1.5;margin-top:10%;color:rgba(246,240,231,.7);padding:0 16%}
-.cover-replaceable .au{font-family:"Instrument Sans";font-weight:600;font-size:.5em;letter-spacing:.42em;margin-top:auto;margin-bottom:10%;padding-left:.42em}
-#ig-book-1080x1080 .cover-replaceable{font-size:34px}
+#ig-book-1080x1080{width:1080px;height:1080px;background:var(--sun);padding:90px}
+#ig-book-1080x1080 .label{font-size:20px}
+#ig-book-1080x1080 .h{font-size:92px;margin-top:56px;width:520px}
+#ig-book-1080x1080 .p{font-size:26px;line-height:1.45;width:460px;margin-top:34px}
+#ig-book-1080x1080 .pill{position:absolute;left:90px;bottom:90px;background:var(--ink);color:var(--paper);padding:24px 38px;font-size:24px}
+#ig-book-1080x1080 .bookwrap{position:absolute;right:80px;top:150px;width:380px;height:570px;transform:rotate(4deg)}
+#ig-book-1080x1080 .bookwrap::after{content:"";position:absolute;left:30px;right:-10px;bottom:-40px;height:40px;background:radial-gradient(closest-side,rgba(23,22,27,.35),transparent);filter:blur(6px)}
+
+/* Replaceable stand-in cover (shared) */
+.cover-rep{position:relative;width:100%;height:100%;background:var(--ink);color:var(--paper);border-radius:6px 14px 14px 6px;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:11% 9% 9%;box-shadow:inset 6px 0 10px -6px rgba(0,0,0,.6),0 30px 60px -20px rgba(23,22,27,.55)}
+.cover-rep .a{font-weight:600;letter-spacing:.3em;font-size:4.2cqw;color:var(--sun)}
+.cover-rep .mk{position:relative;width:36cqw;height:46cqw;margin:12cqw 0 9cqw;border-radius:9999px 9999px 0 0;overflow:hidden;background:#2a2930}
+.cover-rep .mk i{position:absolute;left:50%;bottom:-11cqw;width:26cqw;height:26cqw;margin-left:-13cqw;border-radius:50%;background:var(--sun)}
+.cover-rep .ti{font-family:"Bricolage",sans-serif;font-weight:800;font-size:11.4cqw;letter-spacing:-.03em;line-height:1}
+.cover-rep .sb{font-family:"Bricolage",sans-serif;font-weight:500;font-size:5.6cqw;letter-spacing:-.02em;margin-top:4cqw;color:var(--lilac)}
+.cover-rep .fw{margin-top:auto;font-size:3.4cqw;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,253,248,.6)}
+.cq{container-type:inline-size}
 
 /* 4 — Story 1080x1920 */
-#ig-story-1080x1920{width:1080px;height:1920px;background:var(--linen);color:var(--ink);display:flex;flex-direction:column;align-items:center;padding:150px 100px 110px}
-#ig-story-1080x1920 .photo{width:780px;height:900px;margin-top:70px;flex:none}
-#ig-story-1080x1920 .photo img{object-position:50% 20%}
-#ig-story-1080x1920 .top{text-align:center;font-size:22px;color:var(--garnet)}
-#ig-story-1080x1920 .badge{background:var(--garnet);color:var(--linen);font-size:20px;padding:22px 40px;border-radius:999px;white-space:nowrap;margin-top:-34px;position:relative}
-#ig-story-1080x1920 h2{text-align:center;font-size:92px;line-height:1.02;margin-top:56px;text-wrap:balance}
-#ig-story-1080x1920 .meta{text-align:center;font-size:26px;color:var(--stone);line-height:1.6;margin-top:36px}
-#ig-story-1080x1920 .meta b{color:var(--ink);font-weight:600}
-#ig-story-1080x1920 .bottom{margin-top:auto;display:flex;justify-content:center}
-#ig-story-1080x1920 .bottom img{height:66px}
+#ig-story-1080x1920{width:1080px;height:1920px;background:var(--paper);padding:120px 96px}
+#ig-story-1080x1920 .label{font-size:24px}
+#ig-story-1080x1920 .doorbg{position:absolute;left:140px;top:250px;width:800px;height:950px;background:var(--lilac);border-radius:9999px 9999px 0 0}
+#ig-story-1080x1920 .photo{position:absolute;left:220px;top:340px;width:640px;height:860px}
+#ig-story-1080x1920 .photo img{object-position:50% 25%}
+#ig-story-1080x1920 .sun{width:220px;height:220px;right:110px;top:1040px}
+#ig-story-1080x1920 .h{position:absolute;left:96px;right:96px;top:1275px;font-size:98px;text-align:center}
+#ig-story-1080x1920 .meta{position:absolute;left:96px;right:96px;top:1600px;text-align:center;font-size:28px;color:var(--stone);line-height:1.5}
+#ig-story-1080x1920 .foot{position:absolute;left:0;right:0;bottom:110px;display:flex;justify-content:center}
+#ig-story-1080x1920 .foot img{height:64px}
 
-/* 5 — LinkedIn banner 1584x396 (profile photo covers bottom-left: keep that zone clear) */
-#linkedin-banner-1584x396{width:1584px;height:396px;background:var(--ink);color:var(--linen)}
-#linkedin-banner-1584x396 .arches{position:absolute;left:120px;top:56px;display:flex;gap:26px;opacity:.9}
-#linkedin-banner-1584x396 .arches i{display:block;width:84px;height:400px;border:1.5px solid rgba(176,141,87,.5);border-bottom:0;border-radius:9999px 9999px 0 0}
-#linkedin-banner-1584x396 .arches i:nth-child(2){border-color:rgba(176,141,87,.32)}
-#linkedin-banner-1584x396 .arches i:nth-child(3){border-color:rgba(176,141,87,.18)}
-#linkedin-banner-1584x396 .right{position:absolute;right:110px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right}
-#linkedin-banner-1584x396 .right img{height:104px}
-#linkedin-banner-1584x396 .right .roles{margin-top:26px;font-size:17px;color:var(--brass);letter-spacing:.3em}
-#linkedin-banner-1584x396 .right .tag{margin-top:18px;font-family:"Fraunces";font-style:italic;font-weight:320;font-size:30px;color:rgba(246,240,231,.85)}
+/* 5 — LinkedIn banner 1584x396 (profile photo sits bottom-left: keep it clear) */
+#linkedin-banner-1584x396{width:1584px;height:396px;background:var(--lilac)}
+#linkedin-banner-1584x396 .sun{width:300px;height:300px;left:330px;top:-150px}
+#linkedin-banner-1584x396 .door{position:absolute;width:150px;height:240px;bottom:0;background:var(--paper);border-radius:9999px 9999px 0 0;opacity:.55}
+#linkedin-banner-1584x396 .txt{position:absolute;right:96px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right}
+#linkedin-banner-1584x396 .txt img{height:92px}
+#linkedin-banner-1584x396 .tag{font-family:"Bricolage",sans-serif;font-weight:600;font-size:36px;letter-spacing:-.03em;margin-top:24px}
+#linkedin-banner-1584x396 .label{font-size:15px;margin-top:20px}
 
-/* 6 — Podcast cover 3000x3000 */
-#podcast-cover-3000x3000{width:3000px;height:3000px;background:var(--ink);color:var(--linen)}
-#podcast-cover-3000x3000 .photo{position:absolute;right:250px;top:330px;width:1180px;height:1880px}
-#podcast-cover-3000x3000 .photo img{object-position:50% 15%;filter:grayscale(1) contrast(1.05)}
-#podcast-cover-3000x3000 .label{position:absolute;left:250px;top:330px;font-size:64px;color:var(--brass)}
-#podcast-cover-3000x3000 h2{position:absolute;left:236px;top:600px;font-size:330px;line-height:.9}
-#podcast-cover-3000x3000 h2 em{color:var(--blush)}
-#podcast-cover-3000x3000 .with{position:absolute;left:250px;bottom:300px;right:250px;border-top:4px solid rgba(246,240,231,.2);padding-top:110px;display:flex;justify-content:space-between;align-items:flex-end}
-#podcast-cover-3000x3000 .with img{height:300px}
-#podcast-cover-3000x3000 .with span{font-family:"Fraunces";font-style:italic;font-weight:320;font-size:120px;color:var(--brass)}
+/* 6 — Podcast cover 3000x3000 (designed at 1000, scaled 3x) */
+#podcast-cover-3000x3000{width:3000px;height:3000px;background:var(--sun)}
+#podcast-cover-3000x3000 .s{position:absolute;left:0;top:0;width:1000px;height:1000px;transform:scale(3);transform-origin:0 0;padding:70px}
+#podcast-cover-3000x3000 .label{font-size:19px}
+#podcast-cover-3000x3000 .h{font-size:132px;letter-spacing:-.055em;line-height:.86;margin-top:44px;position:relative;z-index:2}
+#podcast-cover-3000x3000 .doorbg{position:absolute;right:70px;bottom:0;width:430px;height:560px;background:var(--lilac);border-radius:9999px 9999px 0 0}
+#podcast-cover-3000x3000 .photo{position:absolute;right:110px;bottom:0;width:350px;height:490px}
+#podcast-cover-3000x3000 .photo img{object-position:50% 22%;filter:grayscale(1) contrast(1.05)}
+#podcast-cover-3000x3000 .by{position:absolute;left:70px;bottom:70px}
+#podcast-cover-3000x3000 .by img{height:52px}
+#podcast-cover-3000x3000 .by p{font-size:20px;font-weight:600;margin-top:16px}
 </style>
 </head>
 <body>
 
-<!-- 1 · Quote card -->
+<!-- 1 -->
 <section class="t" id="ig-quote-1080x1350">
-  <div class="frame"></div>
-  <div class="top"><img src="../logos/leah-roling-monogram.svg" alt=""></div>
-  <p class="q serif"><span class="open">“</span>You were taught how to <em>build</em> a life. You were never taught how to <em>live</em> one.</p>
-  <div class="foot"><span class="rule"></span><span class="ks"></span><span class="label" style="letter-spacing:.3em;font-size:18px">Leah Roling</span><span class="ks"></span><span class="rule"></span></div>
+  <span class="sun"></span><span class="door"></span>
+  <p class="label">A truth worth holding</p>
+  <p class="d q">You were taught how to build a life. You were never taught how to <span class="hl">live</span> one.</p>
+  <div class="foot"><img src="../logos/leah-roling-wordmark.svg" alt="leah roling"></div>
 </section>
 
-<!-- 2 · Podcast episode -->
+<!-- 2 -->
 <section class="t" id="ig-podcast-1080x1350">
-  <div class="head"><span class="label">The Becoming You Show</span><span class="label">New · Friday</span></div>
-  <div class="ep serif"><small>Episode</small>179</div>
+  <p class="label ink-dot">The Becoming You Show · New episode</p>
+  <p class="d num">179</p>
   <div class="photo arch"><img src="../../assets/img/leah-podcast-512.webp" alt=""></div>
-  <h2 class="title serif">Worth <em>acquisition.</em></h2>
-  <div class="sub"><b>From potential to proof.</b><span>Listen wherever you get podcasts</span></div>
+  <span class="sun"></span>
+  <p class="d title">Worth <span class="hl-paper">acquisition.</span></p>
+  <div class="foot"><span>From potential to proof.</span><span class="pill">Listen now →</span></div>
 </section>
 
-<!-- 3 · Book launch -->
+<!-- 3 -->
 <section class="t" id="ig-book-1080x1080">
-  <div class="glow"></div>
-  <div class="copy">
-    <div class="label">The new book · Out now</div>
-    <h2 class="serif">Build a team that doesn’t <em>need</em> you.</h2>
-    <p>The internal operating system that lets business owners build accountable teams and scale without burnout.</p>
+  <p class="label ink-dot">The new book · Out now</p>
+  <p class="d h">Build a team that doesn't <span class="hl-paper">need</span> you.</p>
+  <p class="p">The internal operating system that turns good people into accountable teams, so you can scale without burnout.</p>
+  <div class="bookwrap cq">
+    <div class="cover-rep"><span class="a">LEAH ROLING</span><span class="mk"><i></i></span><span class="ti">REPLACEABLE</span><span class="sb">The Internal Operating System</span><span class="fw">Foreword by Craig Jackman</span></div>
   </div>
-  <div class="cta"><span class="pill">Get your copy</span></div>
-  <div class="book"><div class="cover-replaceable">
-    <span class="ks k"></span>
-    <div class="tt">REPLACEABLE</div>
-    <div class="st">The Internal Operating System</div>
-    <div class="chair"></div>
-    <div class="desc">How business owners build accountable teams and scale without burnout</div>
-    <div class="au">LEAH ROLING</div>
-  </div></div>
+  <span class="pill">Get your copy →</span>
 </section>
 
-<!-- 4 · Story: keynote announcement -->
+<!-- 4 -->
 <section class="t" id="ig-story-1080x1920">
-  <div class="top label">Keynote · Now booking 2027</div>
+  <p class="label">Keynote · Now booking 2027</p>
+  <span class="doorbg"></span>
   <div class="photo arch"><img src="../../assets/img/leah-blazer-800.webp" alt=""></div>
-  <div class="badge label">Leah Roling, MCC</div>
-  <h2 class="serif">The Operator Underneath the <em>Operation.</em></h2>
-  <div class="meta">Keynotes · Workshops · Leadership intensives<br><b>Book Leah to speak at your next event</b></div>
-  <div class="bottom"><img src="../logos/leah-roling-wordmark-primary.svg" alt=""></div>
+  <span class="sun"></span>
+  <p class="d h">The operator underneath the <span class="hl">operation.</span></p>
+  <p class="meta">Keynotes · Workshops · Leadership intensives<br><b style="color:var(--ink)">Book Leah to speak at your next event</b></p>
+  <div class="foot"><img src="../logos/leah-roling-lockup.svg" alt="leah roling"></div>
 </section>
 
-<!-- 5 · LinkedIn banner -->
+<!-- 5 -->
 <section class="t" id="linkedin-banner-1584x396">
-  <div class="arches"><i></i><i></i><i></i></div>
-  <div class="right">
-    <img src="../logos/leah-roling-wordmark-reverse.svg" alt="Leah Roling">
-    <div class="roles label">Coach · Author · Speaker · Founder of InnerBoard</div>
-    <div class="tag">Become who you were made to be.</div>
+  <span class="sun"></span>
+  <span class="door" style="left:640px"></span><span class="door" style="left:810px;height:200px"></span>
+  <div class="txt">
+    <img src="../logos/leah-roling-wordmark.svg" alt="leah roling">
+    <p class="tag">Become who you were <span class="hl">made</span> to be.</p>
+    <p class="label ink-dot">Coach · Author · Speaker · Founder of InnerBoard</p>
   </div>
 </section>
 
-<!-- 6 · Podcast cover art -->
+<!-- 6 -->
 <section class="t" id="podcast-cover-3000x3000">
-  <div class="label" style="font-weight:600;letter-spacing:.3em;text-transform:uppercase">Weekly · Every Friday</div>
-  <h2 class="serif">The<br><em>Becoming</em><br>You<br>Show</h2>
-  <div class="photo arch"><img src="../../assets/img/leah-portrait-bw-1700.webp" alt=""></div>
-  <div class="with"><img src="../logos/leah-roling-wordmark-reverse.svg" alt="Leah Roling"><span>From potential to proof.</span></div>
+  <div class="s">
+    <p class="label ink-dot">Weekly · Every Friday</p>
+    <p class="d h">The<br>Becoming<br><span class="hl-paper">You</span><br>Show</p>
+    <span class="doorbg"></span>
+    <div class="photo arch"><img src="../../assets/img/leah-portrait-bw-1200.webp" alt=""></div>
+    <div class="by"><img src="../logos/leah-roling-wordmark-ink.svg" alt="leah roling"><p>From potential to proof.</p></div>
+  </div>
 </section>
 
 </body>

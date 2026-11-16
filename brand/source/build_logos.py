@@ -1,5 +1,5 @@
 """
-Leah Roling — logo suite generator.
+Leah Roling — logo suite generator ("The Open Door").
 
 Builds every logo as outlined SVG paths (no font dependency), so files work
 in any tool: print vendors, Canva, Figma, embroidery, signage.
@@ -24,11 +24,12 @@ OUT = os.path.join(ROOT, "brand", "logos")
 os.makedirs(OUT, exist_ok=True)
 
 # ---- Brand palette -------------------------------------------------------
-INK = "#1C1815"
-LINEN = "#F6F0E7"
-GARNET = "#7E1F2C"
-BRASS = "#B08D57"
-EMBER = "#C8553D"
+INK = "#17161B"
+PAPER = "#FFFDF8"
+SUN = "#FFC933"
+LILAC = "#C8B6FF"
+BUTTER = "#FFF0BF"
+LAVENDER = "#F0EBFF"
 
 # ---- Font instancing -----------------------------------------------------
 _cache = {}
@@ -38,7 +39,9 @@ def font(name, **axes):
     key = (name, tuple(sorted(axes.items())))
     if key in _cache:
         return _cache[key]
-    path = os.path.join(FONTS, name) if os.path.exists(os.path.join(FONTS, name)) else os.path.join(ROOT, "brand", "source", name)
+    path = os.path.join(FONTS, name)
+    if not os.path.exists(path):
+        path = os.path.join(ROOT, "brand", "source", name)
     tt = TTFont(path)
     if "fvar" in tt and axes:
         tt = instancer.instantiateVariableFont(tt, axes)
@@ -47,70 +50,58 @@ def font(name, **axes):
     tt.save(buf)
     data = buf.getvalue()
     tt = TTFont(io.BytesIO(data))
-    face = hb.Face(data)
-    hbfont = hb.Font(face)
-    _cache[key] = (tt, hbfont)
+    _cache[key] = (tt, hb.Font(hb.Face(data)))
     return _cache[key]
 
 
 class Run:
     """A shaped run of text that can be drawn as SVG path data."""
 
-    def __init__(self, text, fnt, size, tracking=0.0, features=None):
+    def __init__(self, text, fnt, size, tracking=0.0):
         self.tt, self.hb = fnt
         self.upm = self.tt["head"].unitsPerEm
-        self.size = size
         self.scale = size / self.upm
         buf = hb.Buffer()
         buf.add_str(text)
         buf.guess_segment_properties()
-        hb.shape(self.hb, buf, features or {"kern": True, "liga": True})
+        hb.shape(self.hb, buf, {"kern": True, "liga": True})
+        order = self.tt.getGlyphOrder()
         self.glyphs = []
         x = 0
-        order = self.tt.getGlyphOrder()
-        track_units = tracking * self.upm
+        track = tracking * self.upm
         for info, pos in zip(buf.glyph_infos, buf.glyph_positions):
             self.glyphs.append((order[info.codepoint], x + pos.x_offset, pos.y_offset, pos.x_advance))
-            x += pos.x_advance + track_units
-        self.advance_units = x - (track_units if self.glyphs else 0)
-        self.width = self.advance_units * self.scale
+            x += pos.x_advance + track
+        self.width = (x - (track if self.glyphs else 0)) * self.scale
+
+    def _draw(self, pen, x0, y0):
+        gs = self.tt.getGlyphSet()
+        for name, gx, gy, _ in self.glyphs:
+            gs[name].draw(TransformPen(pen, (self.scale, 0, 0, -self.scale, x0 + gx * self.scale, y0 - gy * self.scale)))
 
     def path(self, x0, y0):
-        gs = self.tt.getGlyphSet()
-        pen = SVGPathPen(gs)
-        for name, gx, gy, _ in self.glyphs:
-            t = TransformPen(pen, (self.scale, 0, 0, -self.scale, x0 + gx * self.scale, y0 - gy * self.scale))
-            gs[name].draw(t)
+        pen = SVGPathPen(self.tt.getGlyphSet())
+        self._draw(pen, x0, y0)
         return pen.getCommands()
 
     def bounds(self, x0, y0):
-        gs = self.tt.getGlyphSet()
-        bp = BoundsPen(gs)
-        for name, gx, gy, _ in self.glyphs:
-            t = TransformPen(bp, (self.scale, 0, 0, -self.scale, x0 + gx * self.scale, y0 - gy * self.scale))
-            gs[name].draw(t)
-        return bp.bounds  # xmin, ymin, xmax, ymax in SVG space
+        bp = BoundsPen(self.tt.getGlyphSet())
+        self._draw(bp, x0, y0)
+        return bp.bounds
 
     def glyph_paths(self):
-        """Yield (svg_path_at_origin, advance_px) per glyph — used for the circular seal."""
         gs = self.tt.getGlyphSet()
         for name, _, _, adv in self.glyphs:
             pen = SVGPathPen(gs)
-            t = TransformPen(pen, (self.scale, 0, 0, -self.scale, 0, 0))
-            gs[name].draw(t)
+            gs[name].draw(TransformPen(pen, (self.scale, 0, 0, -self.scale, 0, 0)))
             yield pen.getCommands(), adv * self.scale
 
 
-# Type settings for the brand -------------------------------------------
-def serif_roman():
-    return font("fraunces-roman.woff2", wght=340, opsz=144, SOFT=100, WONK=0)
+def display(w=700):
+    return font("bricolage-grotesque.woff2", wght=w, opsz=96, wdth=100)
 
 
-def serif_italic():
-    return font("fraunces-italic.woff2", wght=330, opsz=144, SOFT=100, WONK=1)
-
-
-def sans(w=560):
+def sans(w=600):
     return font("instrument-sans-roman.woff2", wght=w, wdth=100)
 
 
@@ -119,11 +110,11 @@ def script():
 
 
 # ---- SVG helpers ---------------------------------------------------------
-def svg(w, h, body, title):
+def svg(w, h, body, title, defs=""):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.2f} {h:.2f}" '
         f'width="{w:.0f}" height="{h:.0f}" role="img" aria-label="{title}">\n'
-        f"<title>{title}</title>\n{body}\n</svg>\n"
+        f"<title>{title}</title>\n{('<defs>' + defs + '</defs>') if defs else ''}{body}\n</svg>\n"
     )
 
 
@@ -137,183 +128,128 @@ def union(*bs):
     return (min(b[0] for b in bs), min(b[1] for b in bs), max(b[2] for b in bs), max(b[3] for b in bs))
 
 
-# ---- Wordmark ------------------------------------------------------------
+# ---- The Open Door mark ---------------------------------------------------
+# A doorway (arch) with the sun rising inside it: a new day, the becoming self.
+MW, MH = 200, 260
+DOOR = "M10 260V100a90 90 0 0 1 180 0v160z"
+SUN_CX, SUN_CY, SUN_R = 100, 212, 60
+_uid = [0]
+
+
+def mark_body(door, sun, cutout=False):
+    """Returns (defs, body). cutout=True punches the sun out of the door (one-color use)."""
+    _uid[0] += 1
+    cid = f"door{_uid[0]}"
+    defs = f'<clipPath id="{cid}"><path d="{DOOR}"/></clipPath>'
+    if cutout:
+        circle = f"M{SUN_CX - SUN_R} {SUN_CY}a{SUN_R} {SUN_R} 0 1 0 {2 * SUN_R} 0a{SUN_R} {SUN_R} 0 1 0 {-2 * SUN_R} 0z"
+        body = f'<g clip-path="url(#{cid})"><path fill-rule="evenodd" fill="{door}" d="{DOOR} {circle}"/></g>'
+    else:
+        body = (
+            f'<path d="{DOOR}" fill="{door}"/>'
+            f'<g clip-path="url(#{cid})"><circle cx="{SUN_CX}" cy="{SUN_CY}" r="{SUN_R}" fill="{sun}"/></g>'
+        )
+    return defs, body
+
+
+def mark(door, sun, fname, title, cutout=False):
+    defs, body = mark_body(door, sun, cutout)
+    save(fname, svg(MW, MH, body, title, defs))
+
+
+# ---- Wordmark: "leah roling." -------------------------------------------
 def wordmark_parts(size=100):
-    leah = Run("Leah", serif_italic(), size, tracking=-0.012)
-    roling = Run("Roling", serif_roman(), size, tracking=-0.018)
-    gap = size * 0.2
-    return leah, roling, gap
+    run = Run("leah roling", display(700), size, tracking=-0.032)
+    b = run.bounds(0, size)
+    dot_r = size * 0.105
+    dot_cx = b[2] + size * 0.035 + dot_r
+    dot_cy = size - dot_r  # sits on the baseline
+    return run, b, (dot_cx, dot_cy, dot_r)
 
 
-def wordmark(color_first, color_second, fname, title, pad=0.06):
+def wordmark(text_color, dot_color, fname, title, pad=0.07):
     size = 100
-    leah, roling, gap = wordmark_parts(size)
-    base = size
-    b1 = leah.bounds(0, base)
-    b2 = roling.bounds(leah.width + gap, base)
-    bx = union(b1, b2)
+    run, b, (dx_, dy_, r) = wordmark_parts(size)
+    bx = union(b, (dx_ - r, dy_ - r, dx_ + r, dy_ + r))
     p = size * pad
-    w = bx[2] - bx[0] + 2 * p
-    h = bx[3] - bx[1] + 2 * p
-    dx, dy = -bx[0] + p, -bx[1] + p
+    w, h = bx[2] - bx[0] + 2 * p, bx[3] - bx[1] + 2 * p
+    tx, ty = -bx[0] + p, -bx[1] + p
     body = (
-        f'<g transform="translate({dx:.2f} {dy:.2f})">'
-        f'<path fill="{color_first}" d="{leah.path(0, base)}"/>'
-        f'<path fill="{color_second}" d="{roling.path(leah.width + gap, base)}"/></g>'
+        f'<g transform="translate({tx:.2f} {ty:.2f})">'
+        f'<path fill="{text_color}" d="{run.path(0, size)}"/>'
+        f'<circle cx="{dx_:.2f}" cy="{dy_:.2f}" r="{r:.2f}" fill="{dot_color}"/></g>'
     )
     save(fname, svg(w, h, body, title))
 
 
-def wordmark_stacked(c1, c2, c3, fname, title, descriptor="COACH  ·  AUTHOR  ·  SPEAKER"):
+def wordmark_stacked(text_color, dot_color, desc_color, fname, title, descriptor="COACH  ·  AUTHOR  ·  SPEAKER"):
     size = 100
-    leah, roling, gap = wordmark_parts(size)
-    base = size
-    b1 = leah.bounds(0, base)
-    b2 = roling.bounds(leah.width + gap, base)
-    wb = union(b1, b2)
-    wm_w = wb[2] - wb[0]
-    desc = Run(descriptor, sans(540), size * 0.17, tracking=0.32)
-    dbase = wb[3] + size * 0.42
-    dx_desc = wb[0] + (wm_w - desc.width) / 2
-    db = desc.bounds(dx_desc, dbase)
-    bx = union(wb, db)
+    run, b, (dx_, dy_, r) = wordmark_parts(size)
+    wb = union(b, (dx_ - r, dy_ - r, dx_ + r, dy_ + r))
+    desc = Run(descriptor, sans(600), size * 0.15, tracking=0.3)
+    dbase = wb[3] + size * 0.36
+    dxd = wb[0] + ((wb[2] - wb[0]) - desc.width) / 2
+    bx = union(wb, desc.bounds(dxd, dbase))
     p = size * 0.08
-    w = bx[2] - bx[0] + 2 * p
-    h = bx[3] - bx[1] + 2 * p
-    dx, dy = -bx[0] + p, -bx[1] + p
+    w, h = bx[2] - bx[0] + 2 * p, bx[3] - bx[1] + 2 * p
+    tx, ty = -bx[0] + p, -bx[1] + p
     body = (
-        f'<g transform="translate({dx:.2f} {dy:.2f})">'
-        f'<path fill="{c1}" d="{leah.path(0, base)}"/>'
-        f'<path fill="{c2}" d="{roling.path(leah.width + gap, base)}"/>'
-        f'<path fill="{c3}" d="{desc.path(dx_desc, dbase)}"/></g>'
+        f'<g transform="translate({tx:.2f} {ty:.2f})">'
+        f'<path fill="{text_color}" d="{run.path(0, size)}"/>'
+        f'<circle cx="{dx_:.2f}" cy="{dy_:.2f}" r="{r:.2f}" fill="{dot_color}"/>'
+        f'<path fill="{desc_color}" d="{desc.path(dxd, dbase)}"/></g>'
     )
     save(fname, svg(w, h, body, title))
 
 
-# ---- Monogram: the Doorway arch ------------------------------------------
-# Arch geometry lives in a 200 x 260 box. Keystone sits in a gap at the apex.
-AW, AH = 200, 262
-CX, CY, R = 100, 102, 82
-LEG_BOTTOM = 252
-STROKE = 4.2
-GAP_DEG = 7.5
-
-
-def arch_paths():
-    t = math.radians(GAP_DEG)
-    lx, ly = CX - R * math.sin(t), CY - R * math.cos(t)
-    rx, ry = CX + R * math.sin(t), CY - R * math.cos(t)
-    left = f"M{CX - R:.2f} {LEG_BOTTOM} V{CY} A{R} {R} 0 0 1 {lx:.2f} {ly:.2f}"
-    right = f"M{rx:.2f} {ry:.2f} A{R} {R} 0 0 1 {CX + R:.2f} {CY} V{LEG_BOTTOM}"
-    ky = CY - R
-    kw, kh = 6.2, 9.5
-    keystone = f"M{CX} {ky - kh:.2f} L{CX + kw} {ky:.2f} L{CX} {ky + kh:.2f} L{CX - kw} {ky:.2f} Z"
-    return left, right, keystone
-
-
-def monogram_letters(base=214):
-    """Italic L and roman R share a baseline; the L's foot runs into the R's stem."""
-    L = Run("L", serif_italic(), 138)
-    Rr = Run("R", serif_roman(), 114)
-    lb, rb = L.bounds(0, 0), Rr.bounds(0, 0)
-    overlap = (lb[2] - lb[0]) * 0.26
-    total = (lb[2] - lb[0]) - overlap + (rb[2] - rb[0])
-    lx = CX - total / 2 - lb[0]
-    rx = lx + lb[0] + (lb[2] - lb[0]) - overlap - rb[0]
-    return (L, lx, base), (Rr, rx, base)
-
-
-def monogram_body(arch_color, l_color, r_color, key_color):
-    left, right, key = arch_paths()
-    (L, lx, lb), (Rr, rx, rb) = monogram_letters()
-    return (
-        f'<path d="{left}" fill="none" stroke="{arch_color}" stroke-width="{STROKE}" stroke-linecap="butt"/>'
-        f'<path d="{right}" fill="none" stroke="{arch_color}" stroke-width="{STROKE}" stroke-linecap="butt"/>'
-        f'<path d="{key}" fill="{key_color}"/>'
-        f'<path fill="{r_color}" d="{Rr.path(rx, rb)}"/>'
-        f'<path fill="{l_color}" d="{L.path(lx, lb)}"/>'
-    )
-
-
-def monogram(arch, lc, rc, kc, fname, title):
-    body = monogram_body(arch, lc, rc, kc)
-    save(fname, svg(AW, AH, body, title))
-
-
-def monogram_filled(bg, fg, fname, title):
-    """Solid arch tile — favicon / app icon / social avatar."""
-    top = 18
-    r = 82
-    d = f"M{CX - r} {AH} V{CY} A{r} {r} 0 0 1 {CX + r} {CY} V{AH} Z"
-    (L, lx, lb), (Rr, rx, rb) = monogram_letters(base=222)
-    body = (
-        f'<path d="{d}" fill="{bg}"/>'
-        f'<path fill="{fg}" opacity="0.6" d="{Rr.path(rx, rb)}"/>'
-        f'<path fill="{fg}" d="{L.path(lx, lb)}"/>'
-    )
-    save(fname, svg(AW, AH, body, title))
-
-
-# ---- Horizontal lockup: monogram + wordmark ------------------------------
-def lockup(c_arch, c_l, c_r, c_key, c1, c2, fname, title):
+# ---- Lockup: mark + wordmark ---------------------------------------------
+def lockup(door, sun, text_color, dot_color, fname, title):
     size = 100
-    leah, roling, gap = wordmark_parts(size)
-    s = 0.62  # monogram scale relative to its 200x262 box
-    mono_w, mono_h = AW * s, AH * s
-    space = 34
-    base = mono_h * 0.68
-    x0 = mono_w + space
-    b1 = leah.bounds(x0, base)
-    b2 = roling.bounds(x0 + leah.width + gap, base)
-    wb = union((0, 0, mono_w, mono_h), b1, b2)
-    p = 8
-    w = wb[2] - wb[0] + 2 * p
-    h = wb[3] - wb[1] + 2 * p
-    dx, dy = -wb[0] + p, -wb[1] + p
+    run, b, (dx_, dy_, r) = wordmark_parts(size)
+    # mark height matches cap-to-baseline of the wordmark (x-height + ascender ≈ b height)
+    text_h = b[3] - b[1]
+    s = (text_h * 1.05) / MH
+    mw = MW * s
+    gap = size * 0.26
+    x0 = mw + gap
+    mark_top = b[1] + (text_h - MH * s) / 2 - text_h * 0.02
+    defs, mb = mark_body(door, sun)
+    bx = union((0, mark_top, mw, mark_top + MH * s), (x0 + b[0], b[1], x0 + dx_ + r, b[3]))
+    p = 6
+    w, h = bx[2] - bx[0] + 2 * p, bx[3] - bx[1] + 2 * p
+    tx, ty = -bx[0] + p, -bx[1] + p
     body = (
-        f'<g transform="translate({dx:.2f} {dy:.2f})">'
-        f'<g transform="scale({s})">{monogram_body(c_arch, c_l, c_r, c_key)}</g>'
-        f'<path fill="{c1}" d="{leah.path(x0, base)}"/>'
-        f'<path fill="{c2}" d="{roling.path(x0 + leah.width + gap, base)}"/></g>'
+        f'<g transform="translate({tx:.2f} {ty:.2f})">'
+        f'<g transform="translate(0 {mark_top:.2f}) scale({s:.5f})">{mb}</g>'
+        f'<path fill="{text_color}" d="{run.path(x0, size)}"/>'
+        f'<circle cx="{x0 + dx_:.2f}" cy="{dy_:.2f}" r="{r:.2f}" fill="{dot_color}"/></g>'
     )
-    save(fname, svg(w, h, body, title))
+    save(fname, svg(w, h, body, title, defs))
 
 
 # ---- Seal ---------------------------------------------------------------
-def seal(ring, text_color, arch, lc, rc, kc, fname, title,
-         text="LEAH ROLING  ✦  COACH  ✦  AUTHOR  ✦  SPEAKER  ✦  "):
+def seal(ring, text_color, door, sun, fname, title,
+         text="LEAH ROLING  •  COACH  •  AUTHOR  •  SPEAKER  •  "):
     size = 400
     c = size / 2
-    r_text = 160
-    text = text.replace("✦", "•")
-    run = Run(text, sans(600), 21, tracking=0.0)
+    r_text = 158
+    run = Run(text, sans(650), 22)
     glyphs = list(run.glyph_paths())
     natural = sum(a for _, a in glyphs)
-    circumference = 2 * math.pi * r_text
-    extra = (circumference - natural) / len(glyphs)
-    parts = []
-    phi = -math.pi / 2
+    extra = (2 * math.pi * r_text - natural) / len(glyphs)
+    parts, phi = [], -math.pi / 2
     for d, adv in glyphs:
         step = adv + extra
         mid = phi + (step / 2) / r_text
-        gx = c + r_text * math.cos(mid)
-        gy = c + r_text * math.sin(mid)
-        deg = math.degrees(mid) + 90
+        gx, gy = c + r_text * math.cos(mid), c + r_text * math.sin(mid)
         if d:
-            parts.append(
-                f'<path fill="{text_color}" transform="translate({gx:.2f} {gy:.2f}) rotate({deg:.2f}) translate({-adv / 2:.2f} 0)" d="{d}"/>'
-            )
+            parts.append(f'<path fill="{text_color}" transform="translate({gx:.2f} {gy:.2f}) rotate({math.degrees(mid) + 90:.2f}) translate({-adv / 2:.2f} 0)" d="{d}"/>')
         phi += step / r_text
-    rings = (
-        f'<circle cx="{c}" cy="{c}" r="{c - 6}" fill="none" stroke="{ring}" stroke-width="2"/>'
-        f'<circle cx="{c}" cy="{c}" r="{r_text - 18}" fill="none" stroke="{ring}" stroke-width="1"/>'
-    )
-    ms = 0.9
-    mono = (
-        f'<g transform="translate({c - AW * ms / 2:.2f} {c - AH * ms / 2 + 4:.2f}) scale({ms})">'
-        f"{monogram_body(arch, lc, rc, kc)}</g>"
-    )
-    save(fname, svg(size, size, rings + "".join(parts) + mono, title))
+    ring_svg = f'<circle cx="{c}" cy="{c}" r="{c - 4}" fill="none" stroke="{ring}" stroke-width="3"/>'
+    ms = 0.82
+    defs, mb = mark_body(door, sun)
+    mono = f'<g transform="translate({c - MW * ms / 2:.2f} {c - MH * ms / 2:.2f}) scale({ms})">{mb}</g>'
+    save(fname, svg(size, size, ring_svg + "".join(parts) + mono, title, defs))
 
 
 # ---- Signature ----------------------------------------------------------
@@ -321,36 +257,35 @@ def signature(color, fname, title, text="Leah"):
     run = Run(text, script(), 200)
     b = run.bounds(0, 200)
     p = 12
-    w = b[2] - b[0] + 2 * p
-    h = b[3] - b[1] + 2 * p
+    w, h = b[2] - b[0] + 2 * p, b[3] - b[1] + 2 * p
     body = f'<path fill="{color}" transform="translate({-b[0] + p:.2f} {-b[1] + p:.2f})" d="{run.path(0, 200)}"/>'
     save(fname, svg(w, h, body, title))
 
 
 if __name__ == "__main__":
     print("Building Leah Roling logo suite →", OUT)
-    # Primary wordmark
-    wordmark(GARNET, INK, "leah-roling-wordmark-primary.svg", "Leah Roling")
-    wordmark(INK, INK, "leah-roling-wordmark-ink.svg", "Leah Roling")
-    wordmark(LINEN, LINEN, "leah-roling-wordmark-linen.svg", "Leah Roling")
-    wordmark(BRASS, LINEN, "leah-roling-wordmark-reverse.svg", "Leah Roling")
-    # Stacked w/ descriptor
-    wordmark_stacked(GARNET, INK, INK, "leah-roling-wordmark-stacked.svg", "Leah Roling — Coach, Author, Speaker")
-    wordmark_stacked(BRASS, LINEN, LINEN, "leah-roling-wordmark-stacked-reverse.svg", "Leah Roling — Coach, Author, Speaker")
-    # Monogram
-    monogram(INK, GARNET, INK, BRASS, "leah-roling-monogram.svg", "Leah Roling monogram")
-    monogram(LINEN, BRASS, LINEN, BRASS, "leah-roling-monogram-reverse.svg", "Leah Roling monogram")
-    monogram(GARNET, GARNET, GARNET, GARNET, "leah-roling-monogram-garnet.svg", "Leah Roling monogram")
-    monogram_filled(GARNET, LINEN, "leah-roling-icon.svg", "Leah Roling icon")
-    monogram_filled(INK, LINEN, "leah-roling-icon-ink.svg", "Leah Roling icon")
-    # Lockup
-    lockup(INK, GARNET, INK, BRASS, GARNET, INK, "leah-roling-lockup.svg", "Leah Roling")
-    lockup(LINEN, BRASS, LINEN, BRASS, BRASS, LINEN, "leah-roling-lockup-reverse.svg", "Leah Roling")
+    for f in os.listdir(OUT):
+        if f.endswith(".svg"):
+            os.remove(os.path.join(OUT, f))
+    # Wordmark
+    wordmark(INK, SUN, "leah-roling-wordmark.svg", "leah roling")
+    wordmark(PAPER, SUN, "leah-roling-wordmark-reverse.svg", "leah roling")
+    wordmark(INK, INK, "leah-roling-wordmark-ink.svg", "leah roling")
+    wordmark(PAPER, PAPER, "leah-roling-wordmark-white.svg", "leah roling")
+    wordmark_stacked(INK, SUN, INK, "leah-roling-wordmark-stacked.svg", "leah roling — coach, author, speaker")
+    wordmark_stacked(PAPER, SUN, PAPER, "leah-roling-wordmark-stacked-reverse.svg", "leah roling — coach, author, speaker")
+    # The Open Door mark
+    mark(LILAC, SUN, "leah-roling-mark.svg", "Leah Roling mark")
+    mark(INK, SUN, "leah-roling-mark-ink.svg", "Leah Roling mark")
+    mark(INK, None, "leah-roling-mark-mono.svg", "Leah Roling mark", cutout=True)
+    mark(PAPER, None, "leah-roling-mark-white.svg", "Leah Roling mark", cutout=True)
+    # Lockups
+    lockup(LILAC, SUN, INK, SUN, "leah-roling-lockup.svg", "leah roling")
+    lockup(LILAC, SUN, PAPER, SUN, "leah-roling-lockup-reverse.svg", "leah roling")
     # Seal
-    seal(GARNET, GARNET, INK, GARNET, INK, BRASS, "leah-roling-seal.svg", "Leah Roling seal")
-    seal(BRASS, LINEN, LINEN, BRASS, LINEN, BRASS, "leah-roling-seal-reverse.svg", "Leah Roling seal")
+    seal(INK, INK, LILAC, SUN, "leah-roling-seal.svg", "Leah Roling seal")
+    seal(PAPER, PAPER, LILAC, SUN, "leah-roling-seal-reverse.svg", "Leah Roling seal")
     # Signature
     signature(INK, "leah-signature.svg", "Leah signature")
-    signature(GARNET, "leah-signature-garnet.svg", "Leah signature")
-    signature(LINEN, "leah-signature-linen.svg", "Leah signature")
+    signature(PAPER, "leah-signature-white.svg", "Leah signature")
     print("done")

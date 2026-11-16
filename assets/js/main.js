@@ -369,7 +369,7 @@
           const near = d < 240 ? 1 - d / 240 : 0;
           const a = 0.1 + 0.09 * wave + near * 0.8;
           if (a <= 0.02) continue;
-          ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
+          ctx.fillStyle = `rgba(${Math.round(255 - near * 100)},${Math.round(255 - near * 146)},255,${a.toFixed(3)})`;
           ctx.beginPath();
           ctx.arc(x, y, 1 + near * 2.4, 0, 6.2832);
           ctx.fill();

@@ -22,7 +22,7 @@ const logos = path.join(root, 'brand', 'logos');
     console.log('png', f);
   }
   // Favicons / app icons from the monochrome app icon (it carries its own background)
-  const icon = fs.readFileSync(path.join(logos, 'leah-roling-app-icon.svg'), 'utf8');
+  const icon = fs.readFileSync(path.join(logos, 'leah-roling-app-icon-violet.svg'), 'utf8');
   const out = path.join(root, 'assets', 'img', 'icons');
   fs.mkdirSync(out, { recursive: true });
   for (const [name, size] of [['favicon-32.png', 32], ['apple-touch-icon.png', 180], ['icon-192.png', 192], ['icon-512.png', 512]]) {

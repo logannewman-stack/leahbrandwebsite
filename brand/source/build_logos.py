@@ -30,6 +30,8 @@ SUN = "#FFC933"
 LILAC = "#C8B6FF"
 BUTTER = "#FFF0BF"
 LAVENDER = "#F0EBFF"
+VIOLET = "#7C3AED"      # accent on light backgrounds
+VIOLET_HI = "#9B6DFF"   # accent on black
 
 # ---- Font instancing -----------------------------------------------------
 _cache = {}
@@ -255,11 +257,11 @@ def seal(ring, text_color, door, sun, fname, title,
 
 
 # ---- App icon (monochrome, self-contained background) ---------------------
-def app_icon(bg, fg, fname, title):
+def app_icon(bg, fg, fname, title, sun=None):
     size = 512
     s = 0.56
     x, y = (size - MW * s) / 2, (size - MH * s) / 2 + 6
-    defs, mb = mark_body(fg, None, cutout=True)
+    defs, mb = mark_body(fg, sun) if sun else mark_body(fg, None, cutout=True)
     body = (
         f'<rect width="{size}" height="{size}" rx="116" fill="{bg}"/>'
         f'<g transform="translate({x:.2f} {y:.2f}) scale({s})">{mb}</g>'
@@ -303,6 +305,16 @@ if __name__ == "__main__":
     seal(INK, INK, INK, None, "leah-roling-seal-ink.svg", "Leah Roling seal", cutout=True)
     seal(PAPER, PAPER, PAPER, None, "leah-roling-seal-white.svg", "Leah Roling seal", cutout=True)
     app_icon("#0B0B0D", "#FFFFFF", "leah-roling-app-icon.svg", "Leah Roling icon")
+    # Violet accent set (black, white and one violet)
+    wordmark(INK, VIOLET, "leah-roling-wordmark-violet.svg", "leah roling")
+    wordmark("#FFFFFF", VIOLET_HI, "leah-roling-wordmark-violet-reverse.svg", "leah roling")
+    mark(INK, VIOLET_HI, "leah-roling-mark-violet.svg", "Leah Roling mark")
+    mark("#FFFFFF", VIOLET, "leah-roling-mark-violet-reverse.svg", "Leah Roling mark")
+    lockup(INK, VIOLET_HI, INK, VIOLET, "leah-roling-lockup-violet.svg", "leah roling")
+    lockup("#FFFFFF", VIOLET, "#FFFFFF", VIOLET_HI, "leah-roling-lockup-violet-reverse.svg", "leah roling")
+    seal(INK, INK, INK, VIOLET_HI, "leah-roling-seal-violet.svg", "Leah Roling seal")
+    seal("#FFFFFF", "#FFFFFF", "#FFFFFF", VIOLET, "leah-roling-seal-violet-reverse.svg", "Leah Roling seal")
+    app_icon("#0B0B0D", "#FFFFFF", "leah-roling-app-icon-violet.svg", "Leah Roling icon", sun=VIOLET)
     # Seal
     seal(INK, INK, LILAC, SUN, "leah-roling-seal.svg", "Leah Roling seal")
     seal(PAPER, PAPER, LILAC, SUN, "leah-roling-seal-reverse.svg", "Leah Roling seal")

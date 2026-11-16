@@ -67,7 +67,7 @@ edited, or written for her.
 
 ## Out of date
 
-The website is now black and white. These still show the earlier yellow and lilac
+The website is now black and white with one violet accent. These still show the earlier yellow and lilac
 look and the earlier wording, and have not been rebuilt:
 
 - `brand/Leah-Roling-Brand-Book.pdf` and `brand/source/brand-book.html`

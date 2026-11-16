@@ -207,6 +207,6 @@ All three are free (Google Fonts / SIL Open Font License).
 ### Copy to confirm with Leah before launch
 - Faith wording on the site ("Faith first. Family always.") and how public she wants it
 - Her husband's and sons' names, if she wants them included (currently left out)
-- Book purchase links (Amazon links are in place) and the *Replaceable* final cover
+- Book purchase links (Amazon links are in place)
 - Newsletter provider (form currently opens an email draft; swap in Flodesk/ConvertKit action)
 - Speaking inquiry email address

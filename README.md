@@ -48,8 +48,8 @@ Then add her domain under *Domain settings*.
       the top of `assets/js/main.js`
 - [ ] **Book links.** *Replaceable* and *No One Is Coming to Save You* link to their Amazon pages;
       *SHIFT* and *Return on Life* link to Amazon searches. Swap in direct links if she has them
-- [ ] **Replaceable cover.** The site and templates use a designed stand-in cover. Drop in the final
-      art when it's ready
+- [ ] **Book credits.** The site shows "Afterword by Tim O'Donnell", as printed on the *Replaceable*
+      cover. Amazon's listing also names Craig Jackman (foreword); add him if she wants
 - [ ] **Domain.** `canonical` and the brand book mockups use `leahrolingcoaching.com`
 - [ ] **Speaking and results claims.** The stats come from her own published pages ($280K → $1M+,
       1 → 5 locations, 81% / 18%); double-check she's comfortable featuring them

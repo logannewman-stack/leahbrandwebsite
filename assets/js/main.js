@@ -34,22 +34,6 @@
       .join("");
   });
 
-  // ---- Intro / ready state --------------------------------------------------
-  const preloader = $(".preloader");
-  const ready = () => body.classList.add("is-ready");
-  if (doc.classList.contains("no-preload") || !preloader) {
-    requestAnimationFrame(ready);
-  } else {
-    const done = () => {
-      preloader.classList.add("is-done");
-      setTimeout(ready, 260);
-    };
-    const minTime = new Promise((r) => setTimeout(r, 1250));
-    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-    Promise.all([minTime, fonts]).then(done);
-    setTimeout(done, 3200); // never block longer than this
-  }
-
   // ---- Header: scrolled / hide on scroll down -------------------------------
   const header = $(".header");
   const progress = $(".progress");

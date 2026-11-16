@@ -44,6 +44,8 @@ def font(name, **axes):
         path = os.path.join(ROOT, "brand", "source", name)
     tt = TTFont(path)
     if "fvar" in tt and axes:
+        have = {a.axisTag for a in tt["fvar"].axes}
+        axes = {k: v for k, v in axes.items() if k in have}
         tt = instancer.instantiateVariableFont(tt, axes)
     buf = io.BytesIO()
     tt.flavor = None

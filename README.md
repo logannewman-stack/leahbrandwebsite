@@ -16,6 +16,7 @@ a 31-page brand book, social templates and a fast personal website.
 | `brand/logos/` | 16 logo files as outlined SVG, plus 2400px transparent PNGs in `png/` |
 | `brand/social/` | Instagram post/story, book launch, podcast and LinkedIn templates |
 | `brand/email-signature.html` | Paste-ready email signature |
+| `brand/ui-ux-overview/` | **UI & UX overview.** A walkthrough of how the site works and why (open `index.html`) |
 | `brand/source/` | Source files and scripts that regenerate everything above |
 
 ## Preview the site
@@ -71,7 +72,17 @@ node brand/source/build_og_and_shots.js      # share image + website screenshots
 node brand/source/build_book.js              # social PNGs + brand book PDF
 ```
 
-Add `--pages` to the last command to also write page previews to `brand/source/preview/`.
+To refresh the UI & UX overview after changing the site:
+
+```bash
+node brand/source/capture_overview.js && python3 brand/source/stitch_overview.py
+```
+
+```bash
+python3 brand/source/build_overview.py
+```
+
+Add `--pages` to the brand book command to also write page previews to `brand/source/preview/`.
 
 ## Credits
 

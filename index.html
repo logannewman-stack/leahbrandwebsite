@@ -29,17 +29,8 @@
   <link rel="preload" href="assets/fonts/instrument-sans-roman.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/leah-portrait-bw-1200.webp" imagesrcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w" imagesizes="(min-width: 960px) 38vw, 92vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 
-  <script>
-    // Show the brief intro only once per visit, and never for reduced-motion users.
-    (function () {
-      var d = document.documentElement;
-      try {
-        if (sessionStorage.getItem('lr-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('no-preload');
-        sessionStorage.setItem('lr-intro', '1');
-      } catch (e) { d.classList.add('no-preload'); }
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -73,15 +64,6 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Intro -->
-  <div class="preloader" aria-hidden="true">
-    <svg viewBox="0 0 200 260">
-      <defs><clipPath id="pl-clip"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath></defs>
-      <path class="pl-door" d="M10 260V100a90 90 0 0 1 180 0v160z" fill="#C8B6FF"/>
-      <g clip-path="url(#pl-clip)"><circle class="pl-sun" cx="100" cy="212" r="60" fill="#FFC933"/></g>
-    </svg>
-  </div>
 
   <div class="progress" aria-hidden="true"></div>
 

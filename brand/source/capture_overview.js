@@ -28,7 +28,7 @@ async function settle(p) {
   await settle(p);
   // Sections are captured as viewport-height slices and stitched afterwards, so each crop
   // shows exactly what a visitor sees (full-page capture mode lays some sections out differently).
-  await p.addStyleTag({ content: '.header,.sticky-cta,.progress{display:none!important} .marquee__track{animation:none!important} .roles__stage,.speaking__visual{position:relative!important;top:auto!important}' });
+  await p.addStyleTag({ content: '.header,.sticky-cta,.progress,.totop{display:none!important} .marquee__track{animation:none!important} .roles__stage,.speaking__visual{position:relative!important;top:auto!important}' });
   await p.waitForTimeout(300);
   const rects = await p.evaluate(sections => sections.map(([name, sel]) => { const r = document.querySelector(sel).getBoundingClientRect(); return { name, y: Math.round(r.top + scrollY), h: Math.round(r.height) }; }), SECTIONS);
   const slices = [];

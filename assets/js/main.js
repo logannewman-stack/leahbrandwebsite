@@ -38,6 +38,7 @@
   const header = $(".header");
   const progress = $(".progress");
   const sticky = $(".sticky-cta");
+  const totop = $(".totop");
   const hero = $(".hero");
   const contact = $("#contact");
   let lastY = window.scrollY;
@@ -50,7 +51,12 @@
     if (!body.classList.contains("menu-open")) {
       header.classList.toggle("is-hidden", y > lastY && y > 480);
     }
-    if (progress) progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    const p = max > 0 ? y / max : 0;
+    if (progress) progress.style.transform = `scaleX(${p})`;
+    if (totop) {
+      totop.style.setProperty("--p", p.toFixed(3));
+      totop.classList.toggle("is-visible", y > window.innerHeight * 0.9);
+    }
     if (sticky && hero && contact) {
       const pastHero = y > hero.offsetHeight * 0.85;
       const atContact = contact.getBoundingClientRect().top < window.innerHeight * 0.9;
@@ -301,6 +307,60 @@
     window.location.href = `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
     form.classList.add("is-sent");
   });
+
+  // ---- Hero: shapes and cards drift with the pointer -------------------------
+  const heroEl = $(".hero");
+  const heroVisual = $(".hero__visual");
+  if (heroEl && heroVisual && finePointer && !reduceMotion) {
+    heroEl.addEventListener("pointermove", (e) => {
+      const r = heroEl.getBoundingClientRect();
+      heroVisual.style.setProperty("--px", (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+      heroVisual.style.setProperty("--py", (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+    });
+    heroEl.addEventListener("pointerleave", () => {
+      heroVisual.style.setProperty("--px", 0);
+      heroVisual.style.setProperty("--py", 0);
+    });
+  }
+
+  // ---- Dark panels: a warm glow follows the pointer --------------------------
+  if (finePointer) {
+    $$(".section--ink").forEach((panel) => {
+      panel.addEventListener("pointermove", (e) => {
+        const r = panel.getBoundingClientRect();
+        panel.style.setProperty("--mx", `${Math.round(e.clientX - r.left)}px`);
+        panel.style.setProperty("--my", `${Math.round(e.clientY - r.top)}px`);
+      });
+    });
+  }
+
+  // ---- Thermostat: drag the sun, warm the room -------------------------------
+  const thermo = $("[data-thermo]");
+  if (thermo) {
+    const input = $(".thermo__input", thermo);
+    const num = $("[data-thermo-num]", thermo);
+    const msg = $("[data-thermo-msg]", thermo);
+    const room = thermo.closest(".section");
+    const MESSAGES = [
+      "Drag the sun to set the temperature.",
+      "Keep going. The room follows you.",
+      "You just set the temperature. That is what leaders do.",
+    ];
+    const update = (fromUser) => {
+      const v = Number(input.value);
+      const heat = v / 100;
+      const degrees = Math.round(62 + heat * 10);
+      room.style.setProperty("--heat", heat.toFixed(3));
+      num.textContent = degrees;
+      input.setAttribute("aria-valuetext", `${degrees} degrees`);
+      thermo.classList.toggle("is-set", heat >= 0.5);
+      if (fromUser) thermo.classList.remove("is-idle");
+      const text = MESSAGES[v === 0 ? 0 : v < 95 ? 1 : 2];
+      if (msg.textContent !== text) msg.textContent = text;
+    };
+    input.addEventListener("input", () => update(true));
+    update(false);
+  }
 
   // ---- Footer year ----------------------------------------------------------
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));

@@ -130,8 +130,7 @@
           <div class="hero__proof fade-up d3">
             <div><strong>25 yrs</strong><span>Installing self-leadership</span></div>
             <div><strong>4</strong><span>Published books</span></div>
-            <div><strong>185+</strong><span>Podcast episodes</span></div>
-            <div><strong>MCC</strong><span>Master Certified Coach</span></div>
+            <div><strong>8+</strong><span>Coach certifications</span></div>
           </div>
         </div>
 
@@ -156,9 +155,27 @@
             </svg>
             <span class="badge__center" aria-hidden="true"><svg width="26" height="34" viewBox="0 0 200 260" aria-hidden="true"><defs><clipPath id="badge-door"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath></defs><path d="M10 260V100a90 90 0 0 1 180 0v160z" fill="#C8B6FF"/><g clip-path="url(#badge-door)"><circle cx="100" cy="212" r="60" fill="#FFC933"/></g></svg><b>Read</b></span>
           </a>
+          <a class="chip-float chip-float--show" href="#show">
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span><b>The Becoming You Show</b><small>New episode every Friday</small></span>
+          </a>
+          <div class="chip-float chip-float--mcc">
+            <span class="chip-float__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#17161B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            <span><b>Master Certified Coach</b><small>MCC · CHPC · Maxwell Leadership</small></span>
+          </div>
         </div>
       </div>
-      <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+      <div class="container">
+        <div class="seen fade-up d3">
+          <span class="seen__label">Seen and heard at</span>
+          <ul>
+            <li>IAOCI World Congress</li>
+            <li>ALIGN</li>
+            <li>Supercharge Your Dental Practice</li>
+            <li>Transformation Talk Radio</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ============ MARQUEE: all she is ============ -->
@@ -343,10 +360,19 @@
             <p>Leading a room through presence and inner steadiness, not technique. When you're settled, people around you settle too.</p>
           </div>
         </div>
-        <div class="thermo">
-          <img src="assets/img/leah-roling-mark.svg" alt="" width="48" height="62" loading="lazy" data-reveal>
-          <p class="quote" data-reveal style="--d:.08s">A thermometer <em>reads</em> the temperature. A thermostat <em>sets</em> it.</p>
-          <p class="lede" data-reveal style="max-width:46ch;--d:.16s">Leah's work turns leaders into thermostats: people who set the culture instead of reacting to it.</p>
+        <div class="thermo is-idle" data-thermo>
+          <p class="quote" data-reveal>A thermometer <em data-thermo-word="read">reads</em> the temperature. A thermostat <em data-thermo-word="set">sets</em> it.</p>
+          <p class="lede" data-reveal style="max-width:46ch;--d:.08s">Leah's work turns leaders into thermostats. They set the culture instead of reacting to it.</p>
+          <div class="thermo__ui" data-reveal style="--d:.16s">
+            <span class="thermo__end"><b>Thermometer</b><small>Reacts to the room</small></span>
+            <span class="thermo__end thermo__end--r"><b>Thermostat</b><small>Sets the room</small></span>
+            <div class="thermo__track">
+              <span class="thermo__fill" aria-hidden="true"></span>
+              <span class="thermo__knob" aria-hidden="true"><span><span data-thermo-num>62</span>°</span></span>
+              <input class="thermo__input" id="thermo-range" type="range" min="0" max="100" step="1" value="0" aria-label="Set the temperature of the room" aria-valuetext="62 degrees">
+            </div>
+          </div>
+          <p class="thermo__msg" data-thermo-msg aria-live="polite">Drag the sun to set the temperature.</p>
         </div>
       </div>
     </section>
@@ -437,7 +463,8 @@
         </div>
         <div class="feature-book__text">
           <p class="label" data-reveal>New book · October 2026</p>
-          <h2 class="h2" id="book-title" data-reveal style="--d:.08s">Build a business that doesn't <em>need</em> you to carry it.</h2>
+          <h2 class="h2 book-title" id="book-title" data-reveal style="--d:.08s"><span class="sr-only">Replaceable</span><span aria-hidden="true"><span class="book-title__ir">Ir</span>Replaceable.</span></h2>
+          <p class="book-sub" data-reveal style="--d:.12s">Build a business that doesn't need you to carry it.</p>
           <p class="lede" data-reveal style="max-width:52ch;--d:.14s">Your business runs on an external operating system: meetings, metrics, accountability charts. But every system quietly assumes a level of self-leadership in whoever holds the seat. <em>Replaceable</em> is the missing layer, the internal operating system that turns good people into accountable teams.</p>
           <ul class="checks" data-reveal style="--d:.2s">
             <li>Why accountability breaks down, even inside great systems like EOS</li>
@@ -516,6 +543,11 @@
           <p class="lede" data-reveal style="--d:.16s">High performance isn't just high profitability. It's practice growth, leadership growth, and a return on the life you've been negotiating away.</p>
         </div>
 
+        <div class="bento">
+          <figure class="bento__photo" data-reveal>
+            <img src="assets/img/leah-coaching-1400.webp" srcset="assets/img/leah-coaching-800.webp 800w, assets/img/leah-coaching-1400.webp 1400w" sizes="(min-width: 960px) 48vw, 100vw" width="1400" height="788" loading="lazy" alt="Leah Roling coaching two leaders at a conference table">
+            <figcaption>In the room with a leadership team</figcaption>
+          </figure>
         <div class="stats">
           <div class="stat" data-reveal>
             <span class="stat__num"><span data-count="1" data-prefix="$" data-suffix="M">$1M</span><small>+</small></span>
@@ -533,6 +565,7 @@
             <span class="stat__num"><span data-count="18">18</span><small>%</small></span>
             <span class="stat__label">Lower turnover, at an average cost of $45K per hire</span>
           </div>
+        </div>
         </div>
 
         <div class="cases">
@@ -627,7 +660,7 @@
       <div class="container show">
         <div class="show__art" data-reveal>
           <div class="show-cover" aria-hidden="true">
-            <span class="show-cover__top">The Becoming You Show</span>
+            <div class="show-cover__head"><span class="show-cover__top">The Becoming You Show</span><span class="eq"><i></i><i></i><i></i><i></i></span></div>
             <div>
               <span class="show-cover__title">From potential to <em>proof.</em></span>
             </div>
@@ -829,6 +862,11 @@
       </div>
     </div>
   </footer>
+
+  <a class="totop" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" pathLength="100"/></svg>
+    <span aria-hidden="true">↑</span>
+  </a>
 
   <div class="sticky-cta" aria-hidden="true">
     <span>Ready for one conversation?</span>

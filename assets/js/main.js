@@ -472,9 +472,9 @@
     const msg = $("[data-thermo-msg]", thermo);
     const room = thermo.closest(".section");
     const MESSAGES = [
-      "Drag the sun to set the temperature.",
-      "Keep going. The room follows you.",
-      "You just set the temperature. That is what leaders do.",
+      "Drag to set the temperature.",
+      "Keep going. The room is following you.",
+      "You set the room. That is the work.",
     ];
     const update = (fromUser) => {
       const v = Number(input.value);

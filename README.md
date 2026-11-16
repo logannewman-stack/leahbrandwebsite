@@ -13,6 +13,7 @@ a 31-page brand book, social templates and a fast personal website.
 | `assets/` | Site CSS, JS, self-hosted fonts, optimized photos, icons |
 | `brand/Leah-Roling-Brand-Book.pdf` | **The brand book.** Print it or send it as-is |
 | `brand/BRAND-STRATEGY.md` | Positioning, voice, bios, palette and type in plain text |
+| `brand/COPY-SOURCES.md` | **Where every line of site copy comes from**, and what Leah should approve |
 | `brand/logos/` | 16 logo files as outlined SVG, plus 2400px transparent PNGs in `png/` |
 | `brand/social/` | Instagram post/story, book launch, podcast and LinkedIn templates |
 | `brand/email-signature.html` | Paste-ready email signature |
@@ -39,26 +40,48 @@ Then add her domain under *Domain settings*.
 
 ## Before launch: confirm with Leah
 
-- [ ] **Faith section wording**, including the Ephesians 2:10 verse, and how public she wants it
-- [ ] **Family details.** Husband's and sons' names are left out on purpose; add them if she wants
-- [ ] **Contact email.** The site uses `leahtfl@gmail.com` (the address on her current site). A domain
-      address such as `leah@leahrolingcoaching.com` would look more polished
-- [ ] **Contact form.** By default it opens the visitor's email app. To receive messages straight to
-      an inbox, create a free form at https://formspree.io and paste the endpoint into `formEndpoint` at
-      the top of `assets/js/main.js`
-- [ ] **Book links.** *Replaceable* and *No One Is Coming to Save You* link to their Amazon pages;
-      *SHIFT* and *Return on Life* link to Amazon searches. Swap in direct links if she has them
-- [ ] **Book credits.** The site shows "Afterword by Tim O'Donnell", as printed on the *Replaceable*
-      cover. Amazon's listing also names Craig Jackman (foreword); add him if she wants
-- [ ] **Domain.** `canonical` and the brand book mockups use `leahrolingcoaching.com`
-- [ ] **Speaking and results claims.** The stats come from her own published pages ($280K → $1M+,
-      1 → 5 locations, 81% / 18%); double-check she's comfortable featuring them
+The site speaks in Leah's first-person voice and uses her own published wording
+wherever it could. `brand/COPY-SOURCES.md` lists every line and marks it as hers,
+edited, or written for her.
+
+- [ ] **Lines written for her.** Read the rows marked *Written for her* in
+      `brand/COPY-SOURCES.md` and approve or replace them
+- [ ] **Her story.** The story section uses what she published about her father on her
+      own site. Confirm she wants it here too
+- [ ] **Faith section**, including the Ephesians 2:10 verse. These lines were written
+      and chosen for her
+- [ ] **Family details.** Husband's and sons' names are left out on purpose
+- [ ] **Numbers.** Her own pages disagree on years of experience and client counts.
+      The site uses "15+ years coaching" and "8+ coach certifications" from her
+      coaching page
+- [ ] **Client quotes.** Three quotes with initials come from the "Client Stories" on
+      her current About page. Confirm she still has permission to use them
+- [ ] **Contact email.** The site uses `leahtfl@gmail.com` (the address on her current
+      site). A domain address would look more polished
+- [ ] **Contact form.** By default it opens the visitor's email app. To receive messages
+      straight to an inbox, create a free form at https://formspree.io and paste the
+      endpoint into `formEndpoint` at the top of `assets/js/main.js`
+- [ ] **Book links.** *Replaceable* and *No One Is Coming to Save You* link to their
+      Amazon pages; *SHIFT* and *Return on Life* link to Amazon searches
+- [ ] **Domain.** `canonical` uses `leahrolingcoaching.com`
+
+## Out of date
+
+The website is now black and white. These still show the earlier yellow and lilac
+look and the earlier wording, and have not been rebuilt:
+
+- `brand/Leah-Roling-Brand-Book.pdf` and `brand/source/brand-book.html`
+- `brand/social/` and `brand/source/social.html`
+- `brand/email-signature.html`
+- `brand/ui-ux-overview/`
+- `brand/BRAND-STRATEGY.md` (the color and type sections)
 
 ## Editing
 
 - **Words:** all copy lives in `index.html`, in clearly commented sections (HERO, ROLES, STORY…).
 - **Email, form and social links:** the `CONFIG` block at the top of `assets/js/main.js`.
-- **Colors and type:** CSS variables at the top of `assets/css/styles.css`.
+- **Colors and type:** CSS variables at the top of `assets/css/styles.css`. Each section sets a few
+  context variables (`--fg`, `--muted`, `--card`…) and the parts inside read from them.
 - **Photos:** `assets/img/`. Keep the same filenames, or update the `src`/`srcset` in `index.html`.
 
 ## Rebuilding brand assets
@@ -86,7 +109,8 @@ Add `--pages` to the brand book command to also write page previews to `brand/so
 
 ## Credits
 
-- Typefaces: [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque),
-  [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) and
-  [Mrs Saint Delafield](https://fonts.google.com/specimen/Mrs+Saint+Delafield), all under the SIL Open Font License.
+- Website typefaces: [Geist and Geist Mono](https://fonts.google.com/specimen/Geist) and
+  [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif), all under the SIL Open Font License.
+  The logo wordmark is drawn in [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque),
+  and the signature in [Mrs Saint Delafield](https://fonts.google.com/specimen/Mrs+Saint+Delafield).
 - Photography and the *SHIFT* / *Return on Life* covers come from Leah's existing websites.

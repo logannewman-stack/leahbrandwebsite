@@ -11,7 +11,7 @@ const SECTIONS = [
   ['09-results', 'section:has(#results-title)'], ['10-speaking', '#speaking'], ['11-podcast', '#show'],
   ['12-faith', '#faith'], ['13-start', '#start'], ['14-contact', '#contact'],
 ];
-const STILL = 'html{scroll-behavior:auto!important} .skip-link{display:none!important}';
+const STILL = 'html{scroll-behavior:auto!important} .skip-link,.cursor{display:none!important}'; // HIDE_CURSOR
 async function settle(p) {
   await p.addStyleTag({ content: STILL });
   const H = await p.evaluate(() => document.documentElement.scrollHeight);
@@ -23,7 +23,7 @@ async function settle(p) {
   const b = await chromium.launch();
   // ---- Desktop ----
   let p = await b.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1.5 });
-  await p.goto(SITE); await p.waitForTimeout(2600);
+  await p.goto(SITE); await p.addStyleTag({ content: STILL }); await p.waitForTimeout(2600);
   await p.screenshot({ path: path.join(out, '01-hero.png') });
   await settle(p);
   // Sections are captured as viewport-height slices and stitched afterwards, so each crop
@@ -44,13 +44,13 @@ async function settle(p) {
   await p.close();
   // ---- Tablet ----
   p = await b.newPage({ viewport: { width: 820, height: 1100 }, deviceScaleFactor: 1.5 });
-  await p.goto(SITE); await p.waitForTimeout(2600);
+  await p.goto(SITE); await p.addStyleTag({ content: STILL }); await p.waitForTimeout(2600);
   await p.screenshot({ path: path.join(out, 'tablet-hero.png') });
   await p.close();
   // ---- Phone ----
   const ctx = await b.newContext({ ...devices['iPhone 13'] });
   p = await ctx.newPage();
-  await p.goto(SITE); await p.waitForTimeout(2600);
+  await p.goto(SITE); await p.addStyleTag({ content: STILL }); await p.waitForTimeout(2600);
   await p.screenshot({ path: path.join(out, 'phone-hero.png') });
   await p.click('.menu-btn'); await p.waitForTimeout(1300);
   await p.screenshot({ path: path.join(out, 'phone-menu.png') });

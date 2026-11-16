@@ -205,7 +205,7 @@ def wordmark_stacked(text_color, dot_color, desc_color, fname, title, descriptor
 
 
 # ---- Lockup: mark + wordmark ---------------------------------------------
-def lockup(door, sun, text_color, dot_color, fname, title):
+def lockup(door, sun, text_color, dot_color, fname, title, cutout=False):
     size = 100
     run, b, (dx_, dy_, r) = wordmark_parts(size)
     # mark height matches cap-to-baseline of the wordmark (x-height + ascender ≈ b height)
@@ -215,7 +215,7 @@ def lockup(door, sun, text_color, dot_color, fname, title):
     gap = size * 0.26
     x0 = mw + gap
     mark_top = b[1] + (text_h - MH * s) / 2 - text_h * 0.02
-    defs, mb = mark_body(door, sun)
+    defs, mb = mark_body(door, sun, cutout)
     bx = union((0, mark_top, mw, mark_top + MH * s), (x0 + b[0], b[1], x0 + dx_ + r, b[3]))
     p = 6
     w, h = bx[2] - bx[0] + 2 * p, bx[3] - bx[1] + 2 * p
@@ -231,7 +231,7 @@ def lockup(door, sun, text_color, dot_color, fname, title):
 
 # ---- Seal ---------------------------------------------------------------
 def seal(ring, text_color, door, sun, fname, title,
-         text="LEAH ROLING  •  COACH  •  AUTHOR  •  SPEAKER  •  "):
+         text="LEAH ROLING  •  COACH  •  AUTHOR  •  SPEAKER  •  ", cutout=False):
     size = 400
     c = size / 2
     r_text = 158
@@ -249,9 +249,22 @@ def seal(ring, text_color, door, sun, fname, title,
         phi += step / r_text
     ring_svg = f'<circle cx="{c}" cy="{c}" r="{c - 4}" fill="none" stroke="{ring}" stroke-width="3"/>'
     ms = 0.82
-    defs, mb = mark_body(door, sun)
+    defs, mb = mark_body(door, sun, cutout)
     mono = f'<g transform="translate({c - MW * ms / 2:.2f} {c - MH * ms / 2:.2f}) scale({ms})">{mb}</g>'
     save(fname, svg(size, size, ring_svg + "".join(parts) + mono, title, defs))
+
+
+# ---- App icon (monochrome, self-contained background) ---------------------
+def app_icon(bg, fg, fname, title):
+    size = 512
+    s = 0.56
+    x, y = (size - MW * s) / 2, (size - MH * s) / 2 + 6
+    defs, mb = mark_body(fg, None, cutout=True)
+    body = (
+        f'<rect width="{size}" height="{size}" rx="116" fill="{bg}"/>'
+        f'<g transform="translate({x:.2f} {y:.2f}) scale({s})">{mb}</g>'
+    )
+    save(fname, svg(size, size, body, title, defs))
 
 
 # ---- Signature ----------------------------------------------------------
@@ -284,6 +297,12 @@ if __name__ == "__main__":
     # Lockups
     lockup(LILAC, SUN, INK, SUN, "leah-roling-lockup.svg", "leah roling")
     lockup(LILAC, SUN, PAPER, SUN, "leah-roling-lockup-reverse.svg", "leah roling")
+    # Monochrome set (black-and-white applications)
+    lockup(INK, None, INK, INK, "leah-roling-lockup-ink.svg", "leah roling", cutout=True)
+    lockup(PAPER, None, PAPER, PAPER, "leah-roling-lockup-white.svg", "leah roling", cutout=True)
+    seal(INK, INK, INK, None, "leah-roling-seal-ink.svg", "Leah Roling seal", cutout=True)
+    seal(PAPER, PAPER, PAPER, None, "leah-roling-seal-white.svg", "Leah Roling seal", cutout=True)
+    app_icon("#0B0B0D", "#FFFFFF", "leah-roling-app-icon.svg", "Leah Roling icon")
     # Seal
     seal(INK, INK, LILAC, SUN, "leah-roling-seal.svg", "Leah Roling seal")
     seal(PAPER, PAPER, LILAC, SUN, "leah-roling-seal-reverse.svg", "Leah Roling seal")

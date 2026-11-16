@@ -112,16 +112,28 @@
   });
   window.matchMedia("(min-width: 1080px)").addEventListener("change", (e) => e.matches && setMenu(false));
 
-  // Swap header logo for the light version while the dark menu is open
-  const brandImg = $(".brand img");
-  if (brandImg) {
-    const light = brandImg.getAttribute("src");
-    const dark = light.replace("lockup.svg", "lockup-reverse.svg");
-    new Image().src = dark;
-    new MutationObserver(() => {
-      brandImg.src = body.classList.contains("menu-open") ? dark : light;
-    }).observe(body, { attributes: true, attributeFilter: ["class"] });
+  // ---- Labels decode into place ---------------------------------------------
+  const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/+";
+  function scramble(el) {
+    if (reduceMotion || el.dataset.decoded) return;
+    el.dataset.decoded = "1";
+    // only the trailing text node, so the index number stays put
+    const node = Array.from(el.childNodes).reverse().find((n) => n.nodeType === 3 && n.textContent.trim());
+    if (!node) return;
+    const final = node.textContent;
+    const t0 = performance.now();
+    const dur = 650;
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const keep = Math.floor(final.length * p);
+      let out = final.slice(0, keep);
+      for (let i = keep; i < final.length; i++) out += final[i] === " " ? " " : GLYPHS[(Math.random() * GLYPHS.length) | 0];
+      node.textContent = p < 1 ? out : final;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   }
+  $$(".hero .label").forEach((el) => setTimeout(() => scramble(el), 250));
 
   // ---- Reveal on scroll -----------------------------------------------------
   const revealEls = $$("[data-reveal]");
@@ -135,7 +147,10 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            (targets.get(entry.target) || []).forEach((el) => el.classList.add("is-in"));
+            (targets.get(entry.target) || []).forEach((el) => {
+              el.classList.add("is-in");
+              if (el.classList.contains("label")) scramble(el);
+            });
             io.unobserve(entry.target);
           }
         });
@@ -323,7 +338,122 @@
     });
   }
 
-  // ---- Dark panels: a warm glow follows the pointer --------------------------
+  // ---- Hero: a field of light that leans toward the pointer ------------------
+  const field = $(".hero__field");
+  if (field && field.getContext && heroEl) {
+    const ctx = field.getContext("2d");
+    const GAP = 28;
+    let W = 0;
+    let H = 0;
+    let mx = -9999;
+    let my = -9999;
+    let raf = 0;
+    let running = false;
+    let inView = true;
+    const size = () => {
+      const r = field.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width;
+      H = r.height;
+      field.width = Math.round(W * dpr);
+      field.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    const draw = (now) => {
+      const t = now / 1000;
+      ctx.clearRect(0, 0, W, H);
+      for (let y = GAP / 2; y < H; y += GAP) {
+        for (let x = GAP / 2; x < W; x += GAP) {
+          const wave = Math.sin(x * 0.011 + t * 0.6) * Math.cos(y * 0.014 - t * 0.45);
+          const d = Math.hypot(x - mx, y - my);
+          const near = d < 240 ? 1 - d / 240 : 0;
+          const a = 0.1 + 0.09 * wave + near * 0.8;
+          if (a <= 0.02) continue;
+          ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
+          ctx.beginPath();
+          ctx.arc(x, y, 1 + near * 2.4, 0, 6.2832);
+          ctx.fill();
+        }
+      }
+      if (running) raf = requestAnimationFrame(draw);
+    };
+    const start = () => {
+      if (running || reduceMotion || !inView || document.hidden) return;
+      running = true;
+      raf = requestAnimationFrame(draw);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+    size();
+    if (reduceMotion) {
+      draw(0);
+    } else if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        inView = entries[0].isIntersecting;
+        if (inView) start();
+        else stop();
+      }).observe(field);
+      document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+    } else {
+      start();
+    }
+    window.addEventListener("resize", () => {
+      size();
+      if (reduceMotion) draw(0);
+    });
+    if (finePointer) {
+      heroEl.addEventListener("pointermove", (e) => {
+        const r = field.getBoundingClientRect();
+        mx = e.clientX - r.left;
+        my = e.clientY - r.top;
+      });
+      heroEl.addEventListener("pointerleave", () => {
+        mx = -9999;
+        my = -9999;
+      });
+    }
+  }
+
+  // ---- Cursor ring -----------------------------------------------------------
+  const cursor = $(".cursor");
+  if (cursor && finePointer && !reduceMotion) {
+    let cx = 0;
+    let cy = 0;
+    let tx = 0;
+    let ty = 0;
+    let on = false;
+    window.addEventListener(
+      "pointermove",
+      (e) => {
+        tx = e.clientX;
+        ty = e.clientY;
+        if (!on) {
+          on = true;
+          cx = tx;
+          cy = ty;
+          cursor.classList.add("is-on");
+        }
+        const hit = e.target.closest && e.target.closest("a, button, summary, [role='tab'], .pills label, .book3d");
+        cursor.classList.toggle("is-active", Boolean(hit));
+      },
+      { passive: true }
+    );
+    document.documentElement.addEventListener("pointerleave", () => {
+      on = false;
+      cursor.classList.remove("is-on");
+    });
+    const follow = () => {
+      cx += (tx - cx) * 0.22;
+      cy += (ty - cy) * 0.22;
+      cursor.style.transform = `translate3d(${cx.toFixed(1)}px, ${cy.toFixed(1)}px, 0)`;
+      requestAnimationFrame(follow);
+    };
+    requestAnimationFrame(follow);
+  }
+
+  // ---- Dark panels: a soft light follows the pointer --------------------------
   if (finePointer) {
     $$(".section--ink").forEach((panel) => {
       panel.addEventListener("pointermove", (e) => {

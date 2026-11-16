@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.00 260.00" width="200" height="260" role="img" aria-label="Leah Roling mark">
-<title>Leah Roling mark</title>
-<defs><clipPath id="door1"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath></defs><path d="M10 260V100a90 90 0 0 1 180 0v160z" fill="#C8B6FF"/><g clip-path="url(#door1)"><circle cx="100" cy="212" r="60" fill="#FFC933"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.00 512.00" width="512" height="512" role="img" aria-label="Leah Roling icon">
+<title>Leah Roling icon</title>
+<defs><clipPath id="door11"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath></defs><rect width="512" height="512" rx="116" fill="#0B0B0D"/><g transform="translate(200.00 189.20) scale(0.56)"><g clip-path="url(#door11)"><path fill-rule="evenodd" fill="#FFFFFF" d="M10 260V100a90 90 0 0 1 180 0v160z M40 212a60 60 0 1 0 120 0a60 60 0 1 0 -120 0z"/></g></g>
 </svg>

@@ -1,25 +1,28 @@
-<!doctype html><html><head><meta charset="utf-8"><style>
-/* Social share image (1200 x 630). Rendered by build_og_and_shots.js → assets/img/og-image.jpg */
-@font-face{font-family:B;src:url(../../assets/fonts/bricolage-grotesque.woff2);font-weight:200 800;font-stretch:75% 100%}
-@font-face{font-family:S;src:url(../../assets/fonts/instrument-sans-roman.woff2);font-weight:400 700}
-:root{--ink:#17161B;--paper:#FFFDF8;--sun:#FFC933;--lilac:#C8B6FF}
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+/* Social share image, 1200 x 630. Rendered by build_og_and_shots.js */
+@font-face{font-family:"Geist";src:url(../../assets/fonts/geist.woff2);font-weight:100 900}
+@font-face{font-family:"Geist Mono";src:url(../../assets/fonts/geist-mono.woff2);font-weight:100 900}
+@font-face{font-family:"Instrument Serif";src:url(../../assets/fonts/instrument-serif-italic.woff2);font-style:italic}
 html,body{margin:0}
-body{width:1200px;height:630px;background:var(--paper);position:relative;overflow:hidden;font-family:S;color:var(--ink);-webkit-font-smoothing:antialiased}
-.l{position:absolute;left:72px;top:0;bottom:0;width:620px;display:flex;flex-direction:column;justify-content:center}
-.lockup{height:50px;align-self:flex-start;margin-bottom:48px}
-h1{font-family:B;font-weight:700;font-variation-settings:"opsz" 96;font-size:88px;line-height:.95;letter-spacing:-.05em;margin:0}
-.hl{background:linear-gradient(transparent 58%,var(--sun) 58%,var(--sun) 92%,transparent 92%);padding:0 .06em;margin:0 -.03em}
-p{margin:34px 0 0;font-size:15px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
-p::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--sun)}
-.door{position:absolute;right:70px;bottom:0;width:410px;height:560px;border-radius:999px 999px 0 0;background:var(--lilac)}
-.arch{position:absolute;right:110px;bottom:0;width:330px;height:480px;border-radius:999px 999px 0 0;overflow:hidden}
-.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.sun{position:absolute;right:400px;bottom:70px;width:130px;height:130px;border-radius:50%;background:var(--sun)}
+body{width:1200px;height:630px;background:#060607;color:#fff;position:relative;overflow:hidden;font-family:"Geist",sans-serif}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1.2px,transparent 1.4px);background-size:28px 28px;-webkit-mask-image:radial-gradient(90% 100% at 78% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(90% 100% at 78% 40%,#000 20%,transparent 75%)}
+.l{position:absolute;left:76px;top:0;bottom:0;width:680px;display:flex;flex-direction:column;justify-content:center}
+.lockup{height:40px;align-self:flex-start;margin-bottom:58px}
+h1{font-weight:560;font-size:104px;line-height:.88;letter-spacing:-.062em;margin:0}
+h1 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:-.025em;font-size:1.07em}
+p{margin:44px 0 0;font-family:"Geist Mono",monospace;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#a0a0a9}
+.v{position:absolute;right:92px;bottom:0;width:340px;height:500px}
+.sun{position:absolute;right:-70px;top:-46px;width:210px;height:210px;border-radius:50%;background:#fff;box-shadow:0 0 90px 10px rgba(255,255,255,.28),0 0 220px 60px rgba(255,255,255,.12)}
+.door{position:absolute;inset:-20px -20px 0 20px;border:1px solid rgba(255,255,255,.42);border-bottom:0;border-radius:999px 999px 0 0}
+.arch{position:absolute;inset:0;border-radius:999px 999px 0 0;overflow:hidden;background:#151517}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:contrast(1.06)}
 </style></head><body>
-<div class="l"><img class="lockup" src="../logos/leah-roling-lockup.svg" alt="">
-<h1>Become who you were <span class="hl">made</span> to be.</h1>
-<p>Coach · Author · Speaker</p></div>
-<div class="door"></div>
-<div class="arch"><img src="../../assets/img/leah-portrait-bw-720.webp" alt=""></div>
-<span class="sun"></span>
+<div class="dots"></div>
+<div class="l">
+  <img class="lockup" src="../logos/leah-roling-lockup-white.svg" alt="">
+  <h1>Become who<br>you were <em>made</em><br>to be.</h1>
+  <p>Coach / Author / Speaker</p>
+</div>
+<div class="v"><span class="sun"></span><span class="door"></span><div class="arch"><img src="../../assets/img/leah-portrait-bw-720.webp" alt=""></div></div>
 </body></html>

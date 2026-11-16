@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Leah Roling | Coach, Author &amp; Speaker | Become who you were made to be</title>
   <meta name="description" content="Leah Roling is a Master Certified Coach, keynote speaker, founder of InnerBoard and author of Replaceable. She helps leaders and business owners master the one skill every result depends on: leading themselves.">
-  <meta name="theme-color" content="#FFFDF8">
+  <meta name="theme-color" content="#060607">
   <link rel="canonical" href="https://leahrolingcoaching.com/">
 
   <!-- Open Graph / social -->
@@ -25,8 +25,8 @@
   <link rel="manifest" href="site.webmanifest">
 
   <!-- Performance -->
-  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-sans-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/leah-portrait-bw-1200.webp" imagesrcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w" imagesizes="(min-width: 960px) 38vw, 92vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
@@ -66,12 +66,13 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
 
   <!-- ============ HEADER ============ -->
   <header class="header" id="top">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Leah Roling, home">
-        <img src="assets/img/leah-roling-lockup.svg" alt="" width="200" height="46">
+        <img src="assets/img/leah-roling-lockup-white.svg" alt="" width="200" height="46">
       </a>
       <nav class="nav" aria-label="Primary">
         <ul>
@@ -114,6 +115,7 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
+      <canvas class="hero__field" aria-hidden="true"></canvas>
       <div class="container hero__grid">
         <div class="hero__text">
           <p class="label hero__eyebrow fade-up">Coach · Author · Speaker · Founder of InnerBoard</p>
@@ -124,7 +126,7 @@
           </h1>
           <p class="lede hero__lede fade-up d1">Leah Roling helps high-achieving leaders master the one skill every result depends on: <strong>leading themselves</strong>. Then they grow the business without losing their life.</p>
           <div class="hero__actions fade-up d2">
-            <a class="btn btn--sun" href="#work" data-magnetic>Work with Leah <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn" href="#work" data-magnetic>Work with Leah <span class="arrow" aria-hidden="true">→</span></a>
             <a class="link" href="#replaceable">Read <em>Replaceable</em> <span class="arrow" aria-hidden="true">→</span></a>
           </div>
           <div class="hero__proof fade-up d3">
@@ -200,7 +202,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>Meet Leah</p>
+            <p class="label" data-reveal><span class="label__n">01</span>Meet Leah</p>
             <h2 class="h2" id="about-title" data-reveal style="--d:.08s;margin-top:22px">One woman.<br><em>Many</em> doorways.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">Leah wears a lot of names. Every one of them comes from the same belief: you were made on purpose, and you're allowed to live like it.</p>
@@ -312,7 +314,7 @@
           <img class="story__sig" src="assets/img/leah-signature.svg" alt="" width="300" height="160" loading="lazy" data-reveal style="--d:.5s">
         </div>
         <div class="story__text">
-          <p class="label" data-reveal>Her story</p>
+          <p class="label" data-reveal><span class="label__n">02</span>Her story</p>
           <h2 class="h2" id="story-title" data-reveal style="--d:.08s">For years, she was very good at <em>earning</em> love.</h2>
           <div class="prose lede" data-reveal style="max-width:56ch;--d:.16s">
             <p>Through middle school, college and into her career, Leah carried a quiet conviction: if she achieved enough and pleased the right people, she'd finally have permission to live.</p>
@@ -334,7 +336,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>The philosophy</p>
+            <p class="label" data-reveal><span class="label__n">03</span>The philosophy</p>
             <h2 class="h2" id="phil-title" data-reveal style="--d:.08s;margin-top:22px">There are only <em>two</em> master skills.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">Everything else is a derivative. Self-leadership isn't a leadership skill. It's a human one, and it can be learned.</p>
@@ -373,7 +375,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>Work with Leah</p>
+            <p class="label" data-reveal><span class="label__n">04</span>Work with Leah</p>
             <h2 class="h2" id="work-title" data-reveal style="--d:.08s;margin-top:22px">One philosophy.<br>Four <em>doorways</em>.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">None of them require you to be ready. All of them meet you where you stand. Walk through the one that's closest.</p>
@@ -440,7 +442,7 @@
     </section>
 
     <!-- ============ REPLACEABLE ============ -->
-    <section class="section section--lilac feature-book" id="replaceable" aria-labelledby="book-title">
+    <section class="section section--ink feature-book" id="replaceable" aria-labelledby="book-title">
       <div class="container feature-book__grid">
         <div class="book-stage" data-reveal>
           <div class="book3d" data-tilt>
@@ -453,7 +455,7 @@
           </div>
         </div>
         <div class="feature-book__text">
-          <p class="label" data-reveal>New book · October 2026</p>
+          <p class="label" data-reveal><span class="label__n">05</span>New book · October 2026</p>
           <h2 class="h2 book-title" id="book-title" data-reveal style="--d:.08s"><span class="sr-only">Replaceable</span><span aria-hidden="true"><span class="book-title__ir">Ir</span>Replaceable.</span></h2>
           <p class="book-sub" data-reveal style="--d:.12s">Build a business that doesn't need you to carry it.</p>
           <p class="lede" data-reveal style="max-width:52ch;--d:.14s">Your business runs on an external operating system: meetings, metrics, accountability charts. But every system quietly assumes a level of self-leadership in whoever holds the seat. <em>Replaceable</em> is the missing layer, the internal operating system that turns good people into accountable teams.</p>
@@ -476,7 +478,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>The bookshelf</p>
+            <p class="label" data-reveal><span class="label__n">06</span>The bookshelf</p>
             <h2 class="h2" id="books-title" data-reveal style="--d:.08s;margin-top:22px">Three acts.<br>One <em>philosophy</em>.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">A wake-up call, a transformation and an embodiment, plus a field manual for the leaders building something bigger than themselves.</p>
@@ -528,7 +530,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>Client results</p>
+            <p class="label" data-reveal><span class="label__n">07</span>Client results</p>
             <h2 class="h2" id="results-title" data-reveal style="--d:.08s;margin-top:22px">From potential<br>to <em>proof</em>.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">High performance isn't just high profitability. It's practice growth, leadership growth, and a return on the life you've been negotiating away.</p>
@@ -598,7 +600,7 @@
           <figcaption>On stage at ALIGN 2024</figcaption>
         </figure>
         <div>
-          <p class="label" data-reveal>Speaking</p>
+          <p class="label" data-reveal><span class="label__n">08</span>Speaking</p>
           <h2 class="h2" id="speak-title" data-reveal style="--d:.08s;margin-top:22px">The wrong people want to be inspired. The right people want to be <em>changed</em>.</h2>
           <p class="lede" style="margin-top:28px;max-width:50ch" data-reveal>Leah's keynotes and workshops blend neuroscience, faith-rooted conviction and 25 years in the room with leaders. Audiences leave with a framework, not a sugar high.</p>
 
@@ -660,7 +662,7 @@
           <div class="show__photo"><img src="assets/img/leah-podcast-512.webp" width="512" height="410" alt="Leah Roling at her podcast microphone" loading="lazy"></div>
         </div>
         <div>
-          <p class="label" data-reveal>The podcast</p>
+          <p class="label" data-reveal><span class="label__n">09</span>The podcast</p>
           <h2 class="h2" id="show-title" data-reveal style="--d:.08s;margin-top:22px">The Becoming <em>You</em> Show</h2>
           <p class="lede" style="margin-top:24px;max-width:48ch" data-reveal>Your weekly gut-check, and an unapologetic space where potential gets proven and false identities die. Conversations on thought, identity, worth and work.</p>
           <div class="show__stats" data-reveal>
@@ -685,8 +687,8 @@
     <!-- ============ FAITH & FAMILY ============ -->
     <section class="section" id="faith" aria-labelledby="faith-title">
       <div class="container faith">
-        <img class="faith__mark" src="assets/img/leah-roling-mark.svg" alt="" width="64" height="83" loading="lazy" data-reveal="pop">
-        <p class="label" data-reveal>Faith &amp; family</p>
+        <img class="faith__mark" src="assets/img/leah-roling-mark-mono.svg" alt="" width="64" height="83" loading="lazy" data-reveal="pop">
+        <p class="label" data-reveal><span class="label__n">10</span>Faith &amp; family</p>
         <h2 class="h2" id="faith-title" data-reveal style="--d:.08s">Faith first. Family always. <em>Then</em> the work.</h2>
         <p class="lede" data-reveal style="--d:.14s">Leah's mark is a doorway with the sun rising inside it: a new day and a new chance to become. For Leah, that light is her faith. It's why she teaches what she teaches, and why she believes no one is an accident.</p>
         <blockquote class="verse" data-reveal style="--d:.2s">
@@ -718,7 +720,7 @@
       <div class="container">
         <div class="section-head section-head--split">
           <div>
-            <p class="label" data-reveal>Start here · Free</p>
+            <p class="label" data-reveal><span class="label__n">11</span>Start here · Free</p>
             <h2 class="h2" id="start-title" data-reveal style="--d:.08s;margin-top:22px">Begin <em>where</em> you are.</h2>
           </div>
           <p class="lede" data-reveal style="--d:.16s">Four free field guides from Leah. You don't have to be ready. Walk through whichever one is closest.</p>
@@ -753,10 +755,10 @@
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section class="section section--sun contact" id="contact" aria-labelledby="contact-title">
+    <section class="section section--ink contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact__grid">
         <div>
-          <p class="label" data-reveal>Let's talk</p>
+          <p class="label" data-reveal><span class="label__n">12</span>Let's talk</p>
           <h2 class="h2" id="contact-title" data-reveal style="--d:.08s">The right work starts with <em>one</em> conversation.</h2>
           <p class="lede" data-reveal style="--d:.14s">Whether it's coaching, bringing InnerBoard OS to your organization, or putting Leah on your stage, start here.</p>
           <div class="contact__options" data-reveal style="--d:.2s">
@@ -799,7 +801,7 @@
           <button class="btn" type="submit">Send message <span class="arrow" aria-hidden="true">→</span></button>
           <p class="form__note">Leah personally reads every message.</p>
           <div class="form__success" role="status" aria-live="polite">
-            <img src="assets/img/leah-roling-mark.svg" alt="" width="48" height="62">
+            <img src="assets/img/leah-roling-mark-mono.svg" alt="" width="48" height="62">
             <h3>Thank you. Your note is on its way.</h3>
             <p class="muted">If your email app didn't open, write to <a href="mailto:leahtfl@gmail.com" style="text-decoration:underline">leahtfl@gmail.com</a>.</p>
           </div>
@@ -813,7 +815,7 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <img src="assets/img/leah-roling-seal-reverse.svg" alt="" width="104" height="104" style="margin-bottom:28px" loading="lazy">
+          <img src="assets/img/leah-roling-seal-white.svg" alt="" width="104" height="104" style="margin-bottom:28px" loading="lazy">
           <p>Become who you were <em>made</em> to be.</p>
           <div class="socials" data-socials></div>
         </div>
@@ -846,7 +848,7 @@
           </ul>
         </div>
       </div>
-      <img class="footer__mark" src="assets/img/leah-roling-wordmark-reverse.svg" alt="Leah Roling" width="1200" height="240" loading="lazy">
+      <img class="footer__mark" src="assets/img/leah-roling-wordmark-white.svg" alt="Leah Roling" width="1200" height="240" loading="lazy">
       <div class="footer__bottom">
         <span>© <span data-year>2026</span> Leah Roling. All rights reserved.</span>
         <a class="to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>

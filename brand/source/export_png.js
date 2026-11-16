@@ -21,15 +21,14 @@ const logos = path.join(root, 'brand', 'logos');
     await render(path.join(logos, f), path.join(logos, 'png', f.replace('.svg', '.png')), 2400);
     console.log('png', f);
   }
-  // Favicons / app icons from the filled arch icon, centred on a square
-  const icon = fs.readFileSync(path.join(logos, 'leah-roling-mark.svg'), 'utf8');
-  const sq = (size, pad, bg) => `<html><body style="margin:0;width:${size}px;height:${size}px;display:flex;align-items:flex-end;justify-content:center;background:${bg}">${icon.replace(/width="[\d.]+" height="[\d.]+"/, `height="${Math.round(size * (1 - pad))}"`)}</body></html>`;
+  // Favicons / app icons from the monochrome app icon (it carries its own background)
+  const icon = fs.readFileSync(path.join(logos, 'leah-roling-app-icon.svg'), 'utf8');
   const out = path.join(root, 'assets', 'img', 'icons');
   fs.mkdirSync(out, { recursive: true });
-  for (const [name, size, pad, bg] of [['favicon-32.png', 32, 0.06, 'transparent'], ['apple-touch-icon.png', 180, 0.16, '#FFFDF8'], ['icon-192.png', 192, 0.14, '#FFFDF8'], ['icon-512.png', 512, 0.14, '#FFFDF8']]) {
+  for (const [name, size] of [['favicon-32.png', 32], ['apple-touch-icon.png', 180], ['icon-192.png', 192], ['icon-512.png', 512]]) {
     await p.setViewportSize({ width: size, height: size });
-    await p.setContent(sq(size, pad, bg));
-    await p.screenshot({ path: path.join(out, name), omitBackground: bg === 'transparent' });
+    await p.setContent(`<html><body style="margin:0;background:transparent">${icon.replace(/width="[\d.]+" height="[\d.]+"/, `width="${size}" height="${size}"`)}</body></html>`);
+    await p.screenshot({ path: path.join(out, name), omitBackground: true });
     console.log('icon', name);
   }
   await b.close();

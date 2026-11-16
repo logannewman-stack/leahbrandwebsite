@@ -16,14 +16,14 @@ const SITE = process.env.SITE_URL || 'http://127.0.0.1:8765/index.html';
   // Desktop screenshot
   p = await b.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1.5 });
   await p.addInitScript(() => sessionStorage.setItem('lr-intro', '1'));
-  await p.goto(SITE); await p.waitForTimeout(2600);
+  await p.goto(SITE); await p.addStyleTag({ content: '.cursor{display:none!important}' }); await p.waitForTimeout(2600); // HIDE_CURSOR
   await p.screenshot({ path: path.join(root, 'brand/source/shots/site-desktop.png') });
   await p.close();
   // Mobile screenshot
   const ctx = await b.newContext({ ...devices['iPhone 13'] });
   p = await ctx.newPage();
   await p.addInitScript(() => sessionStorage.setItem('lr-intro', '1'));
-  await p.goto(SITE); await p.waitForTimeout(2600);
+  await p.goto(SITE); await p.addStyleTag({ content: '.cursor{display:none!important}' }); await p.waitForTimeout(2600); // HIDE_CURSOR
   await p.screenshot({ path: path.join(root, 'brand/source/shots/site-mobile.png') });
   await b.close();
   console.log('og-image + site screenshots written');

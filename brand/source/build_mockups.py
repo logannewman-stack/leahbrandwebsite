@@ -19,7 +19,7 @@ def build_emerald():
         assert h.count(a) == n, (h.count(a), a[:70])
         h = h.replace(a, b)
 
-    rep('<html lang="en">', '<html lang="en" data-theme="emerald">')
+    rep('<html lang="en">', '<html lang="en" data-palette="emerald">')
     rep(
         '  <link rel="stylesheet" href="assets/css/styles.css">\n',
         '  <link rel="stylesheet" href="assets/css/styles.css">\n'

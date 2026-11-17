@@ -343,6 +343,9 @@
   if (field && field.getContext && heroEl) {
     const ctx = field.getContext("2d");
     const GAP = 28;
+    // near the pointer the dots take the accent colour (set in CSS, so themes can change it)
+    const tintRaw = getComputedStyle(field).getPropertyValue("--accent-hi-rgb").split(",").map(Number);
+    const tint = tintRaw.length === 3 && tintRaw.every((n) => n >= 0 && n <= 255) ? tintRaw : [155, 109, 255];
     let W = 0;
     let H = 0;
     let mx = -9999;
@@ -369,7 +372,7 @@
           const near = d < 240 ? 1 - d / 240 : 0;
           const a = 0.1 + 0.09 * wave + near * 0.8;
           if (a <= 0.02) continue;
-          ctx.fillStyle = `rgba(${Math.round(255 - near * 100)},${Math.round(255 - near * 146)},255,${a.toFixed(3)})`;
+          ctx.fillStyle = `rgba(${Math.round(255 - near * (255 - tint[0]))},${Math.round(255 - near * (255 - tint[1]))},${Math.round(255 - near * (255 - tint[2]))},${a.toFixed(3)})`;
           ctx.beginPath();
           ctx.arc(x, y, 1 + near * 2.4, 0, 6.2832);
           ctx.fill();

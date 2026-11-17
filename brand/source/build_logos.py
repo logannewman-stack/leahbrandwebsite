@@ -32,6 +32,9 @@ BUTTER = "#FFF0BF"
 LAVENDER = "#F0EBFF"
 VIOLET = "#7C3AED"      # accent on light backgrounds
 VIOLET_HI = "#9B6DFF"   # accent on black
+EMERALD = "#087050"      # emerald mockup: accent on light
+EMERALD_INK = "#063F30"  # emerald mockup: text and deep fills
+GOLD_HI = "#EBD592"      # emerald mockup: the light on emerald
 
 # ---- Font instancing -----------------------------------------------------
 _cache = {}
@@ -315,6 +318,11 @@ if __name__ == "__main__":
     seal(INK, INK, INK, VIOLET_HI, "leah-roling-seal-violet.svg", "Leah Roling seal")
     seal("#FFFFFF", "#FFFFFF", "#FFFFFF", VIOLET, "leah-roling-seal-violet-reverse.svg", "Leah Roling seal")
     app_icon("#0B0B0D", "#FFFFFF", "leah-roling-app-icon-violet.svg", "Leah Roling icon", sun=VIOLET)
+    # Emerald mockup set (deep emerald, white and a pale gold light)
+    wordmark("#FFFFFF", GOLD_HI, "leah-roling-wordmark-emerald-reverse.svg", "leah roling")
+    mark(EMERALD_INK, GOLD_HI, "leah-roling-mark-emerald.svg", "Leah Roling mark")
+    lockup("#FFFFFF", EMERALD, "#FFFFFF", GOLD_HI, "leah-roling-lockup-emerald-reverse.svg", "leah roling")
+    seal("#FFFFFF", "#FFFFFF", "#FFFFFF", EMERALD, "leah-roling-seal-emerald-reverse.svg", "Leah Roling seal")
     # Seal
     seal(INK, INK, LILAC, SUN, "leah-roling-seal.svg", "Leah Roling seal")
     seal(PAPER, PAPER, LILAC, SUN, "leah-roling-seal-reverse.svg", "Leah Roling seal")

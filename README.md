@@ -10,6 +10,7 @@ a 31-page brand book, social templates and a fast personal website.
 | Path | What it is |
 |---|---|
 | `index.html` | The website (single page, no build step, no dependencies) |
+| `emerald.html` | **Colour mockup:** the same site in emerald green, for comparison (see below) |
 | `assets/` | Site CSS, JS, self-hosted fonts, optimized photos, icons |
 | `brand/Leah-Roling-Brand-Book.pdf` | **The brand book.** Print it or send it as-is |
 | `brand/BRAND-STRATEGY.md` | Positioning, voice, bios, palette and type in plain text |
@@ -27,6 +28,26 @@ python3 -m http.server 8765
 ```
 
 Then open http://localhost:8765.
+
+## Colour mockups
+
+`index.html` is the live direction: black and white with a violet accent.
+
+`emerald.html` is the same page in a second colour scheme, to compare side by side.
+The black areas become a rich emerald, the light surfaces become soft sage tones, and
+the accent is a pale gold light. Two other accents can be viewed by adding to the
+address: `emerald.html#mint` and `emerald.html#violet`.
+
+The mockup is generated from `index.html`, so the words only live in one place. All of
+its colours are in `assets/css/theme-emerald.css`. After editing `index.html`, refresh
+the mockup with:
+
+```bash
+python3 brand/source/build_mockups.py
+```
+
+To make emerald the real site, tell Claude which accent you want and it can fold the
+theme into `styles.css`.
 
 ## Put it online (free)
 

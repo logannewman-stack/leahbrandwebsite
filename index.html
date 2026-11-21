@@ -3,34 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Leah Roling | Life &amp; Thought Coach for the Wildly Successful</title>
-  <meta name="description" content="You were taught how to build a life. You were never taught how to live one. Leah Roling is a Master Certified Coach, author of Replaceable, host of The Becoming You Show and founder of InnerBoard.">
-  <meta name="theme-color" content="#060607">
+  <title>Leah Roling | Learn it. Live it. Lead it.</title>
+  <meta name="description" content="You were taught how to build a life. You were never taught how to live one. Leah Roling is a Master Certified Coach, keynote speaker, author of Replaceable, host of The Becoming You Show and founder of InnerBoard.">
+  <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://leahrolingcoaching.com/">
 
-  <!-- Open Graph / social -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Leah Roling">
-  <meta property="og:title" content="Leah Roling">
+  <meta property="og:title" content="Leah Roling | Learn it. Live it. Lead it.">
   <meta property="og:description" content="You were taught how to build a life. You were never taught how to live one.">
   <meta property="og:image" content="assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Icons -->
   <link rel="icon" href="assets/img/icons/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/icons/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- Performance -->
+  <link rel="preload" href="assets/fonts/archivo-expanded.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-expanded-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/leah-portrait-bw-1200.webp" imagesrcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w" imagesizes="(min-width: 960px) 38vw, 92vw" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/leah-portrait-bw-1200.webp" imagesrcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w" imagesizes="(min-width: 900px) 46vw, 100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
-
 
   <script type="application/ld+json">
   {
@@ -38,7 +35,7 @@
     "@type": "Person",
     "name": "Leah Roling",
     "jobTitle": "Master Certified Coach, Author & Keynote Speaker",
-    "description": "Master Certified Coach, author of Replaceable, host of The Becoming You Show and founder of InnerBoard.",
+    "description": "Master Certified Coach, keynote speaker, author of Replaceable, host of The Becoming You Show and founder of InnerBoard.",
     "image": "assets/img/leah-portrait-bw-1200.webp",
     "worksFor": { "@type": "Organization", "name": "InnerBoard", "url": "https://innerboardsuite.com" },
     "address": { "@type": "PostalAddress", "addressRegion": "IA", "addressCountry": "US" },
@@ -63,780 +60,527 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div class="progress" aria-hidden="true"></div>
-  <div class="cursor" aria-hidden="true"></div>
-
-  <!-- ============ HEADER ============ -->
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Leah Roling, home">
-        <img src="assets/img/leah-roling-lockup-violet-reverse.svg" alt="" width="200" height="46">
+  <header class="bar" id="top">
+    <div class="wrap bar__in">
+      <a class="logo" href="#top" aria-label="Leah Roling, home">
+        <span>Leah</span>
+        <span>Roling</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav class="bar__nav" aria-label="Primary">
         <ul>
-          <li><a href="#about">Come closer</a></li>
-          <li><a href="#work">Work with me</a></li>
-          <li><a href="#books">Books</a></li>
+          <li><a href="#about">Meet Leah</a></li>
           <li><a href="#speaking">Speaking</a></li>
+          <li><a href="#stear">STEAR</a></li>
+          <li><a href="#books">Books</a></li>
           <li><a href="#show">The show</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#work">Work with me</a></li>
         </ul>
       </nav>
-      <div class="header__cta">
-        <a class="btn btn--sm" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener" data-magnetic>Book a call <span class="arrow" aria-hidden="true">→</span></a>
-      </div>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-        <span></span><span></span>
+      <a class="btn btn--solid bar__cta" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">Book a call</a>
+      <button class="bar__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav aria-label="Mobile">
-      <ol>
-        <li><a href="#about">Come closer</a></li>
-        <li><a href="#story">My story</a></li>
-        <li><a href="#work">Work with me</a></li>
-        <li><a href="#replaceable">Replaceable</a></li>
-        <li><a href="#books">Books</a></li>
+  <div class="menu" id="menu" hidden>
+    <nav class="wrap menu__in" aria-label="Menu">
+      <ul>
+        <li><a href="#about">Meet Leah</a></li>
         <li><a href="#speaking">Speaking</a></li>
+        <li><a href="#stear">STEAR</a></li>
+        <li><a href="#books">Books</a></li>
         <li><a href="#show">The show</a></li>
-      </ol>
+        <li><a href="#work">Work with me</a></li>
+        <li><a href="#start">Free guides</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--solid btn--lg" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">Book a free 20-minute call</a>
     </nav>
-    <div class="mobile-menu__foot">
-      <a class="btn" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">Book a free 20-minute call <span class="arrow" aria-hidden="true">→</span></a>
-      <div class="socials" data-socials></div>
-    </div>
   </div>
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <canvas class="hero__field" aria-hidden="true"></canvas>
-      <div class="container hero__grid">
-        <div class="hero__text">
-          <p class="label hero__eyebrow fade-up">Life &amp; thought coach for the wildly successful</p>
-          <h1 class="display" id="hero-title">
-            <span class="line"><span>You were taught</span></span>
-            <span class="line"><span>how to <em>build</em> a life.</span></span>
-            <span class="line"><span>You were never taught</span></span>
-            <span class="line"><span>how to <em>live</em> one.</span></span>
-          </h1>
-          <p class="lede hero__lede fade-up d1">For the wildly successful, but quietly disconnected. <strong>This is the conversation you have been avoiding.</strong> The one that changes everything.</p>
-          <div class="hero__actions fade-up d2">
-            <a class="btn" href="#work" data-magnetic>Work with me <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="link" href="#replaceable">Read <em>Replaceable</em> <span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-          <div class="hero__proof fade-up d3">
-            <div><strong>15+ yrs</strong><span>Coaching</span></div>
-            <div><strong>8+</strong><span>Coach certifications</span></div>
-            <div><strong>4</strong><span>Books</span></div>
-          </div>
-        </div>
-
-        <div class="hero__visual">
-          <span class="hero__sun" aria-hidden="true"></span>
-          <span class="hero__door" aria-hidden="true"></span>
-          <div class="hero__portrait arch" data-parallax="0.06">
-            <img
-              src="assets/img/leah-portrait-bw-1200.webp"
-              srcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w"
-              sizes="(min-width: 960px) 38vw, 92vw"
-              width="1200" height="1680"
-              alt="Leah Roling smiling, black-and-white portrait"
-              fetchpriority="high">
-          </div>
-          <a class="chip-float chip-float--show" href="#show">
-            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <span><b>The Becoming You Show</b><small>New every Friday</small></span>
+    <section class="hero">
+      <div class="hero__photo">
+        <img src="assets/img/leah-portrait-bw-1200.webp" srcset="assets/img/leah-portrait-bw-720.webp 720w, assets/img/leah-portrait-bw-1200.webp 1200w, assets/img/leah-portrait-bw-1700.webp 1700w" sizes="(min-width: 900px) 46vw, 100vw" width="1200" height="1680" alt="Leah Roling, smiling" fetchpriority="high">
+      </div>
+      <div class="wrap hero__in">
+        <p class="hero__role">Master Certified Coach. Author. Speaker.</p>
+        <h1 class="hero__title">
+          <span class="hero__line hi">Learn it.</span>
+          <em class="hero__line">Live it.</em>
+          <span class="hero__line hi">Lead it.</span>
+        </h1>
+        <p class="hero__sub">You were taught how to build a life. You were never taught how to live one.</p>
+        <div class="hero__cta">
+          <a class="btn btn--line" href="#show">
+            <svg class="ic-play" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M8 6.4v7.2l5.8-3.6z" fill="var(--play, #0e0e10)"/></svg>
+            Press play
           </a>
-          <div class="chip-float chip-float--mcc">
-            <span class="chip-float__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-            <span><b>Master Certified Coach</b><small>MCC · CHPC · John Maxwell</small></span>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="seen fade-up d3">
-          <span class="seen__label">Seen and heard at</span>
-          <ul>
-            <li>IAOCI World Congress</li>
-            <li>ALIGN</li>
-            <li>Supercharge Your Dental Practice</li>
-            <li>Dentaltown</li>
-            <li>Transformation Talk Radio</li>
-          </ul>
+          <a class="btn btn--solid" href="#work">Work with me</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ MARQUEE: all she is ============ -->
-    <div class="marquee" aria-label="Believer, lucky wife, mama of three amazing boys, founder, author, Master Certified Coach, keynote speaker, podcast host, guacamole obsessed, lover of life">
-      <div class="marquee__track" aria-hidden="true">
-        <div class="marquee__group">
-          <span class="marquee__item">Believer <i class="dot"></i></span>
-          <span class="marquee__item">Lucky wife <i class="dot"></i></span>
-          <span class="marquee__item">Mama of three amazing boys <i class="dot"></i></span>
-          <span class="marquee__item">Founder <i class="dot"></i></span>
-          <span class="marquee__item">Author <i class="dot"></i></span>
-          <span class="marquee__item">Master Certified Coach <i class="dot"></i></span>
-          <span class="marquee__item">Keynote speaker <i class="dot"></i></span>
-          <span class="marquee__item">Podcast host <i class="dot"></i></span>
-          <span class="marquee__item">Guacamole obsessed <i class="dot"></i></span>
-          <span class="marquee__item">Lover of life <i class="dot"></i></span>
-        </div>
-        <div class="marquee__group">
-          <span class="marquee__item">Believer <i class="dot"></i></span>
-          <span class="marquee__item">Lucky wife <i class="dot"></i></span>
-          <span class="marquee__item">Mama of three amazing boys <i class="dot"></i></span>
-          <span class="marquee__item">Founder <i class="dot"></i></span>
-          <span class="marquee__item">Author <i class="dot"></i></span>
-          <span class="marquee__item">Master Certified Coach <i class="dot"></i></span>
-          <span class="marquee__item">Keynote speaker <i class="dot"></i></span>
-          <span class="marquee__item">Podcast host <i class="dot"></i></span>
-          <span class="marquee__item">Guacamole obsessed <i class="dot"></i></span>
-          <span class="marquee__item">Lover of life <i class="dot"></i></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ ROLES ============ -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">01</span>Come closer</p>
-            <h2 class="h2" id="about-title" data-reveal style="--d:.08s">Hi, I'm <em>Leah</em>.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">I teach people how to think about what they think about. You don't need more action items. You need a better way to think.</p>
-        </div>
-
-        <div class="roles">
-          <div class="roles__list" role="tablist" aria-label="Who Leah is" aria-orientation="vertical" data-reveal>
-            <button class="role-tab" role="tab" id="tab-believer" aria-controls="panel-believer" aria-selected="true"><span class="num">01</span>Believer</button>
-            <button class="role-tab" role="tab" id="tab-wife" aria-controls="panel-wife" aria-selected="false" tabindex="-1"><span class="num">02</span>Lucky wife</button>
-            <button class="role-tab" role="tab" id="tab-mother" aria-controls="panel-mother" aria-selected="false" tabindex="-1"><span class="num">03</span>Boy mom</button>
-            <button class="role-tab" role="tab" id="tab-founder" aria-controls="panel-founder" aria-selected="false" tabindex="-1"><span class="num">04</span>Founder</button>
-            <button class="role-tab" role="tab" id="tab-author" aria-controls="panel-author" aria-selected="false" tabindex="-1"><span class="num">05</span>Author</button>
-            <button class="role-tab" role="tab" id="tab-coach" aria-controls="panel-coach" aria-selected="false" tabindex="-1"><span class="num">06</span>Coach</button>
-            <button class="role-tab" role="tab" id="tab-speaker" aria-controls="panel-speaker" aria-selected="false" tabindex="-1"><span class="num">07</span>Speaker</button>
-            <button class="role-tab" role="tab" id="tab-host" aria-controls="panel-host" aria-selected="false" tabindex="-1"><span class="num">08</span>Host</button>
-          </div>
-
-          <div class="roles__stage" data-reveal style="--d:.1s">
-            <article class="role-panel" role="tabpanel" id="panel-believer" aria-labelledby="tab-believer" tabindex="0">
-              <div class="role-panel__img arch"><img src="assets/img/leah-white-480.webp" width="480" height="590" alt="Leah Roling in a white shirt, smiling" loading="lazy"></div>
-              <div class="role-panel__text">
-                <p class="label">My center</p>
-                <h3 class="h3">Worth is a <em>birthright</em>.</h3>
-                <p>My faith is the steady center of my life. It's why I will never treat you like a project. You're not broken. You never were.</p>
-                <a class="link" href="#faith">Faith &amp; family <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-wife" aria-labelledby="tab-wife" tabindex="0" hidden>
-              <div class="role-panel__img arch"><img src="assets/img/leah-color-700.webp" srcset="assets/img/leah-color-700.webp 700w, assets/img/leah-color-1200.webp 1200w" sizes="(min-width: 960px) 30vw, 60vw" width="700" height="1050" alt="Leah Roling laughing in a pink and red dress" loading="lazy"></div>
-              <div class="role-panel__text">
-                <p class="label">Home first</p>
-                <h3 class="h3">Lucky <em>wife</em>.</h3>
-                <p>I've struggled with overwhelm, frustration and anxiety. In my marriage, in my work, as a parent. I have had to solve for all of it. Home is where I practice what I teach.</p>
-                <a class="link" href="#faith">Faith &amp; family <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-mother" aria-labelledby="tab-mother" tabindex="0" hidden>
-              <div class="role-panel__img arch"><img src="assets/img/leah-blazer-600.webp" width="600" height="900" alt="Leah Roling in a black blazer, chin resting on her hand" loading="lazy"></div>
-              <div class="role-panel__text">
-                <p class="label">Boy mom</p>
-                <h3 class="h3">Mama of three <em>amazing</em> boys.</h3>
-                <p>They keep me honest, humble and laughing. They are also my first test. If it doesn't hold up at my kitchen table, I don't teach it.</p>
-                <a class="link" href="#faith">Faith &amp; family <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-founder" aria-labelledby="tab-founder" tabindex="0" hidden>
-              <div class="role-panel__img arch"><img src="assets/img/leah-team-800.webp" srcset="assets/img/leah-team-800.webp 800w, assets/img/leah-team-1400.webp 1400w" sizes="(min-width: 960px) 50vw, 100vw" width="800" height="450" alt="Leah Roling working with her team around a table" loading="lazy" style="object-position:58% 50%"></div>
-              <div class="role-panel__text">
-                <p class="label">Founder of InnerBoard</p>
-                <h3 class="h3">What you've found is a door. There is a <em>house</em> behind it.</h3>
-                <p>InnerBoard is the architecture this work lives inside. The practices. The membership. The library. The credential. The room is where you meet me. The architecture is where the work becomes a way of life.</p>
-                <a class="link" href="#work">Enter InnerBoard <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
-              <div class="role-panel__img role-panel__img--books arch">
-                <div class="mini-books" aria-hidden="true">
-                  <img src="assets/img/book-shift-326.webp" width="326" height="522" alt="" loading="lazy">
-                  <img src="assets/img/book-replaceable-400.webp" width="400" height="634" alt="" loading="lazy">
-                  <img src="assets/img/book-return-on-life-341.webp" width="341" height="522" alt="" loading="lazy">
-                </div>
-              </div>
-              <div class="role-panel__text">
-                <p class="label">The books</p>
-                <h3 class="h3">The wake-up. The shift. The <em>return</em>.</h3>
-                <p><em>No One Is Coming to Save You</em> ends the waiting. <em>SHIFT</em> changes the operating system underneath the life. <em>Return on Life</em> is the philosophy on an ordinary Tuesday. <em>Replaceable</em> brings it to your company.</p>
-                <a class="link" href="#books">See the books <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-coach" aria-labelledby="tab-coach" tabindex="0" hidden>
-              <div class="role-panel__img arch"><img src="assets/img/leah-coaching-800.webp" srcset="assets/img/leah-coaching-800.webp 800w, assets/img/leah-coaching-1400.webp 1400w" sizes="(min-width: 960px) 50vw, 100vw" width="800" height="450" alt="Leah Roling coaching two leaders at a conference table" loading="lazy" style="object-position:52% 50%"></div>
-              <div class="role-panel__text">
-                <p class="label">Master Certified Coach</p>
-                <h3 class="h3">I am paid to <em>push</em>.</h3>
-                <p>Not to validate. Not to comfort. If you want a coach who agrees with you, hire one. If you want one who is going to make you better, you are in the right place.</p>
-                <a class="link" href="#work">Work with me <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-speaker" aria-labelledby="tab-speaker" tabindex="0" hidden>
-              <div class="role-panel__img arch" style="background:var(--ink)"><img src="assets/img/leah-stage-472.webp" width="472" height="626" alt="Leah Roling speaking on stage at ALIGN 2024" loading="lazy" style="object-position:50% 35%"></div>
-              <div class="role-panel__text">
-                <p class="label">Keynote speaker</p>
-                <h3 class="h3">The work, on <em>stage</em>.</h3>
-                <p>Keynotes, leadership intensives and practice group conferences. Each one is designed to leave the room with something they will use tomorrow morning.</p>
-                <a class="link" href="#speaking">Bring me to your stage <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-            <article class="role-panel" role="tabpanel" id="panel-host" aria-labelledby="tab-host" tabindex="0" hidden>
-              <div class="role-panel__img arch"><img src="assets/img/leah-podcast-512.webp" width="512" height="410" alt="Leah Roling recording her podcast at a microphone" loading="lazy" style="object-position:40% 50%"></div>
-              <div class="role-panel__text">
-                <p class="label">Host, The Becoming You Show</p>
-                <h3 class="h3">Your weekly <em>gut-check</em>.</h3>
-                <p>Every Friday since 2022. No gurus. No rescue missions. No fixes. Just one truth: you are the breakthrough.</p>
-                <a class="link" href="#show">Press play <span class="arrow" aria-hidden="true">→</span></a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ STORY ============ -->
-    <section class="section section--cloud" id="story" aria-labelledby="story-title">
-      <div class="container story">
-        <div class="story__visual">
-          <div class="story__img arch" data-reveal="arch">
-            <img src="assets/img/leah-blazer-800.webp" srcset="assets/img/leah-blazer-600.webp 600w, assets/img/leah-blazer-800.webp 800w" sizes="(min-width: 960px) 32vw, 90vw" width="800" height="1200" alt="Portrait of Leah Roling in a black blazer" loading="lazy">
-          </div>
-          <img class="story__sig" src="assets/img/leah-signature.svg" alt="" width="300" height="160" loading="lazy" data-reveal style="--d:.5s">
-        </div>
-        <div class="story__text">
-          <p class="label" data-reveal><span class="label__n">02</span>The story</p>
-          <h2 class="h2" id="story-title" data-reveal style="--d:.08s">Before this work <em>found</em> me.</h2>
-          <div class="prose lede" data-reveal style="max-width:56ch;--d:.16s">
-            <p>Before I was teaching anyone anything, I was the person everyone needed me to be. I was a high-performing version of someone trying to earn the love that should have always been there.</p>
-            <p>I was a girl who held tight to a single conviction. If I were smarter. More athletic. More popular. Prettier. My father would come back. And I would finally have the permission I was waiting for to live.</p>
-            <p>That conviction never came true. But I held it for years. Through middle school. Through college. Into early adulthood. I became exhausted. Resentful. Guilty. Unworthy. And quietly furious at a life I had spent so much energy performing.</p>
-            <p>Until the work found me. My story really began the moment I realized my worth was not dictated by anyone else. Not by my father. Not by the people I'd been pleasing. Not by the standards I'd been performing for.</p>
-          </div>
-          <blockquote class="story__quote" data-reveal>
-            <p class="quote">My worth was never <em>theirs</em> to set.</p>
-            <cite>Leah Roling</cite>
-          </blockquote>
-          <div class="prose lede" style="max-width:56ch" data-reveal>
-            <p>Now I get the honor of walking other people across the same bridge. From the stuck self to the becoming self.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PHILOSOPHY ============ -->
-    <section class="section section--ink philosophy" aria-labelledby="phil-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">03</span>The work</p>
-            <h2 class="h2" id="phil-title" data-reveal style="--d:.08s">There are only <em>two</em> master skills.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">Everything else is a derivative. Self-leadership is not a leadership skill. It is a human one.</p>
-        </div>
-        <div class="skills">
-          <div class="skill" data-reveal>
-            <span class="skill__num" aria-hidden="true">01</span>
-            <h3 class="h3">Personal <em>Power</em></h3>
-            <p class="skill__sub">How you lead yourself.</p>
-            <p>Authority that doesn't borrow. Decisions that don't require an audience. The capacity to be in the room with yourself, and to like what you find there.</p>
-          </div>
-          <div class="skill" data-reveal style="--d:.12s">
-            <span class="skill__num" aria-hidden="true">02</span>
-            <h3 class="h3">Social <em>Influence</em></h3>
-            <p class="skill__sub">How you lead others.</p>
-            <p>Not persuasion. Resonance. The skill of moving rooms, teams, families and organizations without performing, manipulating, or shrinking yourself to fit.</p>
-          </div>
-        </div>
-        <div class="thermo is-idle" data-thermo>
-          <p class="quote" data-reveal>A thermometer <em data-thermo-word="read">reads</em> the temperature. A thermostat <em data-thermo-word="set">sets</em> the temperature.</p>
-          <p class="lede" data-reveal style="max-width:46ch;--d:.08s">Culture is the strategy. The rest is decoration.</p>
-          <div class="thermo__ui" data-reveal style="--d:.16s">
-            <span class="thermo__end"><b>Thermometer</b><small>Reads the room</small></span>
-            <span class="thermo__end thermo__end--r"><b>Thermostat</b><small>Sets the room</small></span>
-            <div class="thermo__track">
-              <span class="thermo__fill" aria-hidden="true"></span>
-              <span class="thermo__knob" aria-hidden="true"><span><span data-thermo-num>62</span>°</span></span>
-              <input class="thermo__input" id="thermo-range" type="range" min="0" max="100" step="1" value="0" aria-label="Set the temperature of the room" aria-valuetext="62 degrees">
-            </div>
-          </div>
-          <p class="thermo__msg" data-thermo-msg aria-live="polite">Drag to set the temperature.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WORK / DOORWAYS ============ -->
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">04</span>Work with me</p>
-            <h2 class="h2" id="work-title" data-reveal style="--d:.08s">One philosophy.<br>Many <em>doorways</em>.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">Each part of the work is built on the same foundation. Choose the doorway that fits where you are. They all open into the same room.</p>
-        </div>
-
-        <div class="doors">
-          <article class="door" data-reveal>
-            <span class="door__key" aria-hidden="true"></span>
-            <p class="door__for">For owners &amp; founders</p>
-            <h3 class="h3">1:1 <em>Coaching</em></h3>
-            <p class="door__desc">Grow the practice. Grow the person. They were always the same project.</p>
-            <ul class="door__list">
-              <li><span>The Read</span><span>1–2 days</span></li>
-              <li><span>The Year</span><span>3, 6 or 12 mo</span></li>
-              <li><span>The Cabinet</span><span>Quarterly</span></li>
-              <li><span>The Install</span><span>6 months</span></li>
-            </ul>
-            <div class="door__cta"><a class="link" href="https://calendly.com/leahroling/30-minute-strategy-session-with-leah-" target="_blank" rel="noopener">30-minute strategy call <span class="arrow" aria-hidden="true">→</span></a></div>
-          </article>
-
-          <article class="door" data-reveal style="--d:.08s">
-            <span class="door__key" aria-hidden="true"></span>
-            <p class="door__for">For individuals</p>
-            <h3 class="h3">The <em>Practice</em></h3>
-            <p class="door__desc">You can live the life you want. It just takes practice.</p>
-            <ul class="door__list">
-              <li><span>Academy</span><span>Learn it</span></li>
-              <li><span>The Lab</span><span>Live it</span></li>
-              <li><span>Practice Coach</span><span>Daily reps</span></li>
-              <li><span>The Club</span><span>Community</span></li>
-            </ul>
-            <div class="door__cta"><a class="link" href="https://innerboardsuite.com" target="_blank" rel="noopener">Start practicing <span class="arrow" aria-hidden="true">→</span></a></div>
-          </article>
-
-          <article class="door" data-reveal style="--d:.16s">
-            <span class="door__key" aria-hidden="true"></span>
-            <p class="door__for">For organizations</p>
-            <h3 class="h3">InnerBoard <em>OS</em></h3>
-            <p class="door__desc">Your people aren't overwhelmed. They are under-clear.</p>
-            <ul class="door__list">
-              <li><span>Core Curriculum</span><span>7 modules</span></li>
-              <li><span>OS Certification</span><span>For leaders</span></li>
-              <li><span>Diagnostic</span><span>Company OS Score</span></li>
-              <li><span>Runs beside</span><span>EOS</span></li>
-            </ul>
-            <div class="door__cta"><a class="link" href="https://innerboardos.com" target="_blank" rel="noopener">Request a diagnostic <span class="arrow" aria-hidden="true">→</span></a></div>
-          </article>
-
-          <article class="door" data-reveal style="--d:.24s">
-            <span class="door__key" aria-hidden="true"></span>
-            <p class="door__for">For coaches &amp; leaders</p>
-            <h3 class="h3">INQ <em>Certification</em></h3>
-            <p class="door__desc">Master the methodology. Lead the transformation. Built to be earned, not just completed.</p>
-            <ul class="door__list">
-              <li><span>Delivery</span><span>Live + self-paced</span></li>
-              <li><span>Practice</span><span>Real application</span></li>
-              <li><span>Assessment</span><span>Competency</span></li>
-              <li><span>Credential</span><span>INQ certified</span></li>
-            </ul>
-            <div class="door__cta"><a class="link" href="https://innerboardsuite.com/inq-certification" target="_blank" rel="noopener">Explore INQ <span class="arrow" aria-hidden="true">→</span></a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ REPLACEABLE ============ -->
-    <section class="section section--ink feature-book" id="replaceable" aria-labelledby="book-title">
-      <div class="container feature-book__grid">
-        <div class="book-stage" data-reveal>
-          <div class="book3d" data-tilt>
-            <div class="book3d__back"></div>
-            <div class="book3d__spine"></div>
-            <div class="book3d__pages"></div>
-            <div class="book3d__front">
-              <img src="assets/img/book-replaceable-800.webp" srcset="assets/img/book-replaceable-400.webp 400w, assets/img/book-replaceable-800.webp 800w" sizes="(min-width: 500px) 340px, 70vw" width="800" height="1269" loading="lazy" alt="Book cover: Replaceable, with the letters I-r struck out of Irreplaceable. The Internal Operating System, by Leah Roling. Afterword by Tim O'Donnell.">
-            </div>
-          </div>
-        </div>
-        <div class="feature-book__text">
-          <p class="label" data-reveal><span class="label__n">05</span>The new book · October 2026</p>
-          <h2 class="h2 book-title" id="book-title" data-reveal style="--d:.08s"><span class="sr-only">Replaceable</span><span aria-hidden="true"><span class="book-title__ir">Ir</span>Replaceable.</span></h2>
-          <p class="book-sub" data-reveal style="--d:.12s">Your business runs on you. That is not a badge. That is the <em>ceiling</em>.</p>
-          <p class="lede" data-reveal style="max-width:52ch;--d:.14s">You built something real, and somewhere along the way it started routing every decision back through you. You have tried to fix it. Hired smarter. Installed a system. Held the meeting about accountability. It held for a quarter, and then everything came back to your desk.</p>
-          <ul class="checks" data-reveal style="--d:.2s">
-            <li>Every company runs two operating systems. EOS runs the business. InnerBoard OS runs the people inside it.</li>
-            <li>Dependent. In transition. Empowered. The Company OS Score tells you which one you actually are.</li>
-            <li>Your company should be able to run without you. This is how you build that.</li>
-          </ul>
-          <div class="book-meta" data-reveal><span>160 pages</span><span>Foreword by Craig Jackman</span><span>Afterword by Tim O'Donnell</span></div>
-          <div class="actions" data-reveal>
-            <a class="btn" href="https://www.amazon.com/dp/B0HMLM6GLZ" target="_blank" rel="noopener" data-magnetic>Get the book <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="link" href="#contact" data-interest="Speaking">Bring <em>Replaceable</em> to your team <span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ BOOKS ============ -->
-    <section class="section" id="books" aria-labelledby="books-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">06</span>The library</p>
-            <h2 class="h2" id="books-title" data-reveal style="--d:.08s">Three acts.<br>One <em>philosophy</em>.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">The books are the philosophy. The coaching is where it becomes your life.</p>
-        </div>
-
-        <div class="shelf">
-          <article class="book-card" data-reveal>
-            <div class="book-card__wrap"><div class="book-card__cover">
-              <img src="assets/img/book-no-one-400.webp" width="400" height="600" alt="Book cover: No One Is Coming to Save You, Wake Up to Your Worth, by Leah Roling" loading="lazy">
-            </div></div>
-            <p class="book-card__act">Act I · The wake-up call</p>
-            <h3>No One Is Coming to Save You</h3>
-            <p>The book that ends the waiting. For everyone still hoping the rescue is on its way.</p>
-            <a class="link" href="https://www.amazon.com/dp/B0CQKXMRT8" target="_blank" rel="noopener">Get it on Amazon <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="book-card" data-reveal style="--d:.08s">
-            <div class="book-card__wrap"><div class="book-card__cover"><img src="assets/img/book-shift-326.webp" width="326" height="522" alt="Book cover: SHIFT by Leah Roling and Bryan Ferre" loading="lazy"></div></div>
-            <p class="book-card__act">Act II · The transformation</p>
-            <h3>SHIFT</h3>
-            <p>The mechanics of changing the operating system underneath the life. Written with Bryan Ferre.</p>
-            <a class="link" href="https://www.amazon.com/s?k=SHIFT+Leah+Roling+Bryan+Ferre" target="_blank" rel="noopener">Find it on Amazon <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="book-card" data-reveal style="--d:.16s">
-            <div class="book-card__wrap"><div class="book-card__cover"><img src="assets/img/book-return-on-life-341.webp" width="341" height="522" alt="Book cover: Return on Life by Leah Roling and Cari Kenzie" loading="lazy"></div></div>
-            <p class="book-card__act">Act III · The embodiment</p>
-            <h3>Return on Life</h3>
-            <p>What it looks like to live the philosophy. Not as theory. As ordinary Tuesday. Written with Cari Kenzie.</p>
-            <a class="link" href="https://www.amazon.com/s?k=Return+on+Life+Leah+Roling+Cari+Kenzie" target="_blank" rel="noopener">Find it on Amazon <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-
-          <article class="book-card" data-reveal style="--d:.24s">
-            <div class="book-card__wrap"><div class="book-card__cover">
-              <span class="tag-new">New</span>
-              <img src="assets/img/book-replaceable-400.webp" width="400" height="634" alt="Book cover: Replaceable, The Internal Operating System, by Leah Roling" loading="lazy">
-            </div></div>
-            <p class="book-card__act">For leaders · 2026</p>
-            <h3>Replaceable</h3>
-            <p>EOS runs the business. InnerBoard OS runs the people inside it. Different layers, one company.</p>
-            <a class="link" href="https://www.amazon.com/dp/B0HMLM6GLZ" target="_blank" rel="noopener">Get it on Amazon <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ RESULTS ============ -->
-    <section class="section section--cloud" aria-labelledby="results-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">07</span>The proof</p>
-            <h2 class="h2" id="results-title" data-reveal style="--d:.08s">The kind of change the work <em>produces</em>.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">High performance is not just high profitability. The names are private. The numbers, and the lives behind them, are real.</p>
-        </div>
-
-        <div class="bento">
-          <figure class="bento__photo" data-reveal>
-            <img src="assets/img/leah-coaching-1400.webp" srcset="assets/img/leah-coaching-800.webp 800w, assets/img/leah-coaching-1400.webp 1400w" sizes="(min-width: 960px) 48vw, 100vw" width="1400" height="788" loading="lazy" alt="Leah Roling coaching two leaders at a conference table">
-            <figcaption>I look under the hood</figcaption>
-          </figure>
-          <div class="stats">
-            <div class="stat" data-reveal>
-              <span class="stat__num"><span data-count="1" data-prefix="$" data-suffix="M">$1M</span><small>+</small></span>
-              <span class="stat__label">Annual revenue at a single location. Up from $280K.</span>
-            </div>
-            <div class="stat" data-reveal style="--d:.08s">
-              <span class="stat__num">1<i class="stat__arrow">→</i>5</span>
-              <span class="stat__label">Locations. The operator grew first. The expansion followed.</span>
-            </div>
-            <div class="stat" data-reveal style="--d:.16s">
-              <span class="stat__num">4<i class="stat__arrow">→</i>3</span>
-              <span class="stat__label">Days a week. Working less while earning more.</span>
-            </div>
-            <div class="stat" data-reveal style="--d:.24s">
-              <span class="stat__num"><span data-count="85">85</span><small>%</small></span>
-              <span class="stat__label">Of the people I coach are dental practice owners.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cases">
-          <article class="case" data-reveal>
-            <p class="case__kicker">Multi-location practice owner</p>
-            <h3>From chairside burnout to multi-practice sovereignty.</h3>
-            <p>The work was to grow the operator first. The expansion followed. So did the operator's actual life.</p>
-            <dl><dt>Practice growth</dt><dd>1 → 5 locations</dd><dt>The deeper return</dt><dd>+ Health · + Family</dd></dl>
-          </article>
-          <article class="case" data-reveal style="--d:.08s">
-            <p class="case__kicker">Single-location practice owner</p>
-            <h3>From $280K to over a million.</h3>
-            <p>Most of the work was on the operator. The practice followed where the leadership led.</p>
-            <dl><dt>Annual revenue</dt><dd>$280K → $1M+</dd><dt>The deeper return</dt><dd>4 → 3 days/wk</dd></dl>
-          </article>
-          <article class="case" data-reveal style="--d:.16s">
-            <p class="case__kicker">Solo practice owner</p>
-            <h3>From burnout and the brink, to clarity.</h3>
-            <p>The question was whether to close or sell. The answer, after eight months of work, was neither.</p>
-            <dl><dt>The question</dt><dd>Stay or leave</dd><dt>The answer</dt><dd>Neither.</dd></dl>
-          </article>
-        </div>
-
-        <div class="voices">
-          <figure class="voice" data-reveal>
-            <blockquote>She helps to build this warm beautiful fire inside of you that you learn to stoke. It helps you be a stronger, more genuine, more intentional you. I'm really enjoying the journey and the process.</blockquote>
-            <figcaption>A.H.</figcaption>
-          </figure>
-          <figure class="voice" data-reveal style="--d:.08s">
-            <blockquote>Leah has led me on the most beautiful journey. I didn't realize that I was holding back in my life. I was afraid to live completely, unapologetically and unabashedly. I am now learning to be happy with me, which makes me happy with everyone else.</blockquote>
-            <figcaption>S.M.</figcaption>
-          </figure>
-          <figure class="voice" data-reveal style="--d:.16s">
-            <blockquote>Wow! Second video had me in tears. Wish I had this 25 years ago! Would have saved me from myself. God truly puts you where you need to be to receive the messages you need.</blockquote>
-            <figcaption>A.B.</figcaption>
-          </figure>
-        </div>
-
-        <div class="creds" data-reveal>
-          <span class="cred"><b>MCC</b>Master Certified Coach</span>
-          <span class="cred"><b>CHPC</b>Certified High Performance Coach</span>
-          <span class="cred"><b>JM</b>John Maxwell-trained leadership coach</span>
-          <span class="cred"><b>CBT</b>Cognitive Behavioral Therapy</span>
-          <span class="cred"><b>NLP</b>Neurolinguistics</span>
-          <span class="cred"><b>8+</b>Coach certifications</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SPEAKING ============ -->
-    <section class="section" id="speaking" aria-labelledby="speak-title">
-      <div class="container speaking">
-        <figure class="speaking__visual">
-          <div class="speaking__img arch" data-reveal="arch">
-            <img src="assets/img/leah-stage-472.webp" width="472" height="626" alt="Leah Roling on stage at the ALIGN 2024 conference" loading="lazy">
-          </div>
-          <figcaption>Keynote · ALIGN 2024</figcaption>
-        </figure>
-        <div>
-          <p class="label" data-reveal><span class="label__n">08</span>The work on stage</p>
-          <h2 class="h2" id="speak-title" data-reveal style="--d:.08s">The wrong people want to be inspired. The right people want to be <em>changed</em>.</h2>
-          <p class="lede" style="margin-top:28px;max-width:50ch" data-reveal>Keynotes, leadership intensives and practice group conferences. Each engagement is designed to leave the room with something they will use tomorrow morning.</p>
-
-          <div class="topics" data-reveal>
-            <details class="topic" open>
-              <summary><span class="topic__num">01</span><span class="topic__title">The Operator Underneath the Operation</span><span class="topic__icon" aria-hidden="true"></span></summary>
-              <p class="topic__body">Why the most important thing in your practice is the person running it, and what happens when that person operates at their best.</p>
-            </details>
-            <details class="topic">
-              <summary><span class="topic__num">02</span><span class="topic__title">High Performance Without the Sacrifice</span><span class="topic__icon" aria-hidden="true"></span></summary>
-              <p class="topic__body">The framework for growing a practice and a life at the same time. Built across fifteen years of work with the operators who are actually doing both.</p>
-            </details>
-            <details class="topic">
-              <summary><span class="topic__num">03</span><span class="topic__title">The Architecture of Self-Leadership</span><span class="topic__icon" aria-hidden="true"></span></summary>
-              <p class="topic__body">The five internal systems that determine whether a leader shows up at their best or their most reactive. A masterclass in STEAR.</p>
-            </details>
-            <details class="topic">
-              <summary><span class="topic__num">04</span><span class="topic__title">The InnerBoard: Four Voices in Every Room</span><span class="topic__icon" aria-hidden="true"></span></summary>
-              <p class="topic__body">How to identify which part of you is running the meeting, and how to put the right one in charge when the stakes are highest.</p>
-            </details>
-            <details class="topic topic--new">
-              <summary><span class="topic__num">05</span><span class="topic__title">Replaceable</span><span class="topic__icon" aria-hidden="true"></span></summary>
-              <p class="topic__body">Your business runs on you. That is not a badge. That is the ceiling. For founders and owners who are tired of being the answer to every question.</p>
-            </details>
-          </div>
-
-          <div class="formats" data-reveal>
-            <span class="chip">Keynote</span><span class="chip">Leadership intensive</span><span class="chip">Practice group conference</span><span class="chip">In person or virtual</span><span class="chip">45 to 90 minutes</span>
-          </div>
-
-          <div class="stages" data-reveal>
-            <p class="label label--plain">Stages &amp; studios</p>
-            <ul>
-              <li>IAOCI World Congress</li>
-              <li>ALIGN 2024</li>
-              <li>Supercharge Your Dental Practice</li>
-              <li>Transformation Talk Radio</li>
-            </ul>
-          </div>
-
-          <div class="actions" style="margin-top:44px" data-reveal>
-            <a class="btn" href="#contact" data-interest="Speaking" data-magnetic>Check my availability <span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PODCAST ============ -->
-    <section class="section section--ink" id="show" aria-labelledby="show-title">
-      <div class="container show">
-        <div class="show__art" data-reveal>
-          <div class="show-cover" aria-hidden="true">
-            <div class="show-cover__head"><span class="show-cover__top">The Becoming You Show</span><span class="eq"><i></i><i></i><i></i><i></i></span></div>
-            <div>
-              <span class="show-cover__title">From potential to <em>proof.</em></span>
-            </div>
-            <span class="show-cover__by">with Leah Roling</span>
-          </div>
-          <div class="show__photo"><img src="assets/img/leah-podcast-512.webp" width="512" height="410" alt="Leah Roling at her podcast microphone" loading="lazy"></div>
-        </div>
-        <div>
-          <p class="label" data-reveal><span class="label__n">09</span>The show</p>
-          <h2 class="h2" id="show-title" data-reveal style="--d:.08s">The Becoming <em>You</em> Show</h2>
-          <p class="lede" style="margin-top:24px;max-width:48ch" data-reveal>Your weekly gut-check. An unapologetic space where potential gets proven and false identities die. The conversations I would have wanted someone to have with me.</p>
-          <div class="show__stats" data-reveal>
-            <div><strong>200+</strong><span>Episodes</span></div>
-            <div><strong>Fridays</strong><span>New every week</span></div>
-            <div><strong>2022</strong><span>On air since</span></div>
-          </div>
-          <ol class="episodes" data-reveal>
-            <li><a class="episode" href="https://podcasts.apple.com/us/podcast/207-promised-dopamine/id1608085445?i=1000801798633" target="_blank" rel="noopener"><span class="episode__num">EP 207</span><span class="episode__title">Promised Dopamine</span><span class="episode__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z" fill="currentColor"/></svg></span></a></li>
-            <li><a class="episode" href="https://podcasts.apple.com/us/podcast/206-whats-it-like-to-be-you/id1608085445?i=1000800304099" target="_blank" rel="noopener"><span class="episode__num">EP 206</span><span class="episode__title">What's it like to be you?</span><span class="episode__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z" fill="currentColor"/></svg></span></a></li>
-            <li><a class="episode" href="https://podcasts.apple.com/us/podcast/205-have-your-own-back/id1608085445?i=1000798944248" target="_blank" rel="noopener"><span class="episode__num">EP 205</span><span class="episode__title">Have your own back</span><span class="episode__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z" fill="currentColor"/></svg></span></a></li>
-            <li><a class="episode" href="https://podcasts.apple.com/us/podcast/204-stop-asking-how/id1608085445?i=1000797820241" target="_blank" rel="noopener"><span class="episode__num">EP 204</span><span class="episode__title">Stop asking HOW</span><span class="episode__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z" fill="currentColor"/></svg></span></a></li>
-          </ol>
-          <div class="actions" data-reveal>
-            <a class="btn" href="https://podcasts.apple.com/us/podcast/the-becoming-you-show-with-leah-roling-from-potential/id1608085445" target="_blank" rel="noopener" data-magnetic>Press play on Apple Podcasts <span class="arrow" aria-hidden="true">→</span></a>
-            <a class="link" href="https://www.youtube.com/@leahrolingcoaching" target="_blank" rel="noopener">Watch on YouTube <span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HER LINES ============ -->
-    <div class="lines" role="group" aria-label="Lines from Leah">
-      <div class="lines__track">
-        <div class="lines__group">
-          <span class="lines__item">Perfectionism is not excellence. It's fear in a tuxedo. <small>Ep 174</small></span>
-          <span class="lines__item">You don't have a confidence problem. You have an evidence problem. <small>Ep 171</small></span>
-          <span class="lines__item">Your comfort zone is not comfort. It's a cage with familiar wallpaper. <small>Ep 173</small></span>
-          <span class="lines__item">Feelings are information, not instructions. <small>The Practice</small></span>
-          <span class="lines__item">You don't author every event. You author every meaning. <small>Ep 195</small></span>
-          <span class="lines__item">There are no balls. No one is juggling. <small>The manifesto</small></span>
-          <span class="lines__item">Insight has to survive Tuesday. <small>Ep 204</small></span>
-        </div>
-        <div class="lines__group" aria-hidden="true">
-          <span class="lines__item">Perfectionism is not excellence. It's fear in a tuxedo. <small>Ep 174</small></span>
-          <span class="lines__item">You don't have a confidence problem. You have an evidence problem. <small>Ep 171</small></span>
-          <span class="lines__item">Your comfort zone is not comfort. It's a cage with familiar wallpaper. <small>Ep 173</small></span>
-          <span class="lines__item">Feelings are information, not instructions. <small>The Practice</small></span>
-          <span class="lines__item">You don't author every event. You author every meaning. <small>Ep 195</small></span>
-          <span class="lines__item">There are no balls. No one is juggling. <small>The manifesto</small></span>
-          <span class="lines__item">Insight has to survive Tuesday. <small>Ep 204</small></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ FAITH & FAMILY ============ -->
-    <section class="section" id="faith" aria-labelledby="faith-title">
-      <div class="container faith">
-        <img class="faith__mark" src="assets/img/leah-roling-mark-violet.svg" alt="" width="48" height="62" loading="lazy" data-reveal="pop">
-        <p class="label" data-reveal><span class="label__n">10</span>Faith &amp; family</p>
-        <h2 class="h2" id="faith-title" data-reveal style="--d:.08s">Faith. Family. <em>Then</em> the work.</h2>
-        <p class="lede" data-reveal style="--d:.14s">Lucky wife. Mama of three amazing boys. My faith sits underneath all of it. It is where I learned that worth is a birthright, and that nobody is an accident.</p>
-        <blockquote class="verse" data-reveal style="--d:.2s">
-          “For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”
-          <cite>Ephesians 2:10</cite>
+    <section class="quote" aria-label="What clients say">
+      <img class="quote__bg" src="assets/img/leah-stage-472.webp" width="472" height="626" alt="" loading="lazy" decoding="async">
+      <figure class="wrap quote__in" data-reveal>
+        <svg class="quote__mark" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V27.6C0 11.6 8.4 2.4 25.2 0v9.6c-8 1.6-12 6.4-12 14.4h12V48zm38.8 0V27.6C38.8 11.6 47.2 2.4 64 0v9.6c-8 1.6-12 6.4-12 14.4h12V48z" fill="currentColor"/></svg>
+        <blockquote>
+          <p>She helps to build this <span class="hi">warm beautiful fire inside of you</span> that you learn to stoke. It helps you be a <span class="hi">stronger, more genuine, more intentional you.</span></p>
         </blockquote>
-        <div class="pillars3">
-          <div class="pillar" data-reveal>
-            <p class="pillar__k">01 · Faith</p>
-            <h3>The center.</h3>
-            <p>What holds when everything else moves.</p>
-          </div>
-          <div class="pillar" data-reveal style="--d:.08s">
-            <p class="pillar__k">02 · Family</p>
-            <h3>The first room.</h3>
-            <p>Lucky wife. Boy mom. The people who get the best of me, not what's left of me.</p>
-          </div>
-          <div class="pillar" data-reveal style="--d:.16s">
-            <p class="pillar__k">03 · Work</p>
-            <h3>The overflow.</h3>
-            <p>Coaching, books, InnerBoard and the stage. Work that comes out of a full life, not in place of one.</p>
+        <figcaption>
+          <strong>A.H.</strong>
+          <span>Coaching client</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="seen" aria-label="Seen and heard at">
+      <div class="wrap">
+        <p class="seen__label">Seen and heard at:</p>
+        <ul class="seen__list">
+          <li class="seen__a" data-reveal><b>IAOCI</b><span>World Congress</span></li>
+          <li class="seen__b" data-reveal><b>ALIGN</b><span>2024</span></li>
+          <li class="seen__c" data-reveal><b>Supercharge</b><span>Your Dental Practice</span></li>
+          <li class="seen__d" data-reveal><b>dentaltown</b></li>
+          <li class="seen__e" data-reveal><b>Transformation</b><span>Talk Radio</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pin" aria-label="Who this work is for">
+      <div class="pin__stage">
+        <div class="pin__glow" aria-hidden="true"></div>
+        <ol class="pin__lines">
+          <li class="pin__line"><p>For the wildly successful, but <span class="hi">quietly disconnected.</span></p></li>
+          <li class="pin__line"><p>You've carried the weight of leadership, expectations, achievement, survival. Somewhere along the way, <span class="hi">the carrying became the life.</span></p></li>
+          <li class="pin__line"><p>You run the business with more discipline than <span class="hi">you run your body.</span></p></li>
+          <li class="pin__line"><p>You know what your team is building. <span class="hi">You don't know what your kids are dreaming.</span></p></li>
+          <li class="pin__line"><p>You can look fully alive on paper, and <span class="hi">still wonder where you went.</span></p></li>
+          <li class="pin__line"><p>You have become very, very successful at <span class="hi">not being here.</span></p></li>
+        </ol>
+        <div class="pin__meter" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <section class="think grid-bg">
+      <div class="wrap think__in">
+        <figure class="think__photo" data-reveal>
+          <img src="assets/img/leah-color-700.webp" srcset="assets/img/leah-color-700.webp 700w, assets/img/leah-color-1200.webp 1200w" sizes="(min-width: 900px) 360px, 70vw" width="700" height="1050" alt="Leah Roling, laughing" loading="lazy" decoding="async">
+        </figure>
+        <h2 class="think__title" data-reveal>You don't need more action items. You need a <span class="hi">better way to think.</span></h2>
+      </div>
+    </section>
+
+    <section class="tools">
+      <div class="wrap tools__in">
+        <p data-reveal>There are <span>tools for this.</span></p>
+      </div>
+    </section>
+
+    <section class="meet grid-bg" id="about">
+      <div class="wrap">
+        <h2 class="meet__title" data-reveal>Hi, I'm Leah.</h2>
+        <div class="meet__grid">
+          <figure class="meet__photo" data-reveal>
+            <img src="assets/img/leah-blazer-600.webp" srcset="assets/img/leah-blazer-600.webp 600w, assets/img/leah-blazer-800.webp 800w" sizes="(min-width: 900px) 420px, 86vw" width="600" height="900" alt="Leah Roling in a black blazer" loading="lazy" decoding="async">
+          </figure>
+          <div class="meet__copy">
+            <p class="meet__lead" data-reveal>I teach people how to think about what they think about.</p>
+            <p data-reveal>Before this work found me, I was the person everyone needed me to be. A high-performing version of someone trying to earn the love that should have always been there.</p>
+            <p data-reveal>I became exhausted. Resentful. Quietly furious at a life I had spent so much energy performing.</p>
+            <p data-reveal>Until the work found me. My story really began the moment I realized my worth was not dictated by anyone else. <span class="hi">My worth was never theirs to set.</span></p>
+            <p data-reveal>Now I get the honor of walking other people across the same bridge. From the stuck self to <span class="hi">the becoming self.</span></p>
+            <ul class="tags" data-reveal>
+              <li>Believer</li>
+              <li>Lucky wife</li>
+              <li>Mama of three amazing boys</li>
+              <li>Guacamole obsessed</li>
+              <li>Lover of life</li>
+            </ul>
           </div>
         </div>
-        <div class="me" data-reveal>
-          <p class="me__title">Unapologetically, imperfectly <em>me</em>.</p>
-          <ul class="me__facts">
-            <li><span>Can't live without</span>Coffee</li>
-            <li><span>Obsessed with</span>Guacamole</li>
-            <li><span>Favorite movie</span>Pretty Woman</li>
-            <li><span>Hobbies</span>Reading &amp; exercising</li>
-            <li><span>Enneagram</span>3</li>
+      </div>
+    </section>
+
+    <section class="stage stage--lines" aria-label="What I believe">
+      <div class="stage__beams" aria-hidden="true"></div>
+      <div class="wrap stage__in">
+        <p class="stage__lead" data-reveal>Peace, success, and happiness are not on the other side of more doing. They are on the other side of better thinking.</p>
+        <ul class="stage__list">
+          <li data-reveal><span>Life</span> takes reps.</li>
+          <li data-reveal><span>Worth</span> is a birthright.</li>
+          <li data-reveal><span>Have</span> your own back.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof" id="proof">
+      <div class="wrap proof__grid">
+        <div class="proof__copy">
+          <p data-reveal>I've spent <span class="hi">15+ years</span> coaching high performers. <span class="hi">85% of the people I coach</span> are dental practice owners. Master Certified Coach. Certified High Performance Coach. John Maxwell-trained.</p>
+          <p data-reveal>I look under the hood. I work on <span class="hi">the operator, not just the operation.</span></p>
+          <p data-reveal>The names are private. The numbers, and the lives behind them, are real. High performance is not just high profitability.</p>
+        </div>
+        <figure class="proof__photo" data-reveal>
+          <img src="assets/img/leah-team-800.webp" srcset="assets/img/leah-team-800.webp 800w, assets/img/leah-team-1400.webp 1400w" sizes="(min-width: 900px) 560px, 92vw" width="800" height="450" alt="Leah Roling leading a team session around a table" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div class="wrap">
+        <dl class="stats">
+          <div data-reveal>
+            <dt>$280K <i>to</i> $1M+</dt>
+            <dd>Annual revenue at a single location.</dd>
+          </div>
+          <div data-reveal>
+            <dt>1 <i>to</i> 5</dt>
+            <dd>Locations. The operator grew first. The expansion followed.</dd>
+          </div>
+          <div data-reveal>
+            <dt>4 <i>to</i> 3</dt>
+            <dd>Days a week. Working less while earning more.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="ways grid-bg">
+      <div class="wrap">
+        <h2 class="h2 ways__title" data-reveal>Grow the practice. Grow the person. <span class="hi">They were always the same project.</span></h2>
+        <ul class="ways__grid">
+          <li data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></span>
+            <h3>I am paid to push.</h3>
+            <p>Not to validate. Not to comfort. If you want a coach who agrees with you, hire one.</p>
+          </li>
+          <li data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></svg></span>
+            <h3>I look under the hood.</h3>
+            <p>Most of the work is on the operator. The practice follows where the leadership leads.</p>
+          </li>
+          <li data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c1.2-4 4-6 7.5-6s6.3 2 7.5 6"/></svg></span>
+            <h3>I work on the operator.</h3>
+            <p>Not just the operation. You don't need more action items. You need a better way to think.</p>
+          </li>
+          <li data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="12" r="5"/><circle cx="15.5" cy="12" r="5"/></svg></span>
+            <h3>I refuse to make you choose.</h3>
+            <p>The practice and the life. Working less while earning more.</p>
+          </li>
+        </ul>
+        <div class="center" data-reveal>
+          <a class="btn btn--solid" href="https://calendly.com/leahroling/30-minute-strategy-session-with-leah-" target="_blank" rel="noopener">Book a strategy call</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="show">
+      <img class="show__bg" src="assets/img/leah-coaching-800.webp" srcset="assets/img/leah-coaching-800.webp 800w, assets/img/leah-coaching-1400.webp 1400w" sizes="100vw" width="800" height="450" alt="" loading="lazy" decoding="async">
+      <div class="wrap show__in">
+        <p class="kicker" data-reveal>The Becoming You Show</p>
+        <h2 class="h2" data-reveal>Your weekly <span class="hi">gut-check.</span></h2>
+        <p class="show__sub" data-reveal>Every Friday since 2022. No gurus. No rescue missions. No fixes. Just one truth: you are the breakthrough.</p>
+        <div class="btns" data-reveal>
+          <a class="btn btn--hi" href="https://podcasts.apple.com/us/podcast/the-becoming-you-show-with-leah-roling-from-potential/id1608085445" target="_blank" rel="noopener">
+            <svg class="ic-play" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M8 6.4v7.2l5.8-3.6z" fill="var(--play, #a682ff)"/></svg>
+            Press play
+          </a>
+          <a class="btn btn--line" href="https://www.youtube.com/@leahrolingcoaching" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+        <ul class="show__eps" data-reveal>
+          <li><a href="https://podcasts.apple.com/us/podcast/207-promised-dopamine/id1608085445?i=1000801798633" target="_blank" rel="noopener"><span>Ep 207</span>Promised Dopamine</a></li>
+          <li><a href="https://podcasts.apple.com/us/podcast/206-whats-it-like-to-be-you/id1608085445?i=1000800304099" target="_blank" rel="noopener"><span>Ep 206</span>What's it like to be you?</a></li>
+          <li><a href="https://podcasts.apple.com/us/podcast/205-have-your-own-back/id1608085445?i=1000798944248" target="_blank" rel="noopener"><span>Ep 205</span>Have your own back</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="stear grid-bg" id="stear">
+      <div class="wrap stear__intro">
+        <figure class="stear__photo" data-reveal>
+          <img src="assets/img/leah-podcast-512.webp" width="512" height="410" alt="Leah Roling at the microphone, laughing" loading="lazy" decoding="async">
+        </figure>
+        <div class="stear__copy">
+          <h2 class="h2" data-reveal>How <span class="hi">STEAR</span> works.</h2>
+          <p class="stear__sub" data-reveal>STEAR is the five-part model for how a high performing leader steers their own thinking, energy, and action before steering anyone else's.</p>
+          <ul class="stear__lines">
+            <li data-reveal>Before you can lead a practice,</li>
+            <li data-reveal>lead a team,</li>
+            <li data-reveal>or lead through uncertainty,</li>
+            <li data-reveal class="hi">you have to lead yourself.</li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <!-- ============ START HERE ============ -->
-    <section class="section section--cloud" id="start" aria-labelledby="start-title">
-      <div class="container">
-        <div class="section-head section-head--split">
-          <div>
-            <p class="label" data-reveal><span class="label__n">11</span>Begin where you are · Free</p>
-            <h2 class="h2" id="start-title" data-reveal style="--d:.08s">Four <em>doorways</em> into the work.</h2>
-          </div>
-          <p class="lede" data-reveal style="--d:.16s">None of them require you to be ready. All of them meet you where you stand. Walk through whichever one is closest.</p>
-        </div>
-        <div class="resources">
-          <article class="resource" data-reveal>
-            <span class="resource__num" aria-hidden="true">01</span>
-            <h3>The Confidence Curriculum</h3>
-            <p>A three-part field guide on cultivating the self-belief that lives underneath every choice. Not the loud kind. The kind that runs quietly.</p>
-            <a class="link" href="https://view.flodesk.com/pages/60318c48eeca3d2c6cd9f783" target="_blank" rel="noopener">Begin <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="resource" data-reveal style="--d:.08s">
-            <span class="resource__num" aria-hidden="true">02</span>
-            <h3>The 25.</h3>
-            <p>Twenty-five thoughts worth holding. The ones the people who built lives they actually wanted thought repeatedly. Until they were truths.</p>
-            <a class="link" href="https://bold-glade-978.myflodesk.com/w44v8oo9bz" target="_blank" rel="noopener">Receive <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="resource" data-reveal style="--d:.16s">
-            <span class="resource__num" aria-hidden="true">03</span>
-            <h3>The Quiet Diagnostic</h3>
-            <p>Five questions on what's actually loud in your life. Mental, emotional, behavioral, temporal. Not a tactic. A diagnostic.</p>
-            <a class="link" href="https://bold-glade-978.myflodesk.com/ooj9j2ykhw" target="_blank" rel="noopener">Begin <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-          <article class="resource" data-reveal style="--d:.24s">
-            <span class="resource__num" aria-hidden="true">04</span>
-            <h3>Live Lighter</h3>
-            <p>A field guide to the five clutters and how to move them. Less a checklist. More a practice. For the visitor who is ready to set something down.</p>
-            <a class="link" href="https://bold-glade-978.myflodesk.com/o8o3i29ru5" target="_blank" rel="noopener">Open the guide <span class="arrow" aria-hidden="true">→</span></a>
-          </article>
-        </div>
+      <div class="wrap">
+        <ol class="stear__blocks">
+          <li data-reveal>
+            <span class="stear__letter" aria-hidden="true">S</span>
+            <div>
+              <h3>Situation</h3>
+              <p>What happened. Just the facts. No story attached yet.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="stear__letter" aria-hidden="true">T</span>
+            <div>
+              <h3>Thoughts</h3>
+              <p>The sentence in your mind about it. This is where the work is.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="stear__letter" aria-hidden="true">E</span>
+            <div>
+              <h3>Emotions</h3>
+              <p>What that thought creates in you. Feelings are information, not instructions.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="stear__letter" aria-hidden="true">A</span>
+            <div>
+              <h3>Action</h3>
+              <p>What you do, or don't do, from there. Follow through is a yes or a no.</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="stear__letter" aria-hidden="true">R</span>
+            <div>
+              <h3>Results</h3>
+              <p>What your actions produce. Results don't lie.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="stear__close" data-reveal>Self-leadership is not a leadership skill. <span class="hi">It is a human one.</span></p>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section section--ink contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact__grid">
-        <div>
-          <p class="label" data-reveal><span class="label__n">12</span>Begin the work</p>
-          <h2 class="h2" id="contact-title" data-reveal style="--d:.08s">The right work starts with <em>one</em> conversation.</h2>
-          <p class="lede" data-reveal style="--d:.14s">You can read the words. Or you can do the work. One leaves you inspired for a week. The other leaves you no longer the same person, six months later.</p>
-          <div class="contact__options" data-reveal style="--d:.2s">
-            <a class="option" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">
-              <div><strong>Twenty minutes. Free.</strong><span>No pitch. Just an honest conversation.</span></div><span class="arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="option" href="https://calendly.com/leahroling/30-minute-strategy-session-with-leah-" target="_blank" rel="noopener">
-              <div><strong>30-minute strategy call</strong><span>For practice owners, founders &amp; leadership teams</span></div><span class="arrow" aria-hidden="true">→</span>
-            </a>
-          </div>
-          <p class="contact__direct" data-reveal>Prefer email? <a href="mailto:leahtfl@gmail.com">leahtfl@gmail.com</a></p>
-        </div>
+    <section class="talks grid-bg" id="speaking">
+      <div class="wrap">
+        <h2 class="h2 center" data-reveal>Speaking <span class="hi">topics.</span></h2>
+        <p class="lede center" data-reveal>The wrong people want to be inspired. The right people want to be changed. Each one is designed to leave the room with something they will use tomorrow morning.</p>
+        <ul class="talks__grid">
+          <li class="talk" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>The Operator Underneath the Operation</h3>
+            <p class="talk__sub">For owners and the people who run things</p>
+            <p>Why the most important thing in your practice is the person running it, and what happens when that person operates at their best.</p>
+            <a class="btn btn--solid btn--sm" href="#contact" data-interest="Speaking" data-topic="The Operator Underneath the Operation">Check availability</a>
+          </li>
+          <li class="talk" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5.5-6 4 3.5L20 7M14.5 7H20v5.5"/></svg></span>
+            <h3>High Performance Without the Sacrifice</h3>
+            <p class="talk__sub">A practice and a life, at the same time</p>
+            <p>The framework for growing a practice and a life at the same time. Built across fifteen years of work with the operators who are actually doing both.</p>
+            <a class="btn btn--solid btn--sm" href="#contact" data-interest="Speaking" data-topic="High Performance Without the Sacrifice">Check availability</a>
+          </li>
+          <li class="talk" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg></span>
+            <h3>The Architecture of Self-Leadership</h3>
+            <p class="talk__sub">A masterclass in STEAR</p>
+            <p>The five internal systems that determine whether a leader shows up at their best or their most reactive.</p>
+            <a class="btn btn--solid btn--sm" href="#contact" data-interest="Speaking" data-topic="The Architecture of Self-Leadership">Check availability</a>
+          </li>
+          <li class="talk" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="2.6"/><circle cx="17" cy="7" r="2.6"/><circle cx="7" cy="17" r="2.6"/><circle cx="17" cy="17" r="2.6"/></svg></span>
+            <h3>The InnerBoard: Four Voices in Every Room</h3>
+            <p class="talk__sub">Put the right one in charge</p>
+            <p>How to identify which part of you is running the meeting, and how to put the right one in charge when the stakes are highest.</p>
+            <a class="btn btn--solid btn--sm" href="#contact" data-interest="Speaking" data-topic="The InnerBoard: Four Voices in Every Room">Check availability</a>
+          </li>
+        </ul>
+        <ul class="formats" data-reveal>
+          <li>Keynotes</li>
+          <li>Leadership intensives</li>
+          <li>Practice group conferences</li>
+          <li>In person or virtual</li>
+          <li>45 to 90 minutes</li>
+        </ul>
+      </div>
+    </section>
 
-        <form class="form" id="contact-form" data-reveal style="--d:.12s" novalidate>
-          <h3>If you do not have a coach, I would be honored to be yours.</h3>
-          <div class="form__row">
+    <section class="quote quote--b" aria-label="What clients say">
+      <img class="quote__bg" src="assets/img/leah-stage-472.webp" width="472" height="626" alt="" loading="lazy" decoding="async">
+      <figure class="wrap quote__in" data-reveal>
+        <svg class="quote__mark" viewBox="0 0 64 48" aria-hidden="true"><path d="M0 48V27.6C0 11.6 8.4 2.4 25.2 0v9.6c-8 1.6-12 6.4-12 14.4h12V48zm38.8 0V27.6C38.8 11.6 47.2 2.4 64 0v9.6c-8 1.6-12 6.4-12 14.4h12V48z" fill="currentColor"/></svg>
+        <blockquote>
+          <p>I didn't realize that I was <span class="hi">holding back in my life.</span> I was afraid to live completely, unapologetically and unabashedly. I am now learning to be <span class="hi">happy with me.</span></p>
+        </blockquote>
+        <figcaption>
+          <strong>S.M.</strong>
+          <span>Coaching client</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="book" id="books">
+      <div class="wrap book__grid">
+        <figure class="book__cover" data-reveal>
+          <img src="assets/img/book-replaceable-400.webp" srcset="assets/img/book-replaceable-400.webp 400w, assets/img/book-replaceable-800.webp 800w" sizes="(min-width: 900px) 340px, 62vw" width="400" height="634" alt="Replaceable: The Internal Operating System, by Leah Roling" loading="lazy" decoding="async">
+        </figure>
+        <div class="book__copy">
+          <p class="kicker" data-reveal>The new book</p>
+          <h2 class="h2" data-reveal>Your business runs on you. That is not a badge. <span class="hi">That is the ceiling.</span></h2>
+          <p data-reveal><strong>Replaceable: The Internal Operating System.</strong> Every company runs two operating systems. EOS runs the business. InnerBoard OS runs the people inside it.</p>
+          <p data-reveal>Your company should be able to run without you. This is how you build that.</p>
+          <p class="book__meta" data-reveal>160 pages. Foreword by Craig Jackman. Afterword by Tim O'Donnell.</p>
+          <div class="btns" data-reveal>
+            <a class="btn btn--solid" href="https://www.amazon.com/dp/B0HMLM6GLZ" target="_blank" rel="noopener">Get the book</a>
+            <a class="btn btn--line" href="#contact" data-interest="InnerBoard OS">Bring it to your team</a>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <ul class="shelf">
+          <li data-reveal>
+            <a href="https://www.amazon.com/dp/B0CQKXMRT8" target="_blank" rel="noopener">
+              <img src="assets/img/book-no-one-400.webp" width="400" height="600" alt="No One Is Coming to Save You, by Leah Roling" loading="lazy" decoding="async">
+              <div>
+                <span class="shelf__act">Act I. The wake-up call</span>
+                <h3>No One Is Coming to Save You</h3>
+                <p>The book that ends the waiting. For everyone still hoping the rescue is on its way.</p>
+                <span class="more">Get it on Amazon</span>
+              </div>
+            </a>
+          </li>
+          <li data-reveal>
+            <a href="https://www.amazon.com/s?k=SHIFT+Leah+Roling+Bryan+Ferre" target="_blank" rel="noopener">
+              <img src="assets/img/book-shift-326.webp" width="326" height="522" alt="SHIFT, by Leah Roling and Bryan Ferre" loading="lazy" decoding="async">
+              <div>
+                <span class="shelf__act">Act II. The transformation</span>
+                <h3>SHIFT</h3>
+                <p>The mechanics of changing the operating system underneath the life. Written with Bryan Ferre.</p>
+                <span class="more">Find it on Amazon</span>
+              </div>
+            </a>
+          </li>
+          <li data-reveal>
+            <a href="https://www.amazon.com/s?k=Return+on+Life+Leah+Roling+Cari+Kenzie" target="_blank" rel="noopener">
+              <img src="assets/img/book-return-on-life-341.webp" width="341" height="522" alt="Return on Life, by Leah Roling and Cari Kenzie" loading="lazy" decoding="async">
+              <div>
+                <span class="shelf__act">Act III. The embodiment</span>
+                <h3>Return on Life</h3>
+                <p>What it looks like to live the philosophy. Not as theory. As ordinary Tuesday. Written with Cari Kenzie.</p>
+                <span class="more">Find it on Amazon</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="work grid-bg" id="work">
+      <div class="wrap">
+        <h2 class="h2 center" data-reveal>One philosophy. <span class="hi">Many doorways.</span></h2>
+        <p class="lede center" data-reveal>Each part of the work is built on the same foundation. Choose the doorway that fits where you are. They all open into the same room.</p>
+        <ul class="work__grid">
+          <li class="door" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c1.2-4 4-6 7.5-6s6.3 2 7.5 6"/></svg></span>
+            <p class="door__for">For owners and founders</p>
+            <h3>1:1 Coaching</h3>
+            <p>The Read. The Year. The Cabinet. The Install. Private work with the person running the operation.</p>
+            <a class="btn btn--hi btn--sm" href="https://calendly.com/leahroling/30-minute-strategy-session-with-leah-" target="_blank" rel="noopener">Book a strategy call</a>
+          </li>
+          <li class="door" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7M20 4v4.7h-4.7M20 12a8 8 0 0 1-13.7 5.6L4 15.3M4 20v-4.7h4.7"/></svg></span>
+            <p class="door__for">For individuals</p>
+            <h3>The Practice</h3>
+            <p>You can live the life you want. It just takes practice. Learn it in the Academy. Live it in the Lab.</p>
+            <a class="btn btn--hi btn--sm" href="https://innerboardsuite.com" target="_blank" rel="noopener">Start practicing</a>
+          </li>
+          <li class="door" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span>
+            <p class="door__for">For organizations</p>
+            <h3>InnerBoard OS</h3>
+            <p>Your people aren't overwhelmed. They are under-clear. The operating system for the people inside the business.</p>
+            <a class="btn btn--hi btn--sm" href="https://innerboardos.com" target="_blank" rel="noopener">Request a diagnostic</a>
+          </li>
+          <li class="door" data-reveal>
+            <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.5" r="5.5"/><path d="M8.5 14l-1.5 6.5 5-2.7 5 2.7L15.5 14"/></svg></span>
+            <p class="door__for">For coaches and leaders</p>
+            <h3>INQ Certification</h3>
+            <p>Master the methodology. Lead the transformation. Built to be earned, not just completed.</p>
+            <a class="btn btn--hi btn--sm" href="https://innerboardsuite.com/inq-certification" target="_blank" rel="noopener">Explore INQ</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guides" id="start">
+      <div class="wrap">
+        <div class="guides__head">
+          <h2 class="h2" data-reveal>Begin where you are. <span>Free.</span></h2>
+          <p data-reveal>None of them require you to be ready. All of them meet you where you stand. Walk through whichever one is closest.</p>
+        </div>
+        <ol class="guides__grid">
+          <li data-reveal>
+            <a href="https://view.flodesk.com/pages/60318c48eeca3d2c6cd9f783" target="_blank" rel="noopener">
+              <span class="guides__n">01</span>
+              <h3>The Confidence Curriculum</h3>
+              <p>A three-part field guide on cultivating the self-belief that lives underneath every choice.</p>
+              <span class="more">Begin</span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a href="https://bold-glade-978.myflodesk.com/w44v8oo9bz" target="_blank" rel="noopener">
+              <span class="guides__n">02</span>
+              <h3>The 25.</h3>
+              <p>Twenty-five thoughts worth holding. Thought repeatedly, until they were truths.</p>
+              <span class="more">Receive</span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a href="https://bold-glade-978.myflodesk.com/ooj9j2ykhw" target="_blank" rel="noopener">
+              <span class="guides__n">03</span>
+              <h3>The Quiet Diagnostic</h3>
+              <p>Five questions on what's actually loud in your life. Not a tactic. A diagnostic.</p>
+              <span class="more">Begin</span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a href="https://bold-glade-978.myflodesk.com/o8o3i29ru5" target="_blank" rel="noopener">
+              <span class="guides__n">04</span>
+              <h3>Live Lighter</h3>
+              <p>A field guide to the five clutters and how to move them. Less a checklist. More a practice.</p>
+              <span class="more">Open the guide</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact grid-bg" id="contact">
+      <div class="wrap contact__grid">
+        <div class="contact__copy">
+          <h2 class="h2" data-reveal>You can read the words. <span class="hi">Or you can do the work.</span></h2>
+          <p data-reveal>One leaves you inspired for a week. The other leaves you no longer the same person, six months later.</p>
+          <ul class="contact__ways" data-reveal>
+            <li>
+              <a href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">
+                <strong>Twenty minutes. Free.</strong>
+                <span>No pitch. Just an honest conversation.</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://calendly.com/leahroling/30-minute-strategy-session-with-leah-" target="_blank" rel="noopener">
+                <strong>30-minute strategy call</strong>
+                <span>For practice owners, founders and leadership teams.</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:leahtfl@gmail.com">
+                <strong>Prefer email?</strong>
+                <span>leahtfl@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <form class="form" id="contact-form" novalidate data-reveal>
+          <div class="form__body">
             <div class="field">
               <label for="f-name">Name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required>
@@ -845,88 +589,92 @@
               <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" autocomplete="email" required>
             </div>
-          </div>
-          <fieldset class="field">
-            <legend>I'm interested in</legend>
-            <div class="pills">
-              <label><input type="radio" name="interest" value="1:1 Coaching" checked><span>1:1 Coaching</span></label>
-              <label><input type="radio" name="interest" value="InnerBoard OS"><span>InnerBoard OS</span></label>
-              <label><input type="radio" name="interest" value="Speaking"><span>Speaking</span></label>
-              <label><input type="radio" name="interest" value="Media &amp; podcast"><span>Media &amp; podcast</span></label>
-              <label><input type="radio" name="interest" value="Something else"><span>Something else</span></label>
+            <fieldset class="field">
+              <legend>I'm interested in</legend>
+              <div class="chips">
+                <label><input type="radio" name="interest" value="1:1 Coaching" checked><span>1:1 Coaching</span></label>
+                <label><input type="radio" name="interest" value="Speaking"><span>Speaking</span></label>
+                <label><input type="radio" name="interest" value="InnerBoard OS"><span>InnerBoard OS</span></label>
+                <label><input type="radio" name="interest" value="Media and podcast"><span>Media &amp; podcast</span></label>
+                <label><input type="radio" name="interest" value="Something else"><span>Something else</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="f-message">What do you want to talk about?</label>
+              <textarea id="f-message" name="message" rows="4"></textarea>
             </div>
-          </fieldset>
-          <div class="field">
-            <label for="f-msg">What do you want to talk about?</label>
-            <textarea id="f-msg" name="message" rows="4"></textarea>
+            <p class="form__error" role="alert" hidden></p>
+            <button class="btn btn--solid btn--lg" type="submit">Send it</button>
           </div>
-          <button class="btn" type="submit">Send it <span class="arrow" aria-hidden="true">→</span></button>
-          <p class="form__note">You don't have to figure this out alone.</p>
-          <div class="form__success" role="status" aria-live="polite">
-            <img src="assets/img/leah-roling-mark-violet.svg" alt="" width="48" height="62">
+          <div class="form__done" role="status" aria-live="polite" hidden>
             <h3>Thank you. Your note is on its way.</h3>
-            <p class="muted">If your email app didn't open, write to me at <a href="mailto:leahtfl@gmail.com" style="text-decoration:underline">leahtfl@gmail.com</a>.</p>
+            <p>If your email app didn't open, write to me at <a href="mailto:leahtfl@gmail.com">leahtfl@gmail.com</a>.</p>
           </div>
         </form>
       </div>
     </section>
+
+    <section class="stage stage--cta" aria-label="Begin the work">
+      <div class="stage__beams" aria-hidden="true"></div>
+      <div class="wrap stage__in">
+        <h2 class="h2" data-reveal>The right work starts with one conversation.</h2>
+        <p class="stage__sub" data-reveal>If you do not have a coach, I would be honored to be yours.</p>
+        <div class="btns" data-reveal>
+          <a class="btn btn--solid btn--lg" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">Book a free call</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <img src="assets/img/leah-roling-seal-violet-reverse.svg" alt="" width="104" height="104" style="margin-bottom:28px" loading="lazy">
-          <p>You get one life. Let's get really <em>good</em> at living it.</p>
-          <div class="socials" data-socials></div>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#about">Come closer</a></li>
-            <li><a href="#story">My story</a></li>
-            <li><a href="#books">Books</a></li>
-            <li><a href="#speaking">Speaking</a></li>
-            <li><a href="#show">The Becoming You Show</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>InnerBoard</h4>
-          <ul>
-            <li><a href="https://innerboardsuite.com" target="_blank" rel="noopener">The Practice</a></li>
-            <li><a href="https://innerboardsuite.com/academy" target="_blank" rel="noopener">InnerBoard Academy</a></li>
-            <li><a href="https://innerboardsuite.com/inq-certification" target="_blank" rel="noopener">INQ Certification</a></li>
-            <li><a href="https://innerboardos.com" target="_blank" rel="noopener">InnerBoard OS</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener">Book a call</a></li>
-            <li><a href="#contact" data-interest="Speaking">Speaking inquiries</a></li>
-            <li><a href="#start">Free field guides</a></li>
-            <li><a href="mailto:leahtfl@gmail.com">Email me</a></li>
-          </ul>
-        </div>
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brand">
+        <a class="logo" href="#top" aria-label="Leah Roling, back to top">
+          <span>Leah</span>
+          <span>Roling</span>
+        </a>
+        <p>You get one life. Let's get really good at living it.</p>
+        <a class="btn btn--solid btn--sm" href="#start">Get the free guides</a>
       </div>
-      <img class="footer__mark" src="assets/img/leah-roling-wordmark-violet-reverse.svg" alt="Leah Roling" width="1200" height="240" loading="lazy">
-      <div class="footer__bottom">
-        <span>© <span data-year>2026</span> Leah Roling · Learn. Live. Lead.</span>
-        <a class="to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
-      </div>
+      <nav class="foot__links" aria-label="Quick links">
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="#about">Meet Leah</a></li>
+          <li><a href="#speaking">Speaking</a></li>
+          <li><a href="#stear">STEAR</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#show">The show</a></li>
+          <li><a href="#work">Work with me</a></li>
+          <li><a href="#start">Free guides</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="foot__links" aria-label="InnerBoard">
+        <h2>InnerBoard</h2>
+        <ul class="foot__one">
+          <li><a href="https://innerboardsuite.com" target="_blank" rel="noopener">The Practice</a></li>
+          <li><a href="https://innerboardsuite.com/academy" target="_blank" rel="noopener">Academy</a></li>
+          <li><a href="https://innerboardsuite.com/inq-certification" target="_blank" rel="noopener">INQ Certification</a></li>
+          <li><a href="https://innerboardos.com" target="_blank" rel="noopener">InnerBoard OS</a></li>
+        </ul>
+        <ul class="social">
+          <li><a href="https://www.linkedin.com/in/leahroling/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M5.3 8.8h3.3V20H5.3zM7 3.5a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8zM10.7 8.8h3.1v1.5h.1c.4-.8 1.5-1.8 3.2-1.8 3.4 0 4 2.2 4 5.1V20h-3.3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-3.2z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/leahrolingcoaching/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="https://www.youtube.com/@leahrolingcoaching" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.4 9.4l4.4 2.6-4.4 2.6z" fill="currentColor"/></svg></a></li>
+          <li><a href="https://www.tiktok.com/@leahrolingcoach" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5v11a3.5 3.5 0 1 1-3.5-3.5M14 3.5c.5 2.6 2.3 4.2 5 4.4"/></svg></a></li>
+          <li><a href="https://podcasts.apple.com/us/podcast/the-becoming-you-show-with-leah-roling-from-potential/id1608085445" target="_blank" rel="noopener" aria-label="Apple Podcasts"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10.5" r="2.2"/><path d="M12 13v8M8.2 15.2a5.4 5.4 0 1 1 7.6 0M5.6 18a9 9 0 1 1 12.8 0"/></svg></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap foot__base">
+      <p>&copy; <span data-year>2026</span> Leah Roling. All rights reserved. Learn. Live. Lead.</p>
     </div>
   </footer>
 
-  <a class="totop" href="#top" aria-label="Back to top">
-    <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" pathLength="100"/></svg>
-    <span aria-hidden="true">↑</span>
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg>
   </a>
-
-  <div class="sticky-cta" aria-hidden="true">
-    <span>The right work starts here.</span>
-    <a class="btn btn--sm" href="https://calendly.com/leahroling/20-minute-call-with-leah" target="_blank" rel="noopener" tabindex="-1">Book a call</a>
-  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>

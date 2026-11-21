@@ -3,14 +3,13 @@
 Everything for Leah Roling's personal brand: a brand strategy, a full identity system,
 a 31-page brand book, social templates and a fast personal website.
 
-> **Become who you were made to be.**
+> **Learn it. Live it. Lead it.**
 
 ## What's inside
 
 | Path | What it is |
 |---|---|
 | `index.html` | The website (single page, no build step, no dependencies) |
-| `emerald.html` | **Colour mockup:** the same site in emerald green, for comparison (see below) |
 | `assets/` | Site CSS, JS, self-hosted fonts, optimized photos, icons |
 | `brand/Leah-Roling-Brand-Book.pdf` | **The brand book.** Print it or send it as-is |
 | `brand/BRAND-STRATEGY.md` | Positioning, voice, bios, palette and type in plain text |
@@ -29,25 +28,34 @@ python3 -m http.server 8765
 
 Then open http://localhost:8765.
 
-## Colour mockups
+## The site at a glance
 
-`index.html` is the live direction: black and white with a violet accent.
+A speaker-style single page on charcoal and black, with one violet accent and a wide,
+heavy headline typeface. From top to bottom:
 
-`emerald.html` is the same page in a second colour scheme, to compare side by side.
-The black areas become a rich emerald, the light surfaces become soft sage tones, and
-the accent is a pale gold light. Two other accents can be viewed by adding to the
-address: `emerald.html#mint` and `emerald.html#violet`.
+1. **Hero:** "Learn it. Live it. Lead it." beside her portrait
+2. **Client quote** over a darkened room photo
+3. **Seen and heard at:** the stages and shows that list her
+4. **Scroll lines:** six of her lines that fade in one at a time as you scroll
+5. **"There are tools for this."**
+6. **Hi, I'm Leah:** her story
+7. **Stage band:** three of her beliefs under stage lights
+8. **Proof:** her numbers and three results
+9. **How I work:** four blocks and a strategy call button
+10. **The Becoming You Show**
+11. **STEAR:** her five-part self-leadership model, one block per letter
+12. **Speaking topics:** four talks, each with a "Check availability" button
+13. **Second client quote**
+14. ***Replaceable*** and the other three books
+15. **Work with me:** four doorways
+16. **Free guides**
+17. **Contact form**, then a closing call-to-action band and the footer
 
-The mockup is generated from `index.html`, so the words only live in one place. All of
-its colours are in `assets/css/theme-emerald.css`. After editing `index.html`, refresh
-the mockup with:
+## Earlier versions
 
-```bash
-python3 brand/source/build_mockups.py
-```
-
-To make emerald the real site, tell Claude which accent you want and it can fold the
-theme into `styles.css`.
+Two earlier looks are saved in the project history at commit `3837032`: the black and
+white site with floating cards, and an emerald green colour mockup of it. Ask Claude
+to bring either one back.
 
 ## Put it online (free)
 
@@ -67,16 +75,21 @@ edited, or written for her.
 
 - [ ] **Lines written for her.** Read the rows marked *Written for her* in
       `brand/COPY-SOURCES.md` and approve or replace them
-- [ ] **Her story.** The story section uses what she published about her father on her
-      own site. Confirm she wants it here too
-- [ ] **Faith section**, including the Ephesians 2:10 verse. These lines were written
-      and chosen for her
+- [ ] **Her story.** A shortened version of what she published on her own site. The
+      part about her father is left out
+- [ ] **STEAR.** The five names are hers. The one-line description under each letter
+      was written for her
+- [ ] **Faith.** It appears only as the word "Believer" under her story. Add more if
+      she wants it
 - [ ] **Family details.** Husband's and sons' names are left out on purpose
 - [ ] **Numbers.** Her own pages disagree on years of experience and client counts.
-      The site uses "15+ years coaching" and "8+ coach certifications" from her
-      coaching page
-- [ ] **Client quotes.** Three quotes with initials come from the "Client Stories" on
+      The site uses "15+ years" from her coaching page
+- [ ] **Client quotes.** Two quotes with initials come from the "Client Stories" on
       her current About page. Confirm she still has permission to use them
+- [ ] **"Seen and heard at."** The five names are set as plain text. Swap in real
+      logos only with permission
+- [ ] **Episodes.** Three recent episodes are named in the show section. Update them
+      now and then
 - [ ] **Contact email.** The site uses `leahtfl@gmail.com` (the address on her current
       site). A domain address would look more polished
 - [ ] **Contact form.** By default it opens the visitor's email app. To receive messages
@@ -88,7 +101,7 @@ edited, or written for her.
 
 ## Out of date
 
-The website is now black and white with one violet accent. These still show the earlier yellow and lilac
+The website is now a charcoal and violet speaker-style page. These still show the earlier yellow and lilac
 look and the earlier wording, and have not been rebuilt:
 
 - `brand/Leah-Roling-Brand-Book.pdf` and `brand/source/brand-book.html`
@@ -96,13 +109,17 @@ look and the earlier wording, and have not been rebuilt:
 - `brand/email-signature.html`
 - `brand/ui-ux-overview/`
 - `brand/BRAND-STRATEGY.md` (the color and type sections)
+- `brand/logos/` (the site header now sets her name in the headline typeface instead of using these files)
 
 ## Editing
 
-- **Words:** all copy lives in `index.html`, in clearly commented sections (HERO, ROLES, STORY…).
-- **Email, form and social links:** the `CONFIG` block at the top of `assets/js/main.js`.
-- **Colors and type:** CSS variables at the top of `assets/css/styles.css`. Each section sets a few
-  context variables (`--fg`, `--muted`, `--card`…) and the parts inside read from them.
+- **Words:** all copy lives in `index.html`. Each section has a plain class name
+  (`hero`, `quote`, `seen`, `pin`, `meet`, `proof`, `show`, `stear`, `talks`, `book`,
+  `work`, `guides`, `contact`).
+- **Email and form:** the `CONFIG` block at the top of `assets/js/main.js`. Social links
+  are in the footer of `index.html`.
+- **Colors and type:** the variables in `:root` near the top of `assets/css/styles.css`.
+  Change `--violet` and `--violet-hi` to try another accent.
 - **Photos:** `assets/img/`. Keep the same filenames, or update the `src`/`srcset` in `index.html`.
 
 ## Rebuilding brand assets
@@ -130,8 +147,9 @@ Add `--pages` to the brand book command to also write page previews to `brand/so
 
 ## Credits
 
-- Website typefaces: [Geist and Geist Mono](https://fonts.google.com/specimen/Geist) and
-  [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif), all under the SIL Open Font License.
-  The logo wordmark is drawn in [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque),
-  and the signature in [Mrs Saint Delafield](https://fonts.google.com/specimen/Mrs+Saint+Delafield).
+- Website typefaces: [Archivo](https://fonts.google.com/specimen/Archivo) (the expanded
+  extra-bold cut, for headlines) and [Geist](https://fonts.google.com/specimen/Geist),
+  both under the SIL Open Font License. The brand kit files also use Geist Mono,
+  Instrument Serif, [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque)
+  and [Mrs Saint Delafield](https://fonts.google.com/specimen/Mrs+Saint+Delafield).
 - Photography and the *SHIFT* / *Return on Life* covers come from Leah's existing websites.

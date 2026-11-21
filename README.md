@@ -30,8 +30,9 @@ Then open http://localhost:8765.
 
 ## The site at a glance
 
-A speaker-style single page on charcoal and black, with one violet accent and a wide,
-heavy headline typeface. From top to bottom:
+A speaker-style single page on warm charcoal and black. Pale pink and gold tan are the
+two accent colors: pink for highlighted words, gold for buttons and small labels, and a
+soft pink-to-gold blend on the biggest headlines. The headline typeface is wide and heavy. From top to bottom:
 
 1. **Hero:** "Learn it. Live it. Lead it." beside her portrait
 2. **Client quote** over a darkened room photo
@@ -53,9 +54,9 @@ heavy headline typeface. From top to bottom:
 
 ## Earlier versions
 
-Two earlier looks are saved in the project history at commit `3837032`: the black and
-white site with floating cards, and an emerald green colour mockup of it. Ask Claude
-to bring either one back.
+Earlier looks are saved in the project history. Commit `3837032` has the black and
+white site with floating cards and an emerald green colour mockup of it. Commit
+`759f11a` has this same page with a violet accent. Ask Claude to bring any of them back.
 
 ## Put it online (free)
 
@@ -101,7 +102,7 @@ edited, or written for her.
 
 ## Out of date
 
-The website is now a charcoal and violet speaker-style page. These still show the earlier yellow and lilac
+The website is now a charcoal, pale pink and gold tan speaker-style page. These still show the earlier yellow and lilac
 look and the earlier wording, and have not been rebuilt:
 
 - `brand/Leah-Roling-Brand-Book.pdf` and `brand/source/brand-book.html`
@@ -119,7 +120,8 @@ look and the earlier wording, and have not been rebuilt:
 - **Email and form:** the `CONFIG` block at the top of `assets/js/main.js`. Social links
   are in the footer of `index.html`.
 - **Colors and type:** the variables in `:root` near the top of `assets/css/styles.css`.
-  Change `--violet` and `--violet-hi` to try another accent.
+  `--pink` and `--gold` are the two accents. `--gold-deep` is the gold used on light
+  backgrounds, and `--blush` and `--paper` are the two light band colors.
 - **Photos:** `assets/img/`. Keep the same filenames, or update the `src`/`srcset` in `index.html`.
 
 ## Rebuilding brand assets

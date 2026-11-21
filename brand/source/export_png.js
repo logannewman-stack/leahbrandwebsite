@@ -21,10 +21,9 @@ const logos = path.join(root, 'brand', 'logos');
     await render(path.join(logos, f), path.join(logos, 'png', f.replace('.svg', '.png')), 2400);
     console.log('png', f);
   }
-  // Favicons / app icons from the monochrome app icon (it carries its own background)
-  const icon = fs.readFileSync(path.join(logos, 'leah-roling-app-icon-violet.svg'), 'utf8');
+  // Favicons / app icons from the site icon (it carries its own background)
   const out = path.join(root, 'assets', 'img', 'icons');
-  fs.mkdirSync(out, { recursive: true });
+  const icon = fs.readFileSync(path.join(out, 'favicon.svg'), 'utf8');
   for (const [name, size] of [['favicon-32.png', 32], ['apple-touch-icon.png', 180], ['icon-192.png', 192], ['icon-512.png', 512]]) {
     await p.setViewportSize({ width: size, height: size });
     await p.setContent(`<html><body style="margin:0;background:transparent">${icon.replace(/width="[\d.]+" height="[\d.]+"/, `width="${size}" height="${size}"`)}</body></html>`);

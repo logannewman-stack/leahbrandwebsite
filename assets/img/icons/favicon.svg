@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Leah Roling icon">
 <title>Leah Roling icon</title>
-<defs><clipPath id="door"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath><linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9D6DC"/><stop offset="1" stop-color="#D9B17B"/></linearGradient></defs><rect width="512" height="512" rx="116" fill="#0B0A09"/><g transform="translate(200 189.2) scale(0.56)"><path d="M10 260V100a90 90 0 0 1 180 0v160z" fill="#FFFFFF"/><g clip-path="url(#door)"><circle cx="100" cy="212" r="60" fill="url(#sun)"/></g></g>
+<defs><clipPath id="door"><path d="M10 260V100a90 90 0 0 1 180 0v160z"/></clipPath><linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBDADA"/><stop offset="1" stop-color="#D9B17B"/></linearGradient></defs><rect width="512" height="512" rx="116" fill="#0B0A09"/><g transform="translate(200 189.2) scale(0.56)"><path d="M10 260V100a90 90 0 0 1 180 0v160z" fill="#FFFFFF"/><g clip-path="url(#door)"><circle cx="100" cy="212" r="60" fill="url(#sun)"/></g></g>
 </svg>

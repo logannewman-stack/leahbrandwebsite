@@ -27,19 +27,19 @@
   --char: #100f0e;
   --char-2: #191716;
   --paper: #f3ece1;
-  --blush: #f8dde2;
+  --blush: #f9dfde;
   --white: #fff;
   --ink: #100f0e;
   --soft: #ddd8d2;
   --mute: #b8b1aa;
   --line: rgba(255, 255, 255, 0.12);
-  --pink: #f3c5ce;
-  --pink-rgb: 243, 197, 206;
+  --pink: #f5c8c8;
+  --pink-rgb: 245, 200, 200;
   --gold: #c9a36c;
   --gold-hi: #dfc293;
   --gold-deep: #7d5a2a;
   --gold-rgb: 201, 163, 108;
-  --glow-pink: 255, 178, 198;
+  --glow-pink: 255, 190, 180;
   --glow-gold: 240, 184, 104;
   --display: "Archivo Expanded", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   --body: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -180,7 +180,7 @@ fieldset {
   .hero__line.hi,
   .meet__title {
     width: fit-content;
-    background: linear-gradient(96deg, #f9d6dc 0%, #f1c5c1 46%, #d9b17b 100%);
+    background: linear-gradient(96deg, #fbdada 0%, #f3cabf 46%, #d9b17b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -902,6 +902,7 @@ a:hover .more::after {
   height: 100%;
   object-fit: cover;
   object-position: 50% 14%;
+  filter: grayscale(1) contrast(1.06);
 }
 
 .think__title {
@@ -968,6 +969,7 @@ a:hover .more::after {
   height: 100%;
   object-fit: cover;
   object-position: 50% 20%;
+  filter: sepia(0.16) saturate(1.06);
 }
 
 .meet__copy {
@@ -1352,12 +1354,12 @@ a:hover .more::after {
 }
 
 .stear__blocks li:nth-child(1) {
-  --tile: #f8d5db;
+  --tile: #f8d7d6;
 }
 
 .stear__blocks li:nth-child(2) {
   --i: 1;
-  --tile: #f3cbc9;
+  --tile: #f4cdc6;
 }
 
 .stear__blocks li:nth-child(3) {
